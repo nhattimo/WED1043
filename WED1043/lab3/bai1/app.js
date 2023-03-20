@@ -34,8 +34,8 @@ function MoiNhap_va_TinhTongTB(){
         tong += diemNhap[i];
         dem ++; 
     }   
-    tong /= dem  
-    console.log("Điểm trung bình: ",tong)
+    tong /= dem ; 
+    console.log("Điểm trung bình: ",tong);
     return tong;
 };
 // kiểm tra người nhập vào điểm không vượt quá 10đ
@@ -81,5 +81,5 @@ function TDTBIf_else(){
         console.log("Học lực: Khá");
     }else if (hi < 9){
             console.log("Học lực: Khá");
-    }else console.log("Học lực: Giỏi")  
+    }else console.log("Học lực: Giỏi");
 };
