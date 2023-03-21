@@ -1,4 +1,6 @@
-function MT(a){
-    a.value+=this.value;
-    return value;
+function MT(result){
+    result.value+=this.value;
+}
+function tinhTong(){
+    document.write(2+3+5);
 }

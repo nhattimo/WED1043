@@ -13,8 +13,8 @@
         <tr>
             <input id="result" type="text">
         </tr>
-        <tr>
-            <td><input type="button" value="7" onclick="MT(result)"></td>
+        <tr> <!-- 1 hàng có 4 cột -->
+            <td><input type="button" value="7" onclick="result.value+=this.value"></td>
             <td><input type="button" value="8" onclick="result.value+=this.value"></td>
             <td><input type="button" value="9" onclick="result.value+=this.value"></td>
             <td><input type="button" value="+" onclick="result.value+=this.value"></td>
@@ -29,15 +29,17 @@
             <td><input type="button" value="1" onclick="result.value+=this.value"></td>
             <td><input type="button" value="2" onclick="result.value+=this.value"></td>
             <td><input type="button" value="3" onclick="result.value+=this.value"></td>
-            <td><input type="button" value="x" onclick="result.value+=this.value"></td>
+            <td><input type="button" value="*" onclick="result.value+=this.value"></td>
         </tr>
         <tr>
             <td><input type="button" value="0" onclick="result.value+=this.value"></td>
-            <td><input type="button" value="C" onclick="result.value+=this.value"></td>
-            <td><input type="button" value="=" onclick="result.value+=this.value"></td>
-            <td><input type="button" value=":" onclick="result.value+=this.value"></td>
+            <td><input type="button" value="C" onclick="result.value=''"></td>
+            <td><input type="button" value="=" onclick="result.value=eval(result.value)"></td>
+            <td><input type="button" value="/" onclick="result.value+=this.value"></td>
         </tr>
-        
+        <tr>
+            <th><button>dell</button></th>
+        </tr>
     </table>
 </body>
 </html>
