@@ -78,7 +78,7 @@ function TDTBIf_else(){
     if(hi < 5 ){
         console.log("Học lực: Yếu");
     }else if (hi < 7){
-        console.log("Học lực: Khá");
+        console.log("Học lực: Trung bình");
     }else if (hi < 9){
             console.log("Học lực: Khá");
     }else console.log("Học lực: Giỏi");
