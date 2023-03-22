@@ -1,4 +1,4 @@
-function MT(result){
+function MT(){
     result.value+=this.value;
 }
 function tinhTong(){
