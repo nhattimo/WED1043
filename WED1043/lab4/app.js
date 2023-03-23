@@ -34,7 +34,6 @@ class Student{
         return ageYear + " Tuổi " + (ageMonth * 30 + ageDay) + " Ngày" ;
     }  
 }
-
 let sinhVien = [
     SV = new Student("PD01", "Nguyen", "Nhật", "IT18320", "nhat@gmail.com", 0857075999, 10, 04, 2003),
     SV1 = new Student("PD02", "Nguyen", "Nhật", "IT18320", "nhat@gmail.com", 0857075999, 29, 01, 2003),
@@ -50,7 +49,3 @@ let width = screen.availWidth;
 console.log("Chiều rộng màn hình = " + width)
 let height = screen.availHeight;
 console.log("Chiều cao màn hình = " + height)
-
-
-
-
