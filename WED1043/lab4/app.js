@@ -32,26 +32,7 @@ class Student{
         }
         // return ageYear*365 + ageMonth * 30 + ageDay;
         return ageYear + " Tuổi " + (ageMonth * 30 + ageDay) + " Ngày" ;
-    }
-    getFullDate(){
-        const date = new Date();
-        let currentYear = date.getFullYear();               // Tạo biến gán = năm hiện tại
-        let currentMonth = date.getMonth()+1;               // Tạo biến gán = tháng hiện tại
-        let currentDay = date.getDate();                    // Tạo biến gán = ngày hiện tại
-        let ageYear = currentYear - this.year_Of_Birth;     // tạo biến gán = năn hiện tại - năm sinh
-        let ageMonth = currentMonth - this.month_Of_Birth;  // tạo biến gán = năn hiện tại - tháng sinh
-        let ageDay = currentDay - this.day_Of_Birth;        // tạo biến gán = năn hiện tại - ngày sinh
-        if(ageDay < 0 || ageDay < this.day_Of_Birth){
-            ageMonth --;
-            ageDay +=30;
-        }
-        if(ageMonth<0){ // tháng khi tính ra nhỏ hơn 0 thì giảm suống 1 năm 
-            ageYear --;
-            ageMonth +=12;
-        }
-        return fulldate = ageYear*365 + ageMonth * 30 + ageDay ;
-    }
-    
+    }  
 }
 
 let sinhVien = [
@@ -64,8 +45,7 @@ let sinhVien = [
 for (let index = 0; index < sinhVien.length; index++) {
     console.log(sinhVien[index].id + "\n" + sinhVien[index].GetFullName() + "\n" + sinhVien[index].getAge())
 }
-sinhVien.sort(a,b);
-
+// lệnh xắp xếp chưa làm được
 let width = screen.availWidth;
 console.log("Chiều rộng màn hình = " + width)
 let height = screen.availHeight;
