@@ -1,12 +1,14 @@
 body{
     margin: 0;
     padding: 0;
+    width: 100%;
+    min-width: 900px;
 }
 
 /* ////////// */
 header img{
     width: 100%;
-    height: 100%;
+    height: 210px;
 }
 nav{
     width: 100%;
@@ -14,12 +16,7 @@ nav{
     background-color: rgba(53, 30, 30, 0.49);
 }
 
-/* ////////// */
-.img{
-    width: 100%;
-    height: 400px;
-    background-color: rgb(108, 79, 29);
-}
+
 /* nhớ dối thàng autu */
 .box{
     width: 100%;
@@ -34,7 +31,7 @@ nav{
 .box-slide{
     position: relative;
     width: 100%;
-    height: 330px;
+    height: 400px;
     margin-top: 30px;
     background-color: rgb(26, 157, 169);
 }
@@ -191,7 +188,6 @@ nav{
     padding-top: 20px;
     width: 100%;
     height: auto;
-    background-color: antiquewhite;
     display: flex;
     flex-wrap: wrap;
 }
@@ -240,7 +236,7 @@ nav{
 .box-menu>.box-doi>.combo>button:hover{
     background-color: rgb(67, 57, 43);
 }
-
+/* BOX 3 SP */
 .box-menu>.box-le-SP{
     position: relative;
     margin: 0 30px;
@@ -250,6 +246,7 @@ nav{
     flex: 1 1  350px;
     text-align: center;
 }
+/* anh sp */
 .box-menu>.box-le-SP>img{
     position: absolute;
     width: 94%;
@@ -257,8 +254,9 @@ nav{
     left: 50%;
     transform: translate(-50%); 
     top: 10px;
-    background-color: rgb(26, 68, 104);
+    background-color: rgba(26, 68, 104, 0.382);
 }
+/* Tene sp */
 .box-menu>.box-le-SP>h2{
     position: absolute;
     left: 50%;
@@ -266,6 +264,7 @@ nav{
     bottom: 55px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+/* Nút chi tiết */
 .box-menu>.box-le-SP>button{
     font-size: 15px;
     position: absolute;
@@ -279,5 +278,268 @@ nav{
 .box-menu>.box-le-SP>button:hover{
     background-color: rgb(67, 57, 43);
 }
+/* box ship */
+.box-menu>.ship{
+    position: relative;
+    width: 100%;
+    height: 350px;
+    margin-top: 30px;
+    background-color: rgba(127, 255, 212, 0.472);
+}
+.box-menu>.ship>.anh_Shiper{
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    height: 110%;
+}
+.box-menu>.ship>h2{
+    position: absolute;
+    left: 13%;
+    font-size: 40px;
+    top: 70px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}
+.box-menu>.ship>.SDT{
+    position: absolute;
+    left: 5%;
+    bottom: 70px;
+    font-size: 100px;
+}
 
+/* BOX IMG____________________________________________  */
+.img{
+    margin-top: 70px;
+    width: 100%;
+    height: 400px;
+    background-color: rgb(108, 79, 29);
+}
 
+/* BOX Cửa Hàng____________________________________________  */
+.box>.box_cua_hang{
+    position: relative;
+    padding: 80px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.box>.box_cua_hang>.box_SP{
+    margin: 2%;
+    position: relative;
+    height: 550px;
+    flex: 1 1  350px;
+    max-width: 470px;
+    border: 1px solid rgb(81, 70, 119);
+}
+/* ảnh sản phẩm */
+.box>.box_cua_hang>.box_SP>.img_sp{
+    position: relative;
+    margin: 0 2% ;
+    height: 70%;
+    width: 96%;
+    background-color: rgb(62, 9, 81);
+}
+.box>.box_cua_hang>.box_SP>.img_sp> img{
+    width: 100%;
+    height: auto;
+}
+/* Giá tiền */
+.box>.box_cua_hang>.box_SP>.img_sp>h2{
+    position: absolute;
+    text-align: center;
+    line-height: 50px; 
+    letter-spacing: 5px; 
+    margin-left: 5%;
+    bottom: -40px;
+    width: 40%; 
+    border-radius: 10px;
+    background-color: #b4462a;
+    z-index: 1;
+}
+.box>.box_cua_hang>.box_SP>.box_SP_TT{
+    padding: 20px 0 1px 0;
+    width: 100%;
+    line-height: 10px;
+    height: auto;
+    background-color: rgba(28, 108, 68, 0.543);
+}
+.box>.box_cua_hang>.box_SP>.box_SP_TT>.TT{
+    margin-left: 7%;
+}
+.box>.box_cua_hang>.box_SP>.box_SP_TT>.nut_bam{
+    position: absolute;
+    bottom: 0;
+    padding-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.box>.box_cua_hang>.box_SP>.box_SP_TT>.nut_bam>.mua_ngay{
+    height: 65px;
+    border: none;
+    background-color: rgb(73, 129, 28);
+    flex: 1 1  150px;
+    font-size: 30px;
+    font-family:'Times New Roman';
+}
+.box>.box_cua_hang>.box_SP>.box_SP_TT>.nut_bam>.mua_ngay:hover{
+    background-color: rgba(73, 129, 28, 0.532);
+}
+.box>.box_cua_hang>.box_SP>.box_SP_TT>.nut_bam>.chi_tiet{
+    height: 65px;
+    border: none;
+    background-color: rgb(131, 173, 96);
+    flex: 1 1  150px;
+    font-size: 30px;
+    font-family: 'Times New Roman';
+}
+.box>.box_cua_hang>.box_SP>.box_SP_TT>.nut_bam>.chi_tiet:hover{
+    background-color: rgba(73, 129, 28, 0.532);
+}
+
+/* BOX ĐẶT BÀN ______________________________________________ */
+/* Box tổng đặt bàn */
+.box>.box_dat_ban{
+    width: 90%;
+    height: auto;
+    background-color: antiquewhite;
+    margin: 7% 0 0 5%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+/* Box ảnh đặt bàn */
+.box>.box_dat_ban>.anh_dat_ban{
+    width: 50%;
+    height: auto;
+    flex: 1 1 460px;
+}   
+.box>.box_dat_ban>.anh_dat_ban> img{
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+}   
+
+/* Box điền thông tin đặt bàn */
+
+.box>.box_dat_ban>.dien_thong_tin_dat_ban{
+    position: relative;
+    width: 50%;
+    flex: 1 1 460px;
+}  
+.box>.box_dat_ban>.dien_thong_tin_dat_ban>h2{
+    position: absolute;
+    font-size: 30px; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 80%;
+    height: 50px;
+    text-align: center;
+    border-bottom: 2px solid #b4462a ;
+    left: 50%;
+    transform: translate(-50%);  
+}  
+.box>.box_dat_ban>.dien_thong_tin_dat_ban>.all_field{
+    margin-top: 25%;
+    width: 100%;
+    height: 50px; 
+    display: flex;
+    flex-wrap: wrap;
+}  
+/*)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))) */
+input:focus,
+.checkbox:focus{
+    outline: none;
+}
+.field{
+    margin-bottom: 70px;
+    position: relative;
+    width: 50%;
+    height: 350px;
+    flex: 1 1 250px;
+}
+/* Nhập chữ*/
+.field>input{
+    position: absolute;
+    width: 90%;
+    height: auto;
+    font-size: 20px;
+    color: white;
+    outline: 0;
+    left: 20px;
+    background-color: inherit;
+    border: none;
+    box-sizing: border-box;
+}
+.field .lable-wrapper{
+    position: absolute;
+    height: 35px;
+    width: 90%;
+    letter-spacing: 5px;
+    background-color: inherit;
+    left: 10px;
+    pointer-events: none;
+    border-bottom: 1px solid rgb(247, 247, 247);
+}
+.field .lable-wrapper:hover{
+    border-bottom: 2px solid yellow;
+}
+/* thanh ngang dưới chữ */
+.field .lable-wrapper::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-bottom: 2.5px solid #ff9950;
+    transform: translateX(-500%);
+    transform: transform 0.2s ease;
+}
+/* chữ */
+.field .lable-text{
+    position: absolute;
+    left: 15px;
+    font-size: 20px;
+    font-family: 'Times New Roman';
+    letter-spacing: 5px;
+    transform: all 0.009s ease;
+    transition-duration: 500ms
+}
+.field input:focus + .lable-wrapper .lable-text,
+.field input:valid + .lable-wrapper .lable-text{
+    letter-spacing: 4px;
+    font-size: 17px;
+    color: #ff9950;
+    transform: translateY(-100%);
+}
+.field input:focus + .lable-wrapper::after,
+.field input:valid + .lable-wrapper::after{
+    transform: translateX(0%);
+}
+
+/* Nút bấm đặt bàn */
+.nut_dat_ban{
+    position: absolute;
+    width: 150px;
+    height: 10%;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgb(89, 89, 217);
+    border: none;
+    margin-top: 30px;
+    padding: 10px 12px;
+    border-radius: 5px;
+    transition: opacity .2s ease;
+}
+.nut_dat_ban:hover{
+    background-color: rgba(24, 47, 200, 0.824);
+}
+.nut_dat_ban:focus{
+    background-color: darkgreen;
+}
+.nut_dat_ban:active{
+    opacity:0.3;
+}
+/* Nhập */
+.field{
+    position: relative;
+    width: 800px;
+    height: auto;
+}

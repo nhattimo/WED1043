@@ -39,15 +39,15 @@ function MoiNhap_va_TinhTongTB(){
     return tong;
 };
 // kiểm tra người nhập vào điểm không vượt quá 10đ
-function KTTinhHopLe(b){
+function KTTinhHopLe(diem){
     do{
-        if( b <= 10 ){
-            return b;
+        if( diem <= 10 ){
+            return diem;
         }else{
-                b = parseFloat(prompt("Mời nhập lại điểm,\nđiểm không được vượt quá 10"));
+                diem = parseFloat(prompt("Mời nhập lại điểm,\nđiểm không được vượt quá 10"));
             } 
-    }while (b>10);
-    return b;
+    }while (diem>10);
+    return diem;
 };
 // hàm kiểm tra học lực bằng Swich case
 function TDTBSwich_case(){
