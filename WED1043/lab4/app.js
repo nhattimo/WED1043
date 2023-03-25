@@ -60,19 +60,23 @@ var sinhVien = [
 var dayAgeSV=[]
 for (let index = 0; index < sinhVien.length; index++) {
     console.log(sinhVien[index].id + "\n" + sinhVien[index].GetFullName() + "\n" + sinhVien[index].getAge());
-    dayAgeSV[index]=sinhVien[index].FullDay();
+    dayAgeSV[index]=sinhVien[index].FullDay(); //lấy số ngày và để vào Array theo index
 }
+
 // for (let index = 0; index < daySV.length; index++) {
 //     dayAgeSV.sort(function(a, b){return a - b});
 // }
+
+// xắp xếp 
 for(var i = 0; i < dayAgeSV.length; i++){
     for(let j = i; j < dayAgeSV.length; j++){
-        if(dayAgeSV[i]>dayAgeSV[j]){
-            let doi;
+        if(dayAgeSV[i]>dayAgeSV[j]){ // nếu thằng đầu lớn hơn thì hoán vị
+            // Hóa vị array dayAgeSV
+            let doi;                
 	        doi = dayAgeSV[i];
 	        dayAgeSV[i]=dayAgeSV[j];
 	        dayAgeSV[j]=doi;
-
+            // Hóa vị array sinhVien
             let doi1;
             doi1 = sinhVien[i];
             sinhVien[i]=sinhVien[j];
@@ -80,11 +84,12 @@ for(var i = 0; i < dayAgeSV.length; i++){
         }
     }
 }
+// In ra danh sách sinh viên theo thứ tự sinh viên có số tuổi (tínhtheo ngày) từ thấp đến cao.
+
 for (let index = 0; index < dayAgeSV.length; index++) {
     console.log(dayAgeSV[index]);
     console.log(sinhVien[index]);
 }
-// lệnh xắp xếp chưa làm được
 // kích thước màn hình
 console.log(`Chiều rộng màn hình = ${screen.availWidth} \nChiều cao màn hình = ${screen.availHeight}`);
 
