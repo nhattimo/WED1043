@@ -337,7 +337,9 @@
                     <img src="IMG/anh_dat_ban.jpg" alt="">
                 </div>
                 <div class="dien_thong_tin_dat_ban">
-                    <h2>Điền thông tin đặt bàn</h2>
+                    <div class="tieu_de">
+                        <h2>Điền thông tin đặt bàn</h2>  
+                    </div>
                     <div class="all_field">
                         <div class="field">
                             <input type="text" name="songuoi" autocomplete="off" required id="">
@@ -355,14 +357,23 @@
                             <samp class="lable-text">Số người</samp>
                         </div>
                         <div class="field">
-                            <input type="text" name="songuoi" autocomplete="off" required id="">
-                            <label class="lable-wrapper" for="songuoi" >
-                            <samp class="lable-text">Ngày</samp>
+                            <fieldset class="ghi_chu">
+                                <legend>Ngày đặt</legend>
+                                <input class="date" type="date" name="" id="">
+                                <br>
+                            </fieldset>
+                        </div>
+                        <div class="field">
+                            <fieldset class="ghi_chu">
+                                <legend>Ghi chú</legend>
+                                <textarea name="" id="" cols="30" rows="5"></textarea>
+                            </fieldset>
                         </div>
                     </div>
                     <input class="nut_dat_ban" type="button" value="Đặt Bàn" name="" id="">
                 </div>
-        </div>
+            </div>
+    </div>
     <!-- Box Liên hệ -->
         <div class="box">
             <div class="boxlogo">
@@ -371,6 +382,24 @@
                 <img class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
                 <span class="span1">Trà sữa và bạn</span>
                 <span class="span2">Liên hệ</span>
+            </div>
+            <div class="box_lien_he">
+                <div class="box_tren_duoi">
+                    <div class="box_trai_phai_tren">
+                        Ảnh
+                    </div>
+                    <div class="box_trai_phai_tren">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902365.6818415667!2d103.7598606155717!3d17.22344650237801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3140b1ced4b08e39%3A0xe63766baac056d38!2sNhat%20timo!5e0!3m2!1sen!2s!4v1679844785844!5m2!1sen!2s" width="100%" height="autocomplete" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                
+                    </div>
+                </div>
+                <div class="box_tren_duoi">
+                    <div class="box_trai_phai_duoi">
+                        box trái
+                    </div>
+                    <div class="box_trai_phai_duoi">
+                        box pahir
+                    </div>
+                </div>
             </div>
         </div>
     </div>

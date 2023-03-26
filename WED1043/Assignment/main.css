@@ -395,101 +395,116 @@ nav{
 .box>.box_cua_hang>.box_SP>.box_SP_TT>.nut_bam>.chi_tiet:hover{
     background-color: rgba(73, 129, 28, 0.532);
 }
-
 /* BOX ĐẶT BÀN ______________________________________________ */
 /* Box tổng đặt bàn */
 .box>.box_dat_ban{
-    width: 90%;
+    padding: 40px;
     height: auto;
-    background-color: antiquewhite;
-    margin: 7% 0 0 5%;
-    display: flex;
-    flex-wrap: wrap;
+    display: flex; /* nằm 1 hàng */
+    flex-direction: row; /* cột*/
+    justify-content: center; /* box nằm giữa*/
 
 }
 /* Box ảnh đặt bàn */
 .box>.box_dat_ban>.anh_dat_ban{
+    display: flex;
     width: 50%;
-    height: auto;
-    flex: 1 1 460px;
+    flex-direction: column;
+    background-color: rgb(144, 143, 41);        
 }   
 .box>.box_dat_ban>.anh_dat_ban> img{
-    width: 100%;
+    width: auto;
     max-width: 900px;
-    height: auto;
+    height: 100%;
 }   
-
 /* Box điền thông tin đặt bàn */
-
 .box>.box_dat_ban>.dien_thong_tin_dat_ban{
-    position: relative;
+    display: flex;
     width: 50%;
-    flex: 1 1 460px;
+    flex-direction: column;        
 }  
-.box>.box_dat_ban>.dien_thong_tin_dat_ban>h2{
-    position: absolute;
-    font-size: 30px; 
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    width: 80%;
-    height: 50px;
-    text-align: center;
+.box>.box_dat_ban>.dien_thong_tin_dat_ban>.tieu_de{
+    display: flex; /* nằm 1 hàng */
+    flex-direction: row;
+    font-size: 20px; 
+    font-family: Verdana,Tahoma, sans-serif;
+    width: 90%;
+    margin-left: 10%;
+    justify-content: center; /* box nằm giữa*/
     border-bottom: 2px solid #b4462a ;
-    left: 50%;
-    transform: translate(-50%);  
 }  
 .box>.box_dat_ban>.dien_thong_tin_dat_ban>.all_field{
-    margin-top: 25%;
+    flex-direction: column;
     width: 100%;
-    height: 50px; 
-    display: flex;
-    flex-wrap: wrap;
+    margin-left: 10%;
+    height: auto; 
 }  
+.box>.box_dat_ban>.dien_thong_tin_dat_ban>.all_field>.field{
+    position: relative;
+    width: 100%;
+    margin-top: 10%;
+    height: auto; 
+} 
+
+textarea{
+    border: none;
+    background-color: initial;
+    font-size: 20px;
+    width: 100%;
+}
+textarea:focus{
+    outline: none;
+}
+legend{
+    font-size: 20px;
+    font-family: 'Times New Roman';
+    letter-spacing: 5px;
+}
+fieldset{
+    margin-right: 10%;
+    background-color: #47262630;
+    border-color: #b4462a66;
+}
+.date{
+    border: none;
+    background-color: initial;
+    font-size: 20px;
+    width: 100%;
+}
+
 /*)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))) */
 input:focus,
 .checkbox:focus{
     outline: none;
 }
-.field{
-    margin-bottom: 70px;
-    position: relative;
-    width: 50%;
-    height: 350px;
-    flex: 1 1 250px;
-}
 /* Nhập chữ*/
 .field>input{
-    position: absolute;
-    width: 90%;
+    width: 100%;
     height: auto;
     font-size: 20px;
     color: white;
-    outline: 0;
-    left: 20px;
-    background-color: inherit;
     border: none;
+    background: none;
     box-sizing: border-box;
 }
 .field .lable-wrapper{
     position: absolute;
-    height: 35px;
+    height: 25px;
     width: 90%;
+    left: 0;
     letter-spacing: 5px;
     background-color: inherit;
-    left: 10px;
     pointer-events: none;
     border-bottom: 1px solid rgb(247, 247, 247);
 }
-.field .lable-wrapper:hover{
-    border-bottom: 2px solid yellow;
-}
-/* thanh ngang dưới chữ */
+/* thanh ngang cam */
 .field .lable-wrapper::after{
     content: "";
     position: absolute;
     height: 100%;
     width: 100%;
     border-bottom: 2.5px solid #ff9950;
-    transform: translateX(-500%);
+    transform: translateX(-1500px);
     transform: transform 0.2s ease;
 }
 /* chữ */
@@ -500,12 +515,13 @@ input:focus,
     font-family: 'Times New Roman';
     letter-spacing: 5px;
     transform: all 0.009s ease;
-    transition-duration: 500ms
+    transition-duration: 500ms  
 }
 .field input:focus + .lable-wrapper .lable-text,
 .field input:valid + .lable-wrapper .lable-text{
     letter-spacing: 4px;
     font-size: 17px;
+    left: 0;
     color: #ff9950;
     transform: translateY(-100%);
 }
@@ -516,14 +532,11 @@ input:focus,
 
 /* Nút bấm đặt bàn */
 .nut_dat_ban{
-    position: absolute;
     width: 150px;
     height: 10%;
-    bottom: 10px;
-    right: 10px;
     background-color: rgb(89, 89, 217);
     border: none;
-    margin-top: 30px;
+    margin:40px 0 30px 78%;
     padding: 10px 12px;
     border-radius: 5px;
     transition: opacity .2s ease;
@@ -537,9 +550,35 @@ input:focus,
 .nut_dat_ban:active{
     opacity:0.3;
 }
-/* Nhập */
-.field{
-    position: relative;
-    width: 800px;
+
+
+.box>.box_lien_he{
+    width: 100%;
     height: auto;
+    display: flex; /* nằm 1 hàng */
+    flex-direction: column;
+}
+.box>.box_lien_he>.box_tren_duoi{
+    width: 100%;
+    height: 500px;
+    display: flex; /* nằm 1 hàng */
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgba(0, 255, 255, 0.267);
+}
+.box>.box_lien_he>.box_tren_duoi>.box_trai_phai_tren{
+    display: flex; /* nằm 1 hàng */
+    flex-direction: row;
+    width: 50%;
+    margin: 10px;
+    justify-content: center;
+    border: 1px solid rebeccapurple;
+    background-color: bisque;
+}
+.box>.box_lien_he>.box_tren_duoi>.box_trai_phai_duoi{
+    display: flex; /* nằm 1 hàng */
+    flex-direction: row;
+    width: 50%;
+    justify-content: center;
+    background-color: bisque;
 }
