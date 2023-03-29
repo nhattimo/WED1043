@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="box_popud">
+        <div class="popup">
+            <div class="popuptext" id="myPopup">
+                <div class="item">
+                    <h2>Tên task</h2>
+                    <input class="ten_task" type="text">
+                </div>
+                <div class="item">
+                    <h2>Mô tả</h2>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="item_cot">
+                    <button onclick="reset()">Reset</button>
+                    <button onclick="send()">Add</button>
+                    <button onclick="myFunction()">Exit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+      
+    <div class="content">
+        <h1>TODO LIST</h1>
+        <div class="item">
+            <h2>Tên task</h2>
+            <input class="ten_task" type="text">
+        </div>
+        <div class="item">
+            <h2>Mô tả</h2>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+        <div class="item_cot">
+            <button onclick="reset()">Reset</button>
+            <button onclick="send()">Add</button>
+        </div>
+        <div class="item">
+            <h2>Danh sách</h2>
+            <div class="danh_sach">
+                <div class="item_trai">                  
+                    <p class="STT">#1</p>
+                    <p class="task">Task1</p>                               
+                    <p class="mo_ta">Mô tả tas sd f s fs df sd  sdfsdfsd</p>        
+                </div>
+                <div class="item_phai">
+                    <button>DELETE</button>                            
+                    <button onclick="myFunction()">EDIT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup">
+        <div class="popuptext" id="myPopup">
+            A Simple Popup!
+        </div>
+    </div>
+</body>
+</html>

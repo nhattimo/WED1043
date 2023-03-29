@@ -11,11 +11,79 @@ header img{
     height: 210px;
 }
 nav{
-    width: 100%;
+    width: 90%;
     height: 60px;
-    background-color: rgba(53, 30, 30, 0.49);
+    padding: 0 5%;
+    margin: 0 auto;
+    background-color: rgba(53, 30, 30, 0.509);
+    display: flex; /* nằm 1 hàng */
+    flex-direction: row;
+    justify-content: space-between;
 }
-
+nav button{
+    width: 90px;
+    font-family:'FontAwesome';
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    background-color: inherit;
+    border: none;
+}
+nav button:hover{
+    background-color: #ff995041;
+    border: 0 1px ;
+    color: #452b19ba;
+    transition-duration: 500ms;
+}
+nav>.nav_box{
+    margin-left: 50px;
+    display: flex; /* nằm 1 hàng */
+    flex-direction: row;
+}
+nav>.nav_box>.icon{
+    height: 70%;
+    margin: auto 0;
+    display: flex; /* nằm 1 hàng */
+    flex-direction: row;
+}
+/* Thanh tìm kiếm */
+.timkiem{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 10px;
+    transition-duration: 500ms;
+    cursor: pointer;
+    font-family: 'Inter',sans-serif;
+    font-family: 'Lato',sans-serif;
+    font-family: 'Noto Sans',sans-serif;
+    font-size: 15px;
+    border: 1px solid white;
+    overflow: hidden;
+    background-image: url(https://cdn-icons-png.flaticon.com/128/4410/4410940.png);
+    background-repeat: no-repeat;
+    background-size: 48px;
+    background-position: 45% 50%;
+  } 
+  .timkiem:hover{
+    border:  1px solid rgba(0, 0, 255, 0.284);
+  }
+  .timkiem:focus{
+    border-radius: 30px;
+    width: 200px;
+    cursor: text;
+    padding-left: 60px;
+    color: white;
+    outline: none;
+    background-color: transparent;
+    border: 1px solid rgb(0, 94, 255);
+    background-image: url(https://cdn-icons-png.flaticon.com/128/4410/4410940.png);
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: 10px 50%;
+  }
 
 /* nhớ dối thàng autu */
 .box{
@@ -162,11 +230,11 @@ nav{
     letter-spacing: 15px;  
     font-size: 30px;
 }
-.box>.bi-a-shop{
+.box>.bi_a_shop{
     margin-top: 60px;
     text-align: center;
 }
-.box>.bi-a-shop>button{
+.box>.bi_a_shop>button{
     width: 200px;
     height: 50px;
     background-color: rgba(32, 22, 22, 0.759);
@@ -177,15 +245,14 @@ nav{
     opacity: 1;
     transition: 0.5s;
 }
-.box>.bi-a-shop>button:hover{
+.box>.bi_a_shop>button:hover{
     width: 205px; 
-    opacity: 0.8
-    
+    opacity: 0.8 
 }
 
 /* BOX MENU ______________________________________________ */
 .box-menu{
-    padding-top: 20px;
+    margin-top: 100px;
     width: 100%;
     height: auto;
     display: flex;
@@ -194,25 +261,31 @@ nav{
 /* khung ảnh */
 .box-menu>.box-le{
     position: relative;
-    margin: 0 10px 0 10px;
-    width: 400px;
-    height: 450px;
-    border: 1px solid red;
+    margin: -100px 0 0 10px;
+    width: 500px;
+    height: 550px;
+}
+.box-menu>.box-le h1{
+    text-align: center;
+}
+.box-menu>.box_combo_sp>.box-le{
+    width: 90%;
+    margin-left: 5%;
 }
 .box-menu>.box-doi{
     position: relative;
     flex: 1 1 300px;
+    margin-right: 20px;
     width: auto;
-    height: 450px;
-    border: 1px solid red;
+    height: 550px;
 }
 /* khung box combo */
 .box-menu>.box-doi>.combo{
     position: relative;
     width: 100%;
-    height: 50%;
-    border: 1px solid rgb(47, 162, 139);
-    background-color: rgb(160, 99, 20);
+    height: 45%;
+    /* background-color: rgb(160, 99, 20); */
+    background-image: url(IMG/background-test.jpg);
 }
 /* chữ combo và văn bản */
 .box-menu>.box-doi>.combo>.text{
@@ -242,30 +315,37 @@ nav{
     margin: 0 30px;
     width: 30%;
     height: 550px;
-    border: 1px solid red;
     flex: 1 1  350px;
     text-align: center;
 }
 /* anh sp */
 .box-menu>.box-le-SP>img{
     position: absolute;
-    width: 94%;
-    height: 70%;
+    width: 95%;
+    height: 80%;
     left: 50%;
     transform: translate(-50%); 
-    top: 10px;
     background-color: rgba(26, 68, 104, 0.382);
+    border-bottom: 2px solid #b4462a;
+    border-top: 2px solid #b4462a;
 }
 /* Tene sp */
-.box-menu>.box-le-SP>h2{
+.box-menu>.box-le-SP>.TT{
+    width: 100%;
+    height: 18%;
+    border-top: 2px solid #b4462a;
+    position: absolute;
+    bottom: 0;
+}
+.box-menu>.box-le-SP>.TT>h2{
     position: absolute;
     left: 50%;
     transform: translate(-50%); 
-    bottom: 55px;
+    bottom: 50px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 /* Nút chi tiết */
-.box-menu>.box-le-SP>button{
+.box-menu>.box-le-SP>.TT>button{
     font-size: 15px;
     position: absolute;
     width: 100px;
@@ -275,8 +355,8 @@ nav{
     left: 50%;
     transform: translate(-50%);    
 }
-.box-menu>.box-le-SP>button:hover{
-    background-color: rgb(67, 57, 43);
+.box-menu>.box-le-SP>.TT>button:hover{
+    background-color: rgb(123, 99, 65);
 }
 /* box ship */
 .box-menu>.ship{
@@ -312,7 +392,10 @@ nav{
     margin-top: 70px;
     width: 100%;
     height: 400px;
-    background-color: rgb(108, 79, 29);
+}
+.img img{
+    width: 100%;
+    height: 100%;
 }
 
 /* BOX Cửa Hàng____________________________________________  */
@@ -328,19 +411,18 @@ nav{
     height: 550px;
     flex: 1 1  350px;
     max-width: 470px;
-    border: 1px solid rgb(81, 70, 119);
 }
 /* ảnh sản phẩm */
 .box>.box_cua_hang>.box_SP>.img_sp{
     position: relative;
     margin: 0 2% ;
     height: 70%;
-    width: 96%;
-    background-color: rgb(62, 9, 81);
+    width: 97%;
 }
 .box>.box_cua_hang>.box_SP>.img_sp> img{
     width: 100%;
-    height: auto;
+    height: 98.5%;
+    border-bottom: 2px solid #b4462a;
 }
 /* Giá tiền */
 .box>.box_cua_hang>.box_SP>.img_sp>h2{
@@ -360,7 +442,8 @@ nav{
     width: 100%;
     line-height: 10px;
     height: auto;
-    background-color: rgba(28, 108, 68, 0.543);
+    background-color:#b4462a4c;
+    border-top: 2px solid #b4462a;
 }
 .box>.box_cua_hang>.box_SP>.box_SP_TT>.TT{
     margin-left: 7%;
@@ -532,17 +615,17 @@ input:focus,
 
 /* Nút bấm đặt bàn */
 .nut_dat_ban{
-    width: 150px;
+    width: 100px;
     height: 10%;
     background-color: rgb(89, 89, 217);
     border: none;
     margin:40px 0 30px 78%;
-    padding: 10px 12px;
+    padding: 10px 0;
     border-radius: 5px;
     transition: opacity .2s ease;
 }
 .nut_dat_ban:hover{
-    background-color: rgba(24, 47, 200, 0.824);
+    background-color: rgba(24, 47, 200, 0.265);
 }
 .nut_dat_ban:focus{
     background-color: darkgreen;
@@ -564,7 +647,6 @@ input:focus,
     display: flex; /* nằm 1 hàng */
     flex-direction: row;
     justify-content: center;
-    background-color: rgba(0, 255, 255, 0.267);
 }
 .box>.box_lien_he>.box_tren_duoi>.box_trai_phai_tren{
     display: flex; /* nằm 1 hàng */
@@ -572,13 +654,39 @@ input:focus,
     width: 50%;
     margin: 10px;
     justify-content: center;
-    border: 1px solid rebeccapurple;
-    background-color: bisque;
+}
+.box>.box_lien_he>.box_tren_duoi>.box_trai_phai_tren img{
+    width: 100%;
 }
 .box>.box_lien_he>.box_tren_duoi>.box_trai_phai_duoi{
     display: flex; /* nằm 1 hàng */
-    flex-direction: row;
+    flex-direction: column;
     width: 50%;
+    background-color: rgba(101, 77, 46, 0.439);
+}
+.box>.box_lien_he>.box_tren_duoi>.box_trai_phai_duoi>.TT_lien_he{
+    width: 80%;
+    margin: 50px 10%;
+    display: flex;
+    flex-direction: row;
+    font-size: 22px;
+    color: aliceblue;
+}
+.box>.box_lien_he>.box_tren_duoi>.box_trai_phai_duoi>.TT_lien_he a{
+    margin: auto 20px;
+    text-decoration: none;
+    color: aliceblue;
+}
+.box>.box_lien_he>.box_tren_duoi>.box_trai_phai_duoi>.TT_lien_he>.icon_TT{
+    width: auto;
+    height: 40px;
     justify-content: center;
-    background-color: bisque;
+}
+.box>.box_lien_he>.box_tren_duoi>.box_trai_phai_duoi>.logo{
+    width: 98%;
+    padding: 50px 0;
+    filter: drop-shadow(-3px -3px 2px rgba(255,255,255,0.3))
+            drop-shadow(5px 5px 5px rgba(150, 64, 64, 0.2))
+            drop-shadow(15px 15px 15px rgba(16, 8, 8, 0.889));
+
 }
