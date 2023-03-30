@@ -75,16 +75,18 @@
     min-width: 320px;
 }
 .content>.item>.danh_sach>.item_trai>.task{
-    width: 15%;
+    width: auto;
     height: auto;
     text-align: center;
     min-width: 45px;
+    padding: 0 10px 0 40px;
 }
 .content>.item>.danh_sach>.item_trai>.mo_ta{
-    width: 80%;
+    width: auto;
     height: auto;
     margin-left: 3px;
     flex: auto;
+    padding: 0 10px 0 10px;
 }
 
 .content>.item>.danh_sach>.item_phai{

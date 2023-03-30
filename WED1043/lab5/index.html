@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="main.css">
-    <script src="app.js"></script>
 </head>
 <body>
     <div class="box_popud">
@@ -21,8 +20,8 @@
                     <textarea name="" id="" cols="30" rows="10"></textarea>
                 </div>
                 <div class="item_cot">
-                    <button onclick="reset()">Reset</button>
-                    <button onclick="send()">Add</button>
+                    <button onclick="resetPopup()">Reset</button>
+                    <button onclick="editPopud(this.Element)">edit</button>
                     <button onclick="myFunction()">Exit</button>
                 </div>
             </div>
@@ -33,35 +32,25 @@
         <h1>TODO LIST</h1>
         <div class="item">
             <h2>Tên task</h2>
+            <!-- Nhập Tên task -->
             <input class="ten_task" type="text">
         </div>
         <div class="item">
             <h2>Mô tả</h2>
+            <!-- Nhập mô tả -->
             <textarea name="" id="" cols="30" rows="10"></textarea>
         </div>
         <div class="item_cot">
             <button onclick="reset()">Reset</button>
-            <button onclick="send()">Add</button>
+            <button onclick="add()">Add</button>
         </div>
         <div class="item">
             <h2>Danh sách</h2>
-            <div class="danh_sach">
-                <div class="item_trai">                  
-                    <p class="STT">#1</p>
-                    <p class="task">Task1</p>                               
-                    <p class="mo_ta">Mô tả tas sd f s fs df sd  sdfsdfsd</p>        
-                </div>
-                <div class="item_phai">
-                    <button>DELETE</button>                            
-                    <button onclick="myFunction()">EDIT</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="popup">
-        <div class="popuptext" id="myPopup">
-            A Simple Popup!
+            <!-- Danh sách list sau khi nhập -->
+           
+            
         </div>
     </div>
 </body>
+<script src="app.js"></script>
 </html>
