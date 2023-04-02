@@ -20,7 +20,10 @@ nav{
     flex-direction: row;
     justify-content: space-between;
 }
-nav button{
+nav a{
+    line-height: 60px;
+    text-align: center;
+    text-decoration: none;
     width: 90px;
     font-family:'FontAwesome';
     font-size: 18px;
@@ -28,7 +31,7 @@ nav button{
     background-color: inherit;
     border: none;
 }
-nav button:hover{
+nav a:hover{
     background-color: #ff995041;
     border: 0 1px ;
     color: #452b19ba;
