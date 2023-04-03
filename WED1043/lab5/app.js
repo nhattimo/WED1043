@@ -9,8 +9,7 @@ function add(){
     if(valueTask == "" ){     // điều kiện ô nhập task và ô nhập mô tả không được bỏ trống
         getH6[5].setAttribute('class','baoloi');
         getH6[4].removeAttribute('class');
-    }
-    if(valueTask.length < 6){        
+    }else if(valueTask.length < 6){        
         getH6[5].removeAttribute('class');
         getH6[4].setAttribute('class','baoloi');
     }else{
@@ -20,8 +19,7 @@ function add(){
     if(ValueMoTa == ""){     // điều kiện ô nhập task và ô nhập mô tả không được bỏ trống
         getH6[7].setAttribute('class','baoloi');
         getH6[6].removeAttribute('class');
-    }
-    if(ValueMoTa.length < 20){
+    }else if(ValueMoTa.length < 20){
         getH6[7].removeAttribute('class');
         getH6[6].setAttribute('class','baoloi');
     }else{  
@@ -91,7 +89,7 @@ function add(){
                 getH6[0].removeAttribute('class')
                 getH6[1].setAttribute('class','baoloi');
             }else if(popupTask.value.length < 6){ 
-                getH6[1].setAttribute('class','_)');       
+                getH6[1].removeAttribute('class')     
                 getH6[0].setAttribute('class','baoloi');
                 
             }else{
