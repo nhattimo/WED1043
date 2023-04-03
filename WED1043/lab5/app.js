@@ -1,7 +1,7 @@
 var getInput = document.getElementById('ten_task');
 var getTextarea = document.getElementById('mo_ta');
-var getItemList = document.getElementById('item_list') // lất tất cả các element có class item_list
-var getH6=document.getElementsByTagName('h6')
+var getItemList = document.getElementById('item_list'); // lất tất cả các element có class item_list
+var getH6=document.getElementsByTagName('h6');
 
 function add(){
     var valueTask = getInput.value;             // lấy value do người dùng nhập ở phần TASK add
@@ -11,22 +11,22 @@ function add(){
         getH6[4].removeAttribute('class');
     }
     if(valueTask.length < 6){        
-        getH6[5].removeAttribute('class')
-        getH6[4].setAttribute('class','baoloi')
+        getH6[5].removeAttribute('class');
+        getH6[4].setAttribute('class','baoloi');
     }else{
-        getH6[4].removeAttribute('class')
-        getH6[5].removeAttribute('class')
+        getH6[4].removeAttribute('class');
+        getH6[5].removeAttribute('class');
     }
     if(ValueMoTa == ""){     // điều kiện ô nhập task và ô nhập mô tả không được bỏ trống
-        getH6[7].setAttribute('class','baoloi')
-        getH6[6].removeAttribute('class')
+        getH6[7].setAttribute('class','baoloi');
+        getH6[6].removeAttribute('class');
     }
     if(ValueMoTa.length < 20){
-        getH6[7].removeAttribute('class')
-        getH6[6].setAttribute('class','baoloi')
+        getH6[7].removeAttribute('class');
+        getH6[6].setAttribute('class','baoloi');
     }else{  
-        getH6[7].removeAttribute('class')
-        getH6[6].removeAttribute('class')
+        getH6[7].removeAttribute('class');
+        getH6[6].removeAttribute('class');
         // tạo thẻ div có class ="danh_sach"
         let danh_sach = document.createElement('div');
         danh_sach.setAttribute('class','danh_sach');  
@@ -80,66 +80,67 @@ function add(){
             // }
 
         });
+
         reset();
 
-        popupTask = document.getElementById('popup_ten_task')
-        popupMoTa = document.getElementById('popup_mo_ta')
-        popudUpdeta = document.getElementById('popud_Updeta')
+        popupTask = document.getElementById('popup_ten_task');
+        popupMoTa = document.getElementById('popup_mo_ta');
+        popudUpdeta = document.getElementById('popud_Updeta');
         popudUpdeta.addEventListener('click',() =>{
             if(popupTask.value == "" ){     // điều kiện ô nhập task và ô nhập mô tả không được bỏ trống
                 getH6[0].removeAttribute('class')
-                getH6[1].setAttribute('class','baoloi')
+                getH6[1].setAttribute('class','baoloi');
             }else if(popupTask.value.length < 6){ 
-                getH6[1].setAttribute('class','_)')          
-                getH6[0].setAttribute('class','baoloi')
+                getH6[1].setAttribute('class','_)');       
+                getH6[0].setAttribute('class','baoloi');
                 
             }else{
-                getH6[1].removeAttribute('class')
-                getH6[0].removeAttribute('class')
+                getH6[1].removeAttribute('class');
+                getH6[0].removeAttribute('class');
             }
             if(popupMoTa.value == ""){     // điều kiện ô nhập task và ô nhập mô tả không được bỏ trống
-                getH6[3].setAttribute('class','baoloi')
-                getH6[2].removeAttribute('class')
+                getH6[3].setAttribute('class','baoloi');
+                getH6[2].removeAttribute('class');
             }else if(popupMoTa.value.length < 20){
-                getH6[3].removeAttribute('class')
-                getH6[2].setAttribute('class','baoloi')
+                getH6[3].removeAttribute('class');
+                getH6[2].setAttribute('class','baoloi');
             }else{
-                getH6[2].removeAttribute('class')
-                getH6[3].removeAttribute('class')
-                class_Task.innerText = popupTask.value
-                class_Mo_ta.innerText = popupMoTa.value
+                getH6[2].removeAttribute('class');
+                getH6[3].removeAttribute('class');
+                class_Task.innerText = popupTask.value;
+                class_Mo_ta.innerText = popupMoTa.value;
                 resetPopup();
             }
         });
     }
 }
 function reset(){
-    getH6[4].removeAttribute('class')
-    getH6[5].removeAttribute('class')
-    getH6[6].removeAttribute('class')
-    getH6[7].removeAttribute('class')
+    getH6[4].removeAttribute('class');
+    getH6[5].removeAttribute('class');
+    getH6[6].removeAttribute('class');
+    getH6[7].removeAttribute('class');
     getInput.value ="";
     getTextarea.value ="";
 }
 function resetPopup(){
-    getH6[0].removeAttribute('class')
-    getH6[1].removeAttribute('class')
-    getH6[2].removeAttribute('class')
-    getH6[3].removeAttribute('class')
+    getH6[0].removeAttribute('class');
+    getH6[1].removeAttribute('class');
+    getH6[2].removeAttribute('class');
+    getH6[3].removeAttribute('class');
     popupTask.value ="";
     popupMoTa.value ="";
 }
 function myFunction() {
     var popup = document.getElementById("myPopup");
     popup.classList.toggle("show");
-    var getboxpopud=document.getElementsByTagName('div')
-    getboxpopud[0].classList.add("box")
+    var getboxpopud=document.getElementsByTagName('div');
+    getboxpopud[0].classList.add("box");
 }
 function myFunction1() {
     var popup = document.getElementById("myPopup");
     popup.classList.toggle("show");
-    var getboxpopud=document.getElementsByTagName('div')
-    getboxpopud[0].setAttribute('class','box_popud')
+    var getboxpopud=document.getElementsByTagName('div');
+    getboxpopud[0].setAttribute('class','box_popud');
 }
 
 
