@@ -23,7 +23,7 @@ function showSlides(value) {
     slides[i].style.display = "none";   // thêm style cho thẻ div có class tên là slide, với thuộc tính none
   }
   for (i = 0; i < chamTron.length; i++) {
-    chamTron[i].className = chamTron[i].className.replace(" active", ""); // thêm class và thẻ span, với class tên là: active
+    chamTron[i].className = chamTron[i].className.replace(" active", ""); // thêm class vào thẻ span, với class tên là: active
   } 
   slides[slideIndex-1].style.display = "block";
   chamTron[slideIndex-1].className += " active";
