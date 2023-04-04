@@ -30,8 +30,8 @@ function img(value) {
 }
 
 let idAutu = 0;
-showSlides();
-function showSlides() {
+autuImg();
+function autuImg() {
   let i;
   let imgs = 	document.getElementsByClassName("slide");
   let chamTron = document.getElementsByClassName("cham_tron");
@@ -47,5 +47,5 @@ function showSlides() {
   }
   imgs[idAutu-1].style.display = "block";  
   chamTron[idAutu-1].className += " active";
-  setTimeout(showSlides, 6000); // Change image every 2 seconds
+  setTimeout(autuImg, 6000); // Change image every 2 seconds
 }
