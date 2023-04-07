@@ -6,23 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="main.css">
-    <script src="app.js"></script>
 </head>
 <body>
-    <!-- Box logo -->
-        <!-- <div class="boxlogo">
-            <h2></h2>
-            <span class="span0"></span>
-            <img class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
-            <span class="span1">Trà sữa và bạn</span>
-            <span class="span2">Giới thiệu</span>
-        </div> -->
+<!-- Box logo -->
+<!-- <div class="boxlogo">
+        <h2></h2>
+        <span class="span0"></span>
+        <img class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
+        <span class="span1">Trà sữa và bạn</span>
+        <span class="span2">Giới thiệu</span>
+    </div> -->
 
 <!-- phần đầu -->
-    <header  id="trangchu">
+    <header id="trangchu">
         <img src="IMG/header.jpg" alt="ảnh nền header" >
     </header>
-    <!-- Menu-->
     <nav>
         <div class="nav_box">
             <img src="IMG/Miu-timo.png" alt="">
@@ -34,23 +32,45 @@
         </div>
         <div class="nav_box">
             <div class="icon">
+                <p class="soLuong">1</p>
                 <img src="IMG/icon_gio_hang.png" alt="">
                 <input class="timkiem" type="search">
                 <img src="IMG/icon_user.png" alt="">
             </div>
-            <a >Đặt bàn</a>
+            <a href="#boxdatban">Đặt bàn</a>
         </div> 
     </nav>
+    <!-- Menu-->
+   
 <!-- Phần thân -->
     <div class="than">
     <!-- Box slide -->
-        <div class="box-slide">
-            <img src="IMG/slide1.jpg" alt="ảnh slide"> 
-            <div class="bacham">
-                <button></button>
-                <button></button>
-                <button></button>
+        <div class="box_slide">
+            <div class="itemslide">
+                <div class="STT">1 / 3</div>
+                <img src="IMG/anh_test.jpg" alt="">
+                <div class="textslide">Ảnh trà sữa 1</div>
             </div>
+            <div class="itemslide">
+                <div class="STT">2 / 3</div>
+                <img src="img/Background-tra-sua-2.png" alt="">
+                <div class="textslide">Ảnh trà sữa 2</div>
+            </div>
+            <div class="itemslide">
+                <div class="STT">3 / 3</div>
+                <img src="img/background-test.jpg" alt="">
+                <div class="textslide">Ảnh trà sữa 3
+                </div>
+            </div>
+            <div class="box_cham_tron">
+                <span class="cham_tron" onclick="chamTron(1)">&#10050;</span>
+                <span class="cham_tron" onclick="chamTron(2)">&#10050;</span>
+                <span class="cham_tron" onclick="chamTron(3)">&#10050;</span>
+            </div>
+            <div class="nutbam_next_slide">
+                <button id="nut_trai" onclick="nutTraiPhai(-1)">&#10502;</button>
+                <button id="nut_phai" onclick="nutTraiPhai(1)">&#10503;</button>
+            </div> 
         </div>
     <!-- Box Giới thiệu-->
         <div id="boxgioithieu" class="box">
@@ -107,51 +127,66 @@
                 <span class="span2">Menu</span>
             </div>
             <div class="box-menu">
-                    <div class="box-le">
-                        <img src="IMG/dac_biet_trà-sữa-nướng-1.png" width="100%" alt="ảnh quảng cáo sản phẩm">
-                        <h1>Thức uống đặc biệt</h1>
-                    </div>
-                    <div class="box-doi">
-                        <div class="combo">
-                            <h1 class="text">Combo 1</h1>
-                            <p class="text"> 
-                                hejasgdugsudgikj sdf sdf erhgwes asdgerhdaf gthadfg ethad htw 
-                                hejasgdugsudgikj sdf sdf erhgwes asdgerhdaf gthadfg ethad htw
-                            </p>
-                            <h2>Giá 1000 $</h2>
-                            <button>Mua</button>
-                        </div>
-                        <div class="combo">
-                            <h1 class="text">Combo 2</h1>
-                            <p class="text"> 
-                                hejasgdugsudgikj sdf sdf erhgwes asdgerhdaf gthadfg ethad htw 
-                                hejasgdugsudgikj sdf sdf erhgwes asdgerhdaf gthadfg ethad htw
-                            </p>
-                            <h2>Giá 1000 $</h2>
+                <div class="box-le">
+                    <img src="IMG/dac_biet_trà-sữa-nướng-1.png" width="100%" alt="ảnh quảng cáo sản phẩm">
+                    <h1>Thức uống đặc biệt</h1>
+                </div>
+                <div class="box-doi">
+                    <div class="combo">
+                        <h1 class="textTieuDe">Combo 4</h1>
+                        <p class="textMoTa"> 
+                            - hejasgdugsu dgikj sdf sdf erhgwes asdgerhdaf gthadfg ethad htw 
+                            hejasgd ugsudgikj sdf sdf erhgwes as dgerhdaf gthadfg ethad htw
+                        </p>
+                        <div class="mua">
+                            <div class="giaTien">
+                                <h2>Giá: 1000 $ <s> 3000$</s></h2>
+                            </div>
                             <button>Mua</button>
                         </div>
                     </div>
-                    <div class="box-doi">
-                        <div class="combo">
-                            <h1 class="text">Combo 3</h1>
-                            <p class="text"> 
-                                hejasgdugsudgikj sdf sdf erhgwes asdgerhdaf gthadfg ethad htw 
-                                hejasgdugsudgikj sdf sdf erhgwes asdgerhdaf gthadfg ethad htw
-                            </p>
-                            <h2>Giá 1000 $</h2>
-                            <button>Mua</button>
-                        </div>
-                        <div class="combo">
-                            <h1 class="text">Combo 4</h1>
-                            <p class="text"> 
-                                hejasgdugsudgikj sdf sdf erhgwes asdgerhdaf gthadfg ethad htw 
-                                hejasgdugsudgikj sdf sdf erhgwes asdgerhdaf gthadfg ethad htw
-                            </p>
-                            <h2>Giá 1000 $</h2>
+                    <div class="combo">
+                        <h1 class="textTieuDe">Combo 4</h1>
+                        <p class="textMoTa"> 
+                            hejasgdu gsudgikj sdf sdf erhgwes asdgerhdaf gthadfg ethad htw 
+                            hejasgd ugsudgikj sdf sdf erhgwes asdgerhdaf gthadfg ethad htw
+                        </p>
+                        <div class="mua">
+                            <div class="giaTien">
+                                <h2>Giá: 1000 $ <s> 3000$</s></h2>
+                            </div>
                             <button>Mua</button>
                         </div>
                     </div>
-                
+                </div>
+                <div class="box-doi">
+                    <div class="combo">
+                        <h1 class="textTieuDe">Combo 4</h1>
+                        <p class="textMoTa"> 
+                            hejasgdugsudgikj sdf sdf erhgwes asdgerhdaf gthadfg ethad htw 
+                            hejasgdugsudgikj sdf sdf erhgwes asdgerhdaf gthadfg ethad htw
+                        </p>
+                        <div class="mua">
+                            <div class="giaTien">
+                                <h2>Giá: 1000 $ <s> 3000$</s></h2>
+                            </div>
+                            <button>Mua</button>
+                        </div>
+                    </div>
+                    <div class="combo">
+                        <h1 class="textTieuDe">Combo 4</h1>
+                        <p class="textMoTa"> 
+                            hejasgdugsudgikj sdf sdf erhgwes asdgerhdaf gthadfg ethad htw 
+                            hejasgdugsudgikj sdf sdf erhgwes asdgerhdaf gthadfg ethad htw
+                        </p>
+                        <div class="mua">
+                            <div class="giaTien">
+                                <h2>Giá: 1000 $ <s> 3000$</s></h2>
+                            </div>
+                            <button>Mua</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="box-menu">
                 <div class="box-le-SP">
@@ -335,8 +370,7 @@
                 <button >Xem thêm</button>
             </div>
             <div class="thong_bao_giam_gia">
-                thông báo giảm giá
-                <img src="IMG/Miu-timo.png" width="400px" alt="">
+                <img src="IMG/giam_gia.png" width="400px" alt="">
             </div>
             
         </div>     
@@ -376,21 +410,21 @@
                         <div class="field">
                             <fieldset class="ghi_chu">
                                 <legend>Ngày đặt</legend>
-                                <input class="date" type="date" name="" id="">
+                                <input class="date" type="date" name="" id="" >
                                 <br>
                             </fieldset>
                         </div>
                         <div class="field">
                             <fieldset class="ghi_chu">
                                 <legend>Ghi chú</legend>
-                                <textarea name="" id="" cols="30" rows="5"></textarea>
+                                <textarea name="" id="" cols="30" rows="5" placeholder="Ghi chú khánh hàng"></textarea>
                             </fieldset>
                         </div>
                     </div>
                     <input class="nut_dat_ban" type="button" value="Đặt Bàn" name="" id="">
                 </div>
             </div>
-    </div>
+        </div>
     <!-- Box Liên hệ -->
         <div id="boxlienhe" class="box">
             <div class="boxlogo">
@@ -413,11 +447,11 @@
                     <div class="box_trai_phai_duoi">
                         <div class="TT_lien_he">
                             <img class="icon_TT" src="IMG/icon_gmail.png" alt="">
-                            <a href="">nguyenvannhatltqb@gmail.com</a>
+                            <a href="https://mail.google.com/mail/u/0/#inbox">nguyenvannhatltqb@gmail.com</a>
                         </div>
                         <div class="TT_lien_he">
                             <img class="icon_TT" src="IMG/icon-youtube.png" alt="">
-                            <a href="">Nhật Timo</a>
+                            <a href="https://www.youtube.com/@NhatTimo/videos">Nhật Timo</a>
                         </div>
                         <div class="TT_lien_he">
                             <img class="icon_TT" src="IMG/icons-DT.png" alt="">
@@ -436,4 +470,5 @@
         </div>
     </div>
 </body>
+<script src="app.js"></script>
 </html>

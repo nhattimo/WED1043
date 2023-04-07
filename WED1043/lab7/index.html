@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="main.css">
 </head>
 <style>
     .drag_and_drop{
@@ -34,26 +33,25 @@
     }
 </style>
 <body>
-        
-        <div class="drag_and_drop">
-            <div id="box_chua" class="box" ondrop="dDrop()" ondragover="nDrop()"></div>
-            <div class="box" ondrop="dDrop()" ondragover="nDrop()">
-                <div id="item_drag" draggable="true" ondragstart="dStar()" draggable="true">
-                    One
-                </div>
-                <div id="item_drag" draggable="true" ondragstart="dStar()" draggable="true">
-                    Two
-                </div>
-                <div id="item_drag" draggable="true" ondragstart="dStar()" draggable="true">
-                    Three
-                </div>
-                <div id="item_drag" draggable="true" ondragstart="dStar()" draggable="true">
-                    Four
-                </div>
-                <div id="item_drag" draggable="true" ondragstart="dStar()" draggable="true">
-                    five
-                </div>
+    <div class="drag_and_drop">
+        <div id="box_chua" class="box" ondrop="dDrop()" ondragover="nDrop()"></div>
+        <div class="box" ondrop="dDrop()" ondragover="nDrop()">
+            <div id="item_drag" draggable="true" ondragstart="dStar()" draggable="true">
+                One
             </div>
+            <div id="item_drag" draggable="true" ondragstart="dStar()" draggable="true">
+                Two
+            </div>
+            <div id="item_drag" draggable="true" ondragstart="dStar()" draggable="true">
+                Three
+            </div>
+            <div id="item_drag" draggable="true" ondragstart="dStar()" draggable="true">
+                Four
+            </div>
+            <div id="item_drag" draggable="true" ondragstart="dStar()" draggable="true">
+                five
+            </div>
+        </div>
     </div>
     <script>
         let holderItem;
