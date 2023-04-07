@@ -2,7 +2,7 @@ var getInput = document.getElementById('ten_task');
 var getTextarea = document.getElementById('mo_ta');
 var getItemList = document.getElementById('item_list'); // lất tất cả các element có class item_list
 var getH6=document.getElementsByTagName('h6');
-
+onchange
 function add(){
     var valueTask = getInput.value;             // lấy value do người dùng nhập ở phần TASK add
     var ValueMoTa = getTextarea.value;          // lấy value do người dùng nhập ở phần mô tả add
@@ -25,6 +25,8 @@ function add(){
     }else{  
         getH6[7].removeAttribute('class');
         getH6[6].removeAttribute('class');
+        getH6[2].removeAttribute('class');
+        getH6[3].removeAttribute('class');
         // tạo thẻ div có class ="danh_sach"
         let danh_sach = document.createElement('div');
         danh_sach.setAttribute('class','danh_sach');  
