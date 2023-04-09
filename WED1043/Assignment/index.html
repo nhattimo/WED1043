@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <!-- <div class="boxhello">
+        <h1>Welcome to the shop Miu timo</h1>
+    </div> -->
 <!-- Box logo -->
 <!-- <div class="boxlogo">
         <h2></h2>
@@ -18,29 +21,92 @@
     </div> -->
 
 <!-- phần đầu -->
+
     <header id="trangchu">
         <img src="IMG/header.jpg" alt="ảnh nền header" >
     </header>
     <nav>
         <div class="nav_box">
-            <img src="IMG/Miu-timo.png" alt="">
-            <a href="#trangchu" >Trang chủ</a> 
-            <a href="#boxgioithieu" >Giới thiệu</a>
-            <a href="#boxmenu" >Sản phẩm</a>
-            <a href="#boxcuahang" >Cửa hàng</a>
-            <a href="#boxlienhe" >Liên hệ</a>
+            <img class="chulogo_miutimo" src="IMG/Miu-timo.png" alt=""> 
+            <a class="btn btn1" href="#trangchu" >Trang chủ</a> 
+            <a class="btn btn1" href="#boxgioithieu" >Giới thiệu</a>
+            <a class="btn btn1" href="#boxmenu" >Sản phẩm</a>
+            <a class="btn btn1" href="#boxcuahang" >Cửa hàng</a>
+            <a class="btn btn1" href="#boxlienhe" >Liên hệ</a>
         </div>
         <div class="nav_box">
             <div class="icon">
                 <p class="soLuong">1</p>
-                <img src="IMG/icon_gio_hang.png" alt="">
+                <img src="IMG/icon_gio_hang.png" alt="Giỏ hàng">
                 <input class="timkiem" type="search">
-                <img src="IMG/icon_user.png" alt="">
+                <img id="user" src="IMG/icon_user.png" alt="User">
             </div>
-            <a href="#boxdatban">Đặt bàn</a>
+            <a class="btn btn1" href="#boxdatban">Đặt bàn</a>
         </div> 
+        <img src="img" alt="">
+        <div id="userdangnhap">
+            <h2>Mời bạn đăng nhập</h2>
+            <input id="inputdangnhapTK" type="text" name="" placeholder="Tên tài khoản">
+            <input id="inputdangnhapMK" type="password" name=""  placeholder="Mật khẩu">
+            <h5 class="error">Bạn đã nhập sai. Mời nhập lại</h5>
+            <div class="btn_DK_DN">
+                <button class="btnanimation" id="btndangky">
+                    <span></span><span></span><span></span><span></span>
+                    Đăng ký
+                </button>
+                <button class="btnanimation" id="btndangnhap">
+                    <span></span><span></span><span></span><span></span>
+                    Đăng nhập
+                </button>
+                <button class="btnanimation" id="thoat">
+                    <span></span><span></span><span></span><span></span>
+                    Thoát
+                </button>
+            </div>
+        </div>
+
+        <div id="userdangky" class="dangky">
+            <div class="ttdangky">
+                <h2>Mời bạn nhập thông tin</h2>
+                <input id="inputdangkyTK1" type="text" name="" placeholder="Tên dăng nhập">
+                <h5 class="error1">Tên tài khoản phải lớn hơn 6 ký tự</h5>
+                <input id="inputdangkyMK1" type="password" name=""  placeholder="Mật khẩu ít nhất 8 ký tự">
+                <h5 class="error1">Mật khẩu phải lớn hơn 8 ký tự</h5>
+            </div>
+            <div class="ttgiotinh">
+                    <fieldset>
+                        <legend>Giới tính</legend>
+                        <input type="radio" name="gioitinh" value="Nam" id=""><i>Nam</i>
+                        <input type="radio" name="gioitinh" value="Nữ" id=""><i>Nữ</i>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Bạn thích</legend>
+                        <input type="checkbox" name="sothich" value="Socolate" checked id=""><i>Socolate</i>
+                        <input type="checkbox" name="sothich" value="Matchar" id=""><i>Matchar</i>
+                        <input type="checkbox" name="sothich" value="Truyền thống" id=""><i>Nghe nhạc</i>
+                        <input type="checkbox" name="sothich" value="Trà đen" id=""><i>Trà đen</i>
+                    </fieldset>
+            </div>
+            <div class="btndangky">
+                <button class="btnanimation" id="btndangnhap1">
+                    <span></span><span></span><span></span><span></span>
+                    Đăng nhập
+                </button>
+                <button class="btnanimation" id="btndangky1">
+                    <span></span><span></span><span></span><span></span>
+                    Đăng ký
+                </button>
+            </div>
+        </div>
+
     </nav>
-    <!-- Menu-->
+
+    
+<!--  -->
+    
+
+    
+<!-- Menu-->
    
 <!-- Phần thân -->
     <div class="than">
@@ -116,6 +182,16 @@
                 <button class="ghe_vao_shop">Ghé vào shop</button>
             </div>
         </div>
+
+    <!-- úm ba la -->
+
+        <div class="demo2">
+            <img  class="itemspanimation" style="--deley: 1s" src="IMG/itemsp1.png" alt="">
+            <img class="itemspanimation" style="--deley: 2s" src="IMG/itemsp2.png" alt="">
+            <img class="itemspanimation" style="--deley: 3s" src="IMG/itemsp3.png" alt="">
+            <img class="itemspanimation" style="--deley: 4s" src="IMG/itemsp4.png" alt="">
+        </div>
+
     <!-- Box Menu -->
         <div id="boxmenu" class="box">
             <!-- logo -->
@@ -128,11 +204,11 @@
             </div>
             <div class="box-menu">
                 <div class="box-le">
-                    <img src="IMG/dac_biet_trà-sữa-nướng-1.png" width="100%" alt="ảnh quảng cáo sản phẩm">
+                    <img data-aos="fade-up" src="IMG/dac_biet_trà-sữa-nướng-1.png" width="100%" alt="ảnh quảng cáo sản phẩm">
                     <h1>Thức uống đặc biệt</h1>
                 </div>
                 <div class="box-doi">
-                    <div class="combo">
+                    <div class="combo" id="itemanimationcombo">
                         <h1 class="textTieuDe">Combo 4</h1>
                         <p class="textMoTa"> 
                             - hejasgdugsu dgikj sdf sdf erhgwes asdgerhdaf gthadfg ethad htw 
@@ -145,7 +221,7 @@
                             <button>Mua</button>
                         </div>
                     </div>
-                    <div class="combo">
+                    <div class="combo" id="itemanimationcombo">
                         <h1 class="textTieuDe">Combo 4</h1>
                         <p class="textMoTa"> 
                             hejasgdu gsudgikj sdf sdf erhgwes asdgerhdaf gthadfg ethad htw 
@@ -160,7 +236,7 @@
                     </div>
                 </div>
                 <div class="box-doi">
-                    <div class="combo">
+                    <div class="combo" id="itemanimationcombo">
                         <h1 class="textTieuDe">Combo 4</h1>
                         <p class="textMoTa"> 
                             hejasgdugsudgikj sdf sdf erhgwes asdgerhdaf gthadfg ethad htw 
@@ -173,7 +249,7 @@
                             <button>Mua</button>
                         </div>
                     </div>
-                    <div class="combo">
+                    <div class="combo" id="itemanimationcombo">
                         <h1 class="textTieuDe">Combo 4</h1>
                         <p class="textMoTa"> 
                             hejasgdugsudgikj sdf sdf erhgwes asdgerhdaf gthadfg ethad htw 
@@ -235,6 +311,15 @@
                 <img class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
                 <span class="span1">Trà sữa và bạn</span>
                 <span class="span2">cửa hàng</span>
+            </div>
+            <!-- Time sales hàng -->
+            <div class="sales">
+                <div class="time">
+                    <span id="flasesales">FLASH SALES SAU:</span>
+                    <span id="h">Giờ</span> :
+                    <span id="m">Phút</span> :
+                    <span id="s">Giây</span>
+                </div>
             </div>
             <div class="box_cua_hang">
                 <div class="box_SP">

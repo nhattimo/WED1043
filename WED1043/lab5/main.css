@@ -231,13 +231,12 @@ h6{
 }
 /* Toggle this class when clicking on the popup container (hide and show the popup) */
 .popup .show {
-
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s
 
 }
-.popup.exit {
+.popup .exit {
     visibility:unset ;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
