@@ -14,12 +14,12 @@
     z-index: 1;
 }
 .boxhello h1{
+    width: 100%;
     position: absolute;
-    font-size: 600%;
+    font-size: 300%;
     color: whitesmoke;
-    margin: 300px  auto;
-    text-align: center;
-    letter-spacing: 0px; 
+    margin: 300px auto;
+    text-align: center; 
     transition-duration: 500ms;
     filter: drop-shadow(0px 2px 2px rgba(235, 173, 17, 0.514))
             drop-shadow(0px 10px 3px rgba(22, 21, 21, 0.23))
@@ -27,11 +27,12 @@
 } 
 .letter {
     cursor: pointer;
-    letter-spacing: 34px; 
+    position: relative;
+    letter-spacing: 20px; 
     opacity: 0;
     visibility: hidden;
-    background-color: #3a2a2573;
-    padding: 200px 1px;
+    background-color: #d940122c;
+    padding: 100px 0 ;
     transition-duration: 500ms;
 }
 
@@ -46,6 +47,7 @@
         transform: translateY(0);
     }
 }
+
 .letter.appear {
     opacity: 1;
     visibility: visible;
