@@ -1,0 +1,25 @@
+.letter {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes ziczac {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-40px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+.letter.appear {
+    opacity: 1;
+    visibility: visible;
+    animation: ziczac 0.4s linear;
+}
+.letter.go-down {
+    transform: translateX(0) rotate(0);
+}

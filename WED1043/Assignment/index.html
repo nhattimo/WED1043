@@ -8,10 +8,84 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="main.css">
 </head>
-<body>
-
+<body onload="Afterloadingtheweb()">
+    <!-- Chào mừng bạn đến với shop timo miu -->
     <div onclick="off()" class="boxhello">
         <h1 class="text">Welcome to the shop Miu timo</h1>
+        </div>
+    </div>
+    <div onclick="offshowIMG()" id="myModolIMG">
+        <div onclick="onshowIMG()" class="boxitemMyModol">
+            <!-- Trái -->
+            <div class="itemtrai">
+                <div class="itemtraicon">
+                    <img id="IMGIDModol" src="IMG/anh_test.jpg" alt="">
+                    <div class="boximgspan">
+                        <img class="imgspan" src="IMG/anh_test.jpg" alt="">
+                        <img class="imgspan" src="IMG/anh_test.jpg" alt="">
+                        <img class="imgspan" src="IMG/anh_test.jpg" alt="">
+                        <img class="imgspan" src="IMG/anh_test.jpg" alt="">
+                    </div>
+                <div class="boximgspan1">
+                    <div>chia sẻ</div>|
+                    <div>thích</div>
+                </div>
+                </div>
+            </div>
+            <!-- Phải -->
+            <div class="itemphai">
+                <h1> Tiêu đề sản phẩm</h1>
+                <div class="itemphaicon">
+                    <div class="boxtext">
+                        <span>Vận chuyển</span>
+                        <span>
+                            <p>Đơn vị chuyển phát nhanh</p>
+                            <i>32.000 đ</i>
+                        </span>
+                    </div>
+                    <div class="boxtext">
+                        <span>Giá</span>
+                        <span>
+                            <i>32.000 đ <del><h5>40.000 đ</h5></del></i>
+                        </span>
+                    </div>
+                    <div class="boxtext">
+                        <span>SIDE</span>
+                        <span>
+                            <button>M</button>
+                            <button>L</button>
+                            <button>S</button>
+                        </span>
+                    </div>
+                    <div class="boxtext">
+                        <span>Hương vị</span>
+                        <span>
+                            <input type="radio" name="huongvi" value="Socolate"><i>sôcla</i>
+                            <input type="radio" name="huongvi" value="Socolate"><i>sôcla</i>
+                            <input type="radio" name="huongvi" value="Socolate"><i>sôcla</i>
+                            <input type="radio" name="huongvi" value="Socolate"><i>sôcla</i>
+                            <input type="radio" name="huongvi" value="Socolate"><i>sôcla</i>
+                            <input type="radio" name="huongvi" value="Socolate"><i>sôcla</i>
+                            <input type="radio" name="huongvi" value="Socolate"><i>sôcla</i>
+                            <input type="radio" name="huongvi" value="Socolate"><i>sôcla</i>
+                        </span>
+                    </div>
+                    <div class="boxtext">
+                        <span>số lượng</span>
+                        <span class="boxsl">
+                            <div class="congtru">-</div>
+                            <div class="sl">sl</div>
+                            <div class="congtru">+</div>
+                        </span>
+                        <p>SL khả thi: 5 </p>
+                    </div>
+                    <div class="muavathem">
+                        <button id="btnmuavathem"><img src="img/add-to-cart.png" width="20px" > Thêm vào giỏ hàng</button>
+                        <button id="btnmuavathem">Mua ngay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- <div onclick="off()" class="boxhello">
@@ -28,17 +102,19 @@
 
 <!-- phần đầu -->
 
+    </div>
     <header id="trangchu">
         <img src="IMG/header.jpg" alt="ảnh nền header" >
+        <!-- <div id="testcolor111">sadf</div> -->
     </header>
-    <nav>
+    <nav id="navtimo">
         <div class="nav_box">
             <img class="chulogo_miutimo" src="IMG/Miu-timo.png" alt=""> 
-            <a class="btn btn1" href="#trangchu" >Trang chủ</a> 
-            <a class="btn btn1" href="#boxgioithieu" >Giới thiệu</a>
-            <a class="btn btn1" href="#boxmenu" >Sản phẩm</a>
-            <a class="btn btn1" href="#boxcuahang" >Cửa hàng</a>
-            <a class="btn btn1" href="#boxlienhe" >Liên hệ</a>
+            <a class="btn btn1" href="javascript:;" onclick="goto(205)" >Trang chủ</a> 
+            <a class="btn btn1" href="javascript:;" onclick="goto(720)" >Giới thiệu</a>
+            <a class="btn btn1" href="javascript:;" onclick="goto(2150)" >Sản phẩm</a>
+            <a class="btn btn1" href="javascript:;" onclick="goto(4630)" >Cửa hàng</a>
+            <a class="btn btn1" href="javascript:;" onclick="goto(6675)"  >Liên hệ</a>
         </div>
         <div class="nav_box">
             <div class="icon">
@@ -47,9 +123,8 @@
                 <input class="timkiem" type="search">
                 <img id="user" src="IMG/icon_user.png" alt="User">
             </div>
-            <a class="btn btn1" href="#boxdatban">Đặt bàn</a>
+            <a class="btn btn1" href="javascript:;" onclick="goto(6670)" >Đặt bàn</a>
         </div> 
-        <img src="img" alt="">
         <div id="userdangnhap">
             <h2>Mời bạn đăng nhập</h2>
             <input id="inputdangnhapTK" type="text" name="" placeholder="Tên tài khoản">
@@ -109,7 +184,6 @@
 
     
 <!--  -->
-    
 
     
 <!-- Menu-->
@@ -146,10 +220,10 @@
         </div>
     <!-- Box Giới thiệu-->
         <div id="boxgioithieu" class="box">
-            <div class="boxlogo">
+            <div id="boxlogo" class="boxlogo">
                 <h2></h2>
                 <span class="span0"></span>
-                <img class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
+                <img id="inglogomiutimoGT" class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
                 <span class="span1">Trà sữa và bạn</span>
                 <span class="span2">Giới thiệu</span>
             </div>
@@ -204,7 +278,7 @@
             <div class="boxlogo">
                 <h2></h2>
                 <span class="span0"></span>
-                <img class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
+                <img id="inglogomiutimoMN" class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
                 <span class="span1">Trà sữa và bạn</span>
                 <span class="span2">Menu</span>
             </div>
@@ -314,7 +388,7 @@
             <div class="boxlogo">
                 <h2></h2>
                 <span class="span0"></span>
-                <img class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
+                <img id="inglogomiutimoCH" class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
                 <span class="span1">Trà sữa và bạn</span>
                 <span class="span2">cửa hàng</span>
             </div>
@@ -327,10 +401,11 @@
                     <span id="s">Giây</span>
                 </div>
             </div>
+            <!-- Các sản phẩm -->
             <div class="box_cua_hang">
                 <div class="box_SP">
                     <div class="img_sp">
-                        <img src="IMG/anh_test.jpg" alt="ảnh sản phẩm">
+                        <img class="imgSPBoxCuaHang" src="IMG/anh_test.jpg" alt="ảnh sản phẩm">
                         <h2>1000$</h2>
                     </div>
                     <div class="box_SP_TT">
@@ -339,14 +414,14 @@
                             <p>1 ly siêu ngon safdasf 1 ly siêu ngon safd</p>  
                         </div>
                         <div class="nut_bam">
-                            <button class="mua_ngay">Mua ngay</button>
+                            <button class="mua_ngay imgSPBoxCuaHang">Mua ngay</button>
                             <button class="chi_tiet">Chi tiết</button>
                         </div>
                     </div>
                 </div>
                 <div class="box_SP">
                     <div class="img_sp">
-                        <img src="IMG/anh_test.jpg" alt="ảnh sản phẩm">
+                        <img class="imgSPBoxCuaHang" src="IMG/anh_test.jpg" alt="ảnh sản phẩm">
                         <h2>1000$</h2>
                     </div>
                     <div class="box_SP_TT">
@@ -355,14 +430,14 @@
                             <p>1 ly siêu ngon safdasf 1 ly siêu ngon safd</p>  
                         </div>
                         <div class="nut_bam">
-                            <button class="mua_ngay">Mua ngay</button>
+                            <button class="mua_ngay imgSPBoxCuaHang">Mua ngay</button>
                             <button class="chi_tiet">Chi tiết</button>
                         </div>
                     </div>
                 </div>
                 <div class="box_SP">
                     <div class="img_sp">
-                        <img src="IMG/anh_test.jpg" alt="ảnh sản phẩm">
+                        <img class="imgSPBoxCuaHang" src="IMG/anh_test.jpg" alt="ảnh sản phẩm">
                         <h2>1000$</h2>
                     </div>
                     <div class="box_SP_TT">
@@ -371,14 +446,14 @@
                             <p>1 ly siêu ngon safdasf 1 ly siêu ngon safd</p>  
                         </div>
                         <div class="nut_bam">
-                            <button class="mua_ngay">Mua ngay</button>
+                            <button class="mua_ngay imgSPBoxCuaHang">Mua ngay</button>
                             <button class="chi_tiet">Chi tiết</button>
                         </div>
                     </div>
                 </div>
                 <div class="box_SP">
                     <div class="img_sp">
-                        <img src="IMG/anh_test.jpg" alt="ảnh sản phẩm">
+                        <img class="imgSPBoxCuaHang" src="IMG/anh_test.jpg" alt="ảnh sản phẩm">
                         <h2>1000$</h2>
                     </div>
                     <div class="box_SP_TT">
@@ -387,14 +462,14 @@
                             <p>1 ly siêu ngon safdasf 1 ly siêu ngon safd</p>  
                         </div>
                         <div class="nut_bam">
-                            <button class="mua_ngay">Mua ngay</button>
+                            <button class="mua_ngay imgSPBoxCuaHang">Mua ngay</button>
                             <button class="chi_tiet">Chi tiết</button>
                         </div>
                     </div>
                 </div>
                 <div class="box_SP">
                     <div class="img_sp">
-                        <img src="IMG/anh_test.jpg" alt="ảnh sản phẩm">
+                        <img class="imgSPBoxCuaHang" src="IMG/anh_test.jpg" alt="ảnh sản phẩm">
                         <h2>1000$</h2>
                     </div>
                     <div class="box_SP_TT">
@@ -403,14 +478,14 @@
                             <p>1 ly siêu ngon safdasf 1 ly siêu ngon safd</p>  
                         </div>
                         <div class="nut_bam">
-                            <button class="mua_ngay">Mua ngay</button>
+                            <button class="mua_ngay imgSPBoxCuaHang">Mua ngay</button>
                             <button class="chi_tiet">Chi tiết</button>
                         </div>
                     </div>
                 </div>
                 <div class="box_SP">
                     <div class="img_sp">
-                        <img src="IMG/anh_test.jpg" alt="ảnh sản phẩm">
+                        <img class="imgSPBoxCuaHang" src="IMG/anh_test.jpg" alt="ảnh sản phẩm">
                         <h2>1000$</h2>
                     </div>
                     <div class="box_SP_TT">
@@ -419,14 +494,14 @@
                             <p>1 ly siêu ngon safdasf 1 ly siêu ngon safd</p>  
                         </div>
                         <div class="nut_bam">
-                            <button class="mua_ngay">Mua ngay</button>
+                            <button class="mua_ngay imgSPBoxCuaHang">Mua ngay</button>
                             <button class="chi_tiet">Chi tiết</button>
                         </div>
                     </div>
                 </div>
                 <div class="box_SP">
                     <div class="img_sp">
-                        <img src="IMG/anh_test.jpg" alt="ảnh sản phẩm">
+                        <img class="imgSPBoxCuaHang" src="IMG/anh_test.jpg" alt="ảnh sản phẩm">
                         <h2>1000$</h2>
                     </div>
                     <div class="box_SP_TT">
@@ -435,14 +510,14 @@
                             <p>1 ly siêu ngon safdasf 1 ly siêu ngon safd</p>  
                         </div>
                         <div class="nut_bam">
-                            <button class="mua_ngay">Mua ngay</button>
+                            <button class="mua_ngay imgSPBoxCuaHang">Mua ngay</button>
                             <button class="chi_tiet">Chi tiết</button>
                         </div>
                     </div>
                 </div>
                 <div class="box_SP">
                     <div class="img_sp">
-                        <img src="IMG/anh_test.jpg" alt="ảnh sản phẩm">
+                        <img class="imgSPBoxCuaHang" src="IMG/itemsp1.jpg" alt="ảnh sản phẩm">
                         <h2>1000$</h2>
                     </div>
                     <div class="box_SP_TT">
@@ -451,7 +526,7 @@
                             <p>1 ly siêu ngon safdasf 1 ly siêu ngon safd</p>  
                         </div>
                         <div class="nut_bam">
-                            <button class="mua_ngay">Mua ngay</button>
+                            <button class="mua_ngay imgSPBoxCuaHang">Mua ngay</button>
                             <button class="chi_tiet">Chi tiết</button>
                         </div>
                     </div>
@@ -470,7 +545,7 @@
             <div class="boxlogo">
                 <h2></h2>
                 <span class="span0"></span>
-                <img class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
+                <img id="inglogomiutimoDB" class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
                 <span class="span1">Trà sữa và bạn</span>
                 <span class="span2">Đặt bàn</span>
             </div>
@@ -521,7 +596,7 @@
             <div class="boxlogo">
                 <h2></h2>
                 <span class="span0"></span>
-                <img class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
+                <img id="inglogomiutimoLH" class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
                 <span class="span1">Trà sữa và bạn</span>
                 <span class="span2">Liên hệ</span>
             </div>
@@ -561,6 +636,9 @@
                         <img class="logo" src="IMG/Miu-timo.png" alt="">
                     </div>
                 </div>
+            </div>
+            <div class="boxtruotlentop">
+                <a href="javascript:;" onclick="goto(0)" class="boxtrontruotlentop">&#10097;</a>
             </div>
         </div>
     </div>

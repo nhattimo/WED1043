@@ -1,0 +1,279 @@
+.ring{
+    width: 50px;
+    height: 50px;
+    border-radius: 100rem;
+    border: 5px solid rgb(33, 40, 138);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    animation: load 0.5s infinite 4s linear; /* tên Animation _ time chạy _ (1/infinite (chạy 1 lần/ chạy mãi) _ Time delay(nếu muốn)) _ Kiểu chạy(VD: ease, ease-in, ease-in-out, cubic-bezier(), forwards(chạy ngang đâu dừng ở đó ngược lại thì backwards ))*/
+}
+@keyframes load{
+    from{
+        transform: rotate(-360deg);
+        background-color: bisque;
+    }
+    to{
+        transform: rotate(360deg); 
+        background-color: aqua;
+    }
+}
+
+.w3tesst {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(9, 191, 27);
+    animation: example 2s infinite linear;
+  }
+  
+  @keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+  }
+
+  .demo1{
+    width: 50px;
+    height: 50px;
+    border-radius: 100rem;
+    border: 5px solid rgb(33, 40, 138);
+    animation: demo1 1s infinite  linear;
+  }
+  
+  @keyframes demo1 {
+    to{
+        transform: scale(1.5);
+        opacity: 0;
+    }
+  }
+
+.loadertiktok div {
+    position: absolute;
+}
+.loadertiktok{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loadertiktok div:nth-child(1){
+    width: 80px;
+    height: 80px;
+    border-radius: 100rem;
+    background-color: #ff003d;
+    animation: loadtiktok 1s linear infinite ;
+    animation-delay: 0.5s;
+}
+.loadertiktok div:nth-child(2){
+    width: 80px;
+    height: 80px;
+    border-radius: 100rem;
+    background-color: #00FFFE;
+    animation: loadtiktok 1s linear  infinite ;
+}
+.loadertiktok div:nth-child(3){
+    width: 80px;
+    height: 80px;
+    border-radius: 100rem;
+    background-color: #ff003d;
+    animation: loadertiktok1 1s linear  infinite ;
+    animation-delay: 0.5s;
+}
+@keyframes loadtiktok {
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(80px);
+    }
+    100%{
+        transform: translateX(0);
+
+    }
+}
+@keyframes loadertiktok1{
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    49.99%{
+        opacity: 1;
+        transform: translateX(80px);
+    }
+    50%{
+        opacity: 0;
+        transform: translateX(80px);
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(0);
+    }
+}
+
+.demo2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 10px;
+}
+.demo2 div{
+    width: 10px;
+    height: 10px; 
+    border-radius: 100rem;
+    background-color: aqua;
+    animation: demo2 1s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-delay: calc(-1 * 1 / 4 * var(--deley));
+}
+@keyframes demo2 {
+    0%{
+        transform: rotateY(0);
+    }
+    50%, 100%{
+        transform: translateY(10px);
+    }
+}
+
+.link{
+    transition: all 0.2s linear    
+}
+
+.link:hover{
+    color: #ff003d;
+
+}
+.btn{
+    display: inline-block;
+    padding: 15px 30px;
+    color: aliceblue;
+    background-color: transparent;
+    outline: none;
+    position: relative;
+}
+.btn::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    /* left: 0; */
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 100%;
+    /* width: 0; */
+    width: 2px;
+    background-color: #ff003d;
+    z-index: -1;
+    transition: width 0.5s ease-in  ;
+}
+.btn:hover::before{
+    width: 100%;
+}
+
+.btn2{
+    display: inline-block;
+    padding: 15px 30px;
+    color: rgb(13, 72, 124);
+    background-color: transparent;
+    outline: none;
+    border: none;
+    position: relative;
+}
+.btn2 span{
+    position: absolute;
+    background-color: #ff003d;
+    display: block;
+    transition: all 0.25s linear ;
+}
+.btn2 span:nth-child(1){
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 0;
+    height: 2px;
+}
+.btn2 span:nth-child(2){
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 2px;
+    height: 0;
+    transition-delay: 0.40s;
+}
+.btn2 span:nth-child(3){
+    position: absolute;
+    bottom:0;
+    right: 0;
+    width: 0;
+    height: 2px;
+}
+.btn2 span:nth-child(4){
+    position: absolute;
+    bottom:0;
+    left: 0;
+    width: 2px;
+    height: 0;
+    transition-delay: 0.40s;
+}
+.btn2:hover span:nth-child(odd){
+    width: 100%;
+}
+.btn2:hover span:nth-child(even){
+    height: 100%;
+}
+
+
+
+
+
+
+/*  */
+
+.btn {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 25px 80px;
+	display: inline-block;
+	margin: 15px 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn-1e {
+	overflow: hidden;
+}
+
+.btn-1e:after {
+	width: 100%;
+	height: 0;
+	top: 50%;
+	left: 50%;
+	background: #fff;
+	opacity: 0;
+	-webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	-moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	-ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+
+.btn-1e:hover,
+.btn-1e:active {
+	color: #0e83cd;
+}
+
+.btn-1e:hover:after {
+	height: 260%;
+	opacity: 1;
+}
+
+.btn-1e:active:after {
+	height: 400%;
+	opacity: 1;
+}

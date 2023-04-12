@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .drag_and_drop{
+        display: flex; /* nằm 1 hàng */
+        flex-direction: row;
+        width: 500px;
+        justify-content: space-between;
+        margin: 50px auto;
+    }
+    .drag_and_drop>#box_chua{
+        border: 4px solid gray;
+        background-color: rgba(55, 17, 17, 0.821);
+    }
+    .box{
+        width: 240px;
+        height: 250px; 
+        padding: 20px;
+    }
+    .box>#item_drag{
+        width: 100%;
+        height: 18%;
+        border: 2px dashed rgb(195, 195, 14);
+        margin-bottom: 2px;
+        text-align: center;
+        background-color: rgba(205, 112, 32, 0.821);
+    }
+</style>
+<body>
+    <div class="drag_and_drop">
+        <div id="box_chua" class="box" ondrop="dDrop()" ondragover="nDrop()"></div>
+        <div class="box" ondrop="dDrop()" ondragover="nDrop()">
+            <div id="item_drag" draggable="true" ondragstart="dStar()" draggable="true">
+                One
+            </div>
+            <div id="item_drag" draggable="true" ondragstart="dStar()" draggable="true">
+                Two
+            </div>
+            <div id="item_drag" draggable="true" ondragstart="dStar()" draggable="true">
+                Three
+            </div>
+            <div id="item_drag" draggable="true" ondragstart="dStar()" draggable="true">
+                Four
+            </div>
+            <div id="item_drag" draggable="true" ondragstart="dStar()" draggable="true">
+                five
+            </div>
+        </div>
+    </div>
+    <script>
+        let holderItem;
+        function dStar(){
+            holderItem = event.target;
+        }
+        function nDrop(){
+            event.preventDefault();
+        }
+        function dDrop(){
+            event.preventDefault();
+            if (event.target.className == "box"){
+                event.target.appendChild(holderItem);
+            }
+        }
+    </script>
+</body>
+</html>

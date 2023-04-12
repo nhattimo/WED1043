@@ -1,3 +1,69 @@
+//CODE JS cho thẻ nav ( Thanh menu )
+window.onscroll = function(){
+  console.log(document.documentElement.scrollTop);
+  var navtimo = document.getElementById('navtimo')
+  navtimo.style.zIndex = 2
+  navtimo.style.height= '60px'
+  if(document.documentElement.scrollTop > 205 || document.body.scrollTop > 205 ){
+    navtimo.style.position ='fixed' ;
+    navtimo.style.transitionDuration = '500ms';
+    navtimo.style.backgroundColor = 'rgba(4, 4, 3, 0.694)';
+    navtimo.style.animation = "navshow 0.3s linear"
+  }else{
+    navtimo.style.position ='relative' ;
+    navtimo.style.backgroundColor = 'rgba(49, 18, 2, 0.594)';
+    navtimo.style.top = 0
+    navtimo.style.transitionDuration = '500ms';
+    navtimo.style.animation = "none"
+  }
+  
+  var inglogomiutimo = document.getElementById('inglogomiutimoGT')
+  if(document.documentElement.scrollTop > 500 || document.body.scrollTop > 500 ){
+    // inglogomiutimo.style.
+  }else{
+    inglogomiutimo.style.position ='absolute' ;
+  }
+};
+
+// ______________________________________________________________________
+// CODE JS SHOW box item mua hàng
+// web đã được nạp xong mới đc làm
+function Afterloadingtheweb() {
+ var imgSPBoxCuaHang = document.getElementsByClassName("imgSPBoxCuaHang");
+ for (let i = 0; i < imgSPBoxCuaHang.length; i++) {
+  imgSPBoxCuaHang[i].addEventListener("click",function(){
+    showIMG(this);
+  });
+ }
+}
+// hàm hiện box mua hàng
+var myModolIMG = document.getElementById("myModolIMG");
+function showIMG(IMG){
+  var imgIDModol = document.getElementById("IMGIDModol")
+  imgIDModol.src = IMG.src
+  myModolIMG.style.display = 'flex'
+} 
+function offshowIMG(){
+  myModolIMG.style.display = 'none'
+} 
+function onshowIMG(){
+  myModolIMG.style.display = 'flex'
+} 
+
+// ____________________________________________________________________
+// CODE JS cho lúc trượt web
+function goto(px){
+  window.scrollTo(0,px);
+  // var runtimeweb = setInterval(function(){
+  //   document.documentElement.scrollTop -= 25;
+  //   if(document.documentElement.scrollTop <= 0){
+  //     clearInterval(runtimeweb);
+  //   }
+  // },1);
+}
+
+// ____________________________________________________________________
+// CODE JS cho box slide
 let id = 1;   // khởi tạo biến id = 1, mặc định vào trang web sẽ đứng ở ảnh 1
 img(id);      // mặc định vào trang web thì sẽ nằm ảnh 1
 
@@ -29,6 +95,8 @@ function img(value) {
   chamTron[id - 1].className += " active";  // chamTron[index] thay đổi tên class = " active"
 }
 
+// ____________________________________________________________________
+// CODE JS cho box slide tự động chuyển tiếp img
 let idAutu = 0;
 autuImg();
 function autuImg() {
@@ -50,31 +118,32 @@ function autuImg() {
   setTimeout(autuImg, 4000); // Change image every 2 seconds
 }
 
-
+// ____________________________________________________________________
+// CODE JS cho item đăng nhập và đăng ký
 // Tài khoản, Mật khẩu mặc định
 const tk = "nguyenvannhat"
 const mk = "nhat12345"
 
 // kiểm tra đăng nhập
-var getinput = document.getElementById("inputdangnhap")
-function ktnhaptk(){
-  var value = getinput.value
-  if(value.length <= 6){
-    console.log("chưa đủ số lượng");
-  }else{
-    console.log("ok fren")
-    getinput.className = 'sai'
-  }
-}
-function ktnhapmk(){
-  var value = getinput.value
-  if(value.length <= 6){
-    console.log("chưa đủ số lượng");
-  }else{
-    console.log("ok fren")
-    getinput.className = 'sai'
-  }
-}
+// var getinput = document.getElementById("inputdangnhap")
+// function ktnhaptk(){
+//   var value = getinput.value
+//   if(value.length <= 6){
+//     console.log("chưa đủ số lượng");
+//   }else{
+//     console.log("ok fren")
+//     getinput.className = 'sai'
+//   }
+// }
+// function ktnhapmk(){
+//   var value = getinput.value
+//   if(value.length <= 6){
+//     console.log("chưa đủ số lượng");
+//   }else{
+//     console.log("ok fren")
+//     getinput.className = 'sai'
+//   }
+// }
 
 
 //___________box đăng nhập
@@ -86,7 +155,7 @@ user.addEventListener('mouseup',function(){
   userdangky.className="dangky";
 })
 
-// nhấn thoát sẽ tắt box đăng nhập
+// btn thoát box đăng nhập
 var thoat = document.getElementById('thoat');
 thoat.addEventListener('mouseup',function(){
   userdangnhap.classList.toggle("showboxdangnhap");
@@ -127,7 +196,7 @@ var getinputTK1 = document.getElementById("inputdangkyTK1")
 var getinputMK1 = document.getElementById("inputdangkyMK1") 
 var geterror1 = document.getElementsByClassName("error1")
 
-// nhấn nút đăng ký sẽ làm những việc này: kiểm tra nhập đăng ký mật khẩu
+// nhấn nút đăng ký sẽ làm những việc này: kiểm tra nhập đăng ký TK và MK
 btndk1.addEventListener("mouseup",function(){
   var valuegetinputTK1 = getinputTK1.value
   var valuegetinputMK1 = getinputMK1.value
@@ -163,8 +232,8 @@ btndn1.addEventListener("mouseup",function(){
 })
 
 
-
-// time sales
+// ____________________________________________________________________
+// CODE JS cho time sales
 var h = 3; // Giờ
 var m = 20; // Phút
 var s = 20; // Giây
@@ -209,12 +278,8 @@ function start()
       start();
     }, 1000);
 }
-
-function stop(){
-    clearTimeout(timeout);
-}
-
-
+// ____________________________________________________________________
+// CODE JS cho  "Chào mừng bạn đến với shop Miu timo"
 const text = document.querySelector('.text');
 const charArr = text.textContent.split('');
 
@@ -262,16 +327,14 @@ function hasWhiteSpace(str) {
 var getDiv =document.getElementsByTagName("div")
 console.log(getDiv)
 function off(){
-  getDiv[0].setAttribute("class",'')
+  getDiv[0].setAttribute("class",'huytrinhchieutext')
 }
 
 
 
 
-
-
-
-
+// ____________________________________________________________________
+// CODE JS cho location"
 var x = document.getElementById("location");
 
 function getLocation() {

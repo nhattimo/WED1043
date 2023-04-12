@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 50%;
+        height: 100px;
+        background-color: antiquewhite;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .drop, .drag{
+        width: 45%;
+        background-color: aqua;
+        display:flex;
+        flex-direction: column;
+    }
+    .drag span{
+        border: 1px dashed rebeccapurple;
+    }
+</style>
+<body>
+    <div class="box">
+        <div class="drop">box trữ</div>
+        <div class="drag">
+            box kéo
+            <span id="one">One</span>
+            <span id="one">Tow</span>
+            <span id="one">Three</span>
+            <span id="one">Four</span>
+        </div>
+    </div>
+</body>
+</html>

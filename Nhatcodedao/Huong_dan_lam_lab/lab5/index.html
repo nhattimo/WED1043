@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO LIST</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+            background-color: beige;
+            padding: 20px;
+            margin: auto;
+        }
+
+        .title {
+            text-align: center;
+            font-weight: bold;
+            color: brown;
+            margin-bottom: 10px;
+            font-size: x-large;
+        }
+
+        label {
+            font-size: small;
+            font-weight: bold;
+            color: grey;
+            margin-bottom: 5px;
+        }
+
+        #task-name {
+            margin-bottom: 20px;
+        }
+
+        #task-description {
+            margin-bottom: 10px;
+        }
+
+        .buttonrow {
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+        }
+
+        .btn {
+            padding: 3px 20px 3px 20px;
+            border: 0px;
+            background-color: green;
+            color: white;
+            box-shadow: 3px 3px 3px rgb(1, 96, 1);
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: rgba(0, 128, 0, 0.833);
+        }
+
+        .btn-disabled {
+            background-color: rgb(50, 55, 50);
+            color: rgb(92, 86, 86);
+            box-shadow: 3px 3px 3px rgb(74, 75, 74);
+        }
+
+        .btn-disabled:hover {
+            background-color: rgba(50, 55, 50, 0.943);
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 30% 40% 15% 15%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- container of dodo list -->
+    <div class="wrapper">
+        <span class="title">TODO LIST</span>
+        <label for="">Task Name:</label>
+        <input type="text" name="task-name" id="task-name" placeholder="Enter task name">
+        <label for="" class="description">Description:</label>
+        <textarea name="task-description" id="task-description" cols="30" rows="10"
+            placeholder="Enter description of the task"></textarea>
+        <div class="buttonrow">
+            <button id="btnAdd" class="btn btn-disabled" disabled="true">Add</button>
+        </div>
+        <h5>Tasks List:</h5>
+        <section id="task-list">
+            <div class="row"> 
+                <div class="name">Name</div>
+                <div class="des">Description</div>
+                <div class="del">Del</div>
+                <div class="edit">Edit</div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // section 
+        let list = document.getElementById("task-list");    // truy xuất id task-list
+        let btnAdd = document.getElementById("btnAdd");     // truy xuất btn
+
+        // listener for inputs
+        let inputName = document.getElementById("task-name");//truy xuất id task-name
+        inputName.addEventListener("keyup", () => {     // biến inputName chấm đến lắng nghe sự kiện keyup ( keyup: khi thả ra event sẽ hoạt động)
+            if (inputName.value.length < 5) {           // nếu input có độ dài của chuỗi nhỏ hơn 5 
+                btnAdd.disabled = true;                 // thì thuộc tính disabled sẽ hoạt động và lúc này nút btn sẽ bị vô hiệu hóa
+                btnAdd.classList.add("btn-disabled");   // và add thêm class vào thẻ btn để thừa hưởng các thuộc tính css
+            } else {                                    // ngược lại điều kiện trên thì 
+                btnAdd.disabled = false;                // chuyển thuộc tính css disabled từ trạng thái hoạt động sang ko hoạt động
+                btnAdd.classList.remove("btn-disabled");// và xóa đi tên class đã add vào 
+            }
+        });
+
+        btnAdd.addEventListener("click", () => {
+            addRow();
+        });
+
+        function addRow() {
+            // get task name + description
+            let task_name = document.getElementById("task-name").value;
+            let task_des = document.getElementById("task-description").value;
+            let disabledInput = true;
+
+            if (task_name.length < 5 || task_des.length < 20) { // nếu người dùng nhập task name nhỏ hơn 5 hoặc mô ta nhỏ hơn 20 thì sẽ hiện lên thông báo nhắc người dùng nhập đúng
+                alert("Name length must be greater or eqal 5 characters and Description must be greater or eqal 20 characters");
+            } else {
+                // create row
+                let row = document.createElement("div");
+                row.classList.add("row");
+
+                // create name
+                let name = document.createElement("input");
+                name.type = "text";
+                name.value = task_name;
+                name.disabled = disabledInput;
+
+                // create description
+                let description = document.createElement("input");
+                description.value = task_des;
+                description.disabled = disabledInput;
+
+                // create button delete
+                let btnDel = document.createElement("button");
+                btnDel.innerHTML = "del";
+
+                // create button edit
+                let btnEdit = document.createElement("button");
+                btnEdit.innerHTML = "edit";
+
+                // add child to row
+                row.appendChild(name);
+                row.appendChild(description);
+                row.appendChild(btnDel);
+                row.appendChild(btnEdit);
+                // add row to list
+                list.appendChild(row);// lúc add thì ở HTML sẽ có cái này  // <div class="row"> 
+                                                                            //     <div class="name">Name</div>
+                                                                            //     <div class="des">Description</div>
+                                                                            //     <div class="del">Del</div>
+                                                                            //     <div class="edit">Edit</div>
+                                                                            // </div>
+
+                // edit event
+                btnEdit.addEventListener("click", () => {
+
+                    if (description.value.length < 20 || name.value.length < 5) {
+                        alert("can't update");
+                    } else {
+                        disabledInput = !disabledInput;
+                        name.disabled = disabledInput;
+                        description.disabled = disabledInput;
+
+                        // change button label => update
+                        btnEdit.innerHTML = disabledInput ? "edit" : "update";
+                    }
+                });
+
+                // delete event
+                btnDel.addEventListener("click", () => {
+                    list.removeChild(row);
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>
