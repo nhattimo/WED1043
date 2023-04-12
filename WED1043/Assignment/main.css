@@ -37,6 +37,8 @@ body{
             drop-shadow(0px 10px 3px rgba(19, 20, 19, 0.506));
 }
 
+
+/* ______________________________________________________________________________________________*/
 /* box tt mua hàng, thêm hàng vào giỏ, thanh toan, tiền  */
 #myModolIMG{
     position:fixed;
@@ -46,7 +48,9 @@ body{
     display: none;
     z-index: 3;
 }
+
 #myModolIMG>.boxitemMyModol{
+    position: relative;
     margin: 7% auto;
     width: 80%;
     height: 70%;
@@ -62,6 +66,16 @@ body{
     to {
         transform: translateY(40px);
     }
+}
+
+#myModolIMG>.boxitemMyModol>.exit{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #cec3c388;
+    text-align: center;
 }
 
 /* box trái */

@@ -41,15 +41,13 @@ var myModolIMG = document.getElementById("myModolIMG");
 function showIMG(IMG){
   var imgIDModol = document.getElementById("IMGIDModol")
   imgIDModol.src = IMG.src
-  myModolIMG.classList.toggle("");
+  // myModolIMG.classList.toggle("showboxdangnhap");
   myModolIMG.style.display = 'flex'
 } 
-function offshowIMG(){
+function exitshowIMG(){
   myModolIMG.style.display = 'none'
 } 
-function onshowIMG(){
-  myModolIMG.style.display = 'flex'
-} 
+
 
 // ____________________________________________________________________
 // CODE JS cho lúc trượt web
