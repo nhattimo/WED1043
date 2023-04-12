@@ -41,6 +41,7 @@ var myModolIMG = document.getElementById("myModolIMG");
 function showIMG(IMG){
   var imgIDModol = document.getElementById("IMGIDModol")
   imgIDModol.src = IMG.src
+  myModolIMG.classList.toggle("");
   myModolIMG.style.display = 'flex'
 } 
 function offshowIMG(){
