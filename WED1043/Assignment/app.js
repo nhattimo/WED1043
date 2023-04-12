@@ -1,23 +1,22 @@
 //CODE JS cho thẻ nav ( Thanh menu )
 window.onscroll = function(){
   console.log(document.documentElement.scrollTop);
-  var navtimo = document.getElementById('navtimo')
-  navtimo.style.zIndex = 2
-  navtimo.style.height= '60px'
+  var navtimo = document.getElementById('navtimo');
+  navtimo.style.zIndex = 2;
+  navtimo.style.height= '60px';
   if(document.documentElement.scrollTop > 205 || document.body.scrollTop > 205 ){
     navtimo.style.position ='fixed' ;
     navtimo.style.transitionDuration = '500ms';
     navtimo.style.backgroundColor = 'rgba(4, 4, 3, 0.694)';
-    navtimo.style.animation = "navshow 0.3s linear"
+    navtimo.style.animation = "navshow 0.3s linear";
   }else{
     navtimo.style.position ='relative' ;
     navtimo.style.backgroundColor = 'rgba(49, 18, 2, 0.594)';
-    navtimo.style.top = 0
+    navtimo.style.top = 0;
     navtimo.style.transitionDuration = '500ms';
-    navtimo.style.animation = "none"
+    navtimo.style.animation = "none";
   }
-  
-  var inglogomiutimo = document.getElementById('inglogomiutimoGT')
+  var inglogomiutimo = document.getElementById('inglogomiutimoGT');
   if(document.documentElement.scrollTop > 500 || document.body.scrollTop > 500 ){
     // inglogomiutimo.style.
   }else{
@@ -39,13 +38,13 @@ function Afterloadingtheweb() {
 // hàm hiện box mua hàng
 var myModolIMG = document.getElementById("myModolIMG");
 function showIMG(IMG){
-  var imgIDModol = document.getElementById("IMGIDModol")
-  imgIDModol.src = IMG.src
+  var imgIDModol = document.getElementById("IMGIDModol");
+  imgIDModol.src = IMG.src;
   // myModolIMG.classList.toggle("showboxdangnhap");
-  myModolIMG.style.display = 'flex'
+  myModolIMG.style.display = 'flex';
 } 
 function exitshowIMG(){
-  myModolIMG.style.display = 'none'
+  myModolIMG.style.display = 'none';
 } 
 
 
@@ -172,62 +171,62 @@ btnDangKy.addEventListener("mouseup",function(){
 // ok đăng nhập
 var getinputTK = document.getElementById("inputdangnhapTK");
 var getinputMK = document.getElementById("inputdangnhapMK");
-var geterror = document.getElementsByClassName("error")
+var geterror = document.getElementsByClassName("error");
 btnDangNhap.addEventListener("mouseup",function(){
   var valuegetinputTK = getinputTK.value;
-  var valuegetinputMK = getinputMK.value
+  var valuegetinputMK = getinputMK.value;
   // var valuegetinputMK = getinputMK.value
   if(valuegetinputTK == tk || valuegetinputMK == mk ){
     userdangnhap.classList.toggle("showboxdangnhap");
-    getinputTK.value = ""
-    getinputMK.value = ""
-    geterror[0].className='error'
+    getinputTK.value = "";
+    getinputMK.value = "";
+    geterror[0].className='error';
   }else{
-    geterror[0].className='error h5_0'
+    geterror[0].className='error h5_0';
   }
 })
 
 //___________box đăng ký
 
-var btndn1 = document.getElementById("btndangnhap1")
-var btndk1 = document.getElementById("btndangky1")
-var getinputTK1 = document.getElementById("inputdangkyTK1") 
-var getinputMK1 = document.getElementById("inputdangkyMK1") 
-var geterror1 = document.getElementsByClassName("error1")
+var btndn1 = document.getElementById("btndangnhap1");
+var btndk1 = document.getElementById("btndangky1");
+var getinputTK1 = document.getElementById("inputdangkyTK1") ;
+var getinputMK1 = document.getElementById("inputdangkyMK1") ;
+var geterror1 = document.getElementsByClassName("error1");
 
 // nhấn nút đăng ký sẽ làm những việc này: kiểm tra nhập đăng ký TK và MK
 btndk1.addEventListener("mouseup",function(){
-  var valuegetinputTK1 = getinputTK1.value
-  var valuegetinputMK1 = getinputMK1.value
+  var valuegetinputTK1 = getinputTK1.value;
+  var valuegetinputMK1 = getinputMK1.value;
   let kt=0;
   if (valuegetinputTK1.length<=6){
-    geterror1[0].className='error1 h5_0'
-    kt=1
+    geterror1[0].className='error1 h5_0';
+    kt=1;
   }else{
     kt=0;
-    geterror1[0].className='error1'
+    geterror1[0].className='error1';
   }
   if (valuegetinputMK1.length<=8){
-    geterror1[1].className='error1 h5_0'
-    kt=1
+    geterror1[1].className='error1 h5_0';
+    kt=1;
   }else{
-    geterror1[1].className='error1'
+    geterror1[1].className='error1';
     kt=0;
   }
   if(kt == 0){
-    getinputTK1.value = ""
-    getinputMK1.value = ""
+    getinputTK1.value = "";
+    getinputMK1.value = "";
   }
 });
 
 // nhấn nút đăng nhập sẽ quay lại box đăng nhập và reset lại box đăng ký
 btndn1.addEventListener("mouseup",function(){
-  userdangky.className="dangky"
+  userdangky.className="dangky";
   userdangnhap.classList.toggle("showboxdangnhap");
-  geterror1[1].className='error1'
-  geterror1[0].className='error1'
-  getinputTK1.value = ""
-  getinputMK1.value = ""
+  geterror1[1].className='error1';
+  geterror1[0].className='error1';
+  getinputTK1.value = "";
+  getinputMK1.value = "";
 })
 
 
