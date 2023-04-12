@@ -240,7 +240,7 @@ var timeout = null; // Timeout
 start();
 function start()
 {
-    /*BƯỚC 1: CHUYỂN ĐỔI DỮ LIỆU*/
+    /*CHUYỂN ĐỔI DỮ LIỆU*/
     // Nếu số giây = -1 tức là đã chạy ngược hết số giây, lúc này:
     //  - giảm số phút xuống 1 đơn vị
     //  - thiết lập số giây lại 59
@@ -265,12 +265,12 @@ function start()
         return false;
     }
  
-    /*BƯỚC 1: HIỂN THỊ ĐỒNG HỒ*/
+    /*HIỂN THỊ ĐỒNG HỒ*/
     document.getElementById('h').innerText = h.toString();
     document.getElementById('m').innerText = m.toString();
     document.getElementById('s').innerText = s.toString();
  
-    /*BƯỚC 1: GIẢM PHÚT XUỐNG 1 GIÂY VÀ GỌI LẠI SAU 1 GIÂY */
+    /* GIẢM PHÚT XUỐNG 1 GIÂY VÀ GỌI LẠI SAU 1 GIÂY */
     timeout = setTimeout(function(){
       s--;
       start();
