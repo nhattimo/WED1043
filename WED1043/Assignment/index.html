@@ -14,6 +14,7 @@
         <h1 class="text">Welcome to the shop Miu timo</h1>
         </div>
     </div>
+    <!-- box mua hang  -->
     <div id="myModolIMG" >
         <div class="boxitemMyModol">
             <!-- Trái -->
@@ -80,20 +81,20 @@
                         <p>SL khả thi: 5 </p>
                     </div>
                     <div class="muavathem">
-                        <button id="btnmuavathem"><img src="img/add-to-cart.png" width="20px" > Thêm vào giỏ hàng</button>
-                        <button id="btnmuavathem">Mua ngay</button>
+                        <button id="btnmuavathem" class="btnhover"><img src="img/add-to-cart.png" width="20px" > Thêm vào giỏ hàng</button>
+                        <button id="btnmuavathem" class="btnhover">Mua ngay</button>
                     </div>
                 </div>
             </div>
-            <div onclick="exitshowIMG()" class="exit">&#935;</div>
+            <div onclick="exitshowIMG()" class="exit btnhover">&#935;</div>
         </div>
     </div>
 
     <!-- <div onclick="off()" class="boxhello">
         <h1 class="text">Welco timo</h1>
     </div> -->
-<!-- Box logo -->
-<!-- <div class="boxlogo">
+    <!-- Box logo -->
+    <!-- <div class="boxlogo">
         <h2></h2>
         <span class="span0"></span>
         <img class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
@@ -101,7 +102,7 @@
         <span class="span2">Giới thiệu</span>
     </div> -->
 
-<!-- phần đầu -->
+<!-- PHẦN ĐẦU -->
 
     </div>
     <header id="trangchu">
@@ -110,22 +111,23 @@
     </header>
     <nav id="navtimo">
         <div class="nav_box">
-            <img class="chulogo_miutimo" src="IMG/Miu-timo.png" alt=""> 
+            <img class="chulogo_miutimo btn activebtnnav" src="IMG/Miu-timo.png" alt="" onclick="goto(0)"> 
             <a class="btn btn1" href="javascript:;" onclick="goto(205)" >Trang chủ</a> 
-            <a class="btn btn1" href="javascript:;" onclick="goto(720)" >Giới thiệu</a>
-            <a class="btn btn1" href="javascript:;" onclick="goto(2150)" >Sản phẩm</a>
-            <a class="btn btn1" href="javascript:;" onclick="goto(4630)" >Cửa hàng</a>
-            <a class="btn btn1" href="javascript:;" onclick="goto(6675)"  >Liên hệ</a>
+            <a class="btn btn1" href="javascript:;" onclick="goto(860)" >Giới thiệu</a>
+            <a class="btn btn1" href="javascript:;" onclick="goto(2375)" >Sản phẩm</a>
+            <a class="btn btn1" href="javascript:;" onclick="goto(5415)" >Cửa hàng</a>
+            <a class="btn btn1" href="javascript:;" onclick="goto(8940)"  >Liên hệ</a>
         </div>
         <div class="nav_box">
             <div class="icon">
                 <p class="soLuong">1</p>
-                <img src="IMG/icon_gio_hang.png" alt="Giỏ hàng">
+                <img src="IMG/shopping-cart.png" alt="Giỏ hàng">
                 <input class="timkiem" type="search">
-                <img id="user" src="IMG/icon_user.png" alt="User">
+                <img id="user" src="IMG/ssmvtnogc7ue0jufjd03h6mj89.png" alt="User">
             </div>
-            <a class="btn btn1" href="javascript:;" onclick="goto(6670)" >Đặt bàn</a>
+            <a class="btn btn1" href="javascript:;" onclick="goto(7925)" >Đặt bàn</a>
         </div> 
+        <!-- box đăng ký -->
         <div id="userdangnhap">
             <h2>Mời bạn đăng nhập</h2>
             <input id="inputdangnhapTK" type="text" name="" placeholder="Tên tài khoản">
@@ -146,7 +148,7 @@
                 </button>
             </div>
         </div>
-
+         <!-- box đăng nhập -->
         <div id="userdangky" class="dangky">
             <div class="ttdangky">
                 <h2>Mời bạn nhập thông tin</h2>
@@ -189,10 +191,10 @@
     
 <!-- Menu-->
    
-<!-- Phần thân -->
+<!-- PHẦN THÂN -->
     <div class="than">
     <!-- Box slide -->
-        <div class="box_slide">
+        <div class="box_slide" id="padingbox_slide">
             <div class="itemslide">
                 <!-- <div class="STT">1 / 3</div> -->
                 <img src="IMG/anh_test.jpg" alt="">
@@ -263,7 +265,6 @@
                 <button class="ghe_vao_shop">Ghé vào shop</button>
             </div>
         </div>
-
     <!-- úm ba la -->
 
         <div class="demo2">
@@ -415,8 +416,8 @@
                             <p>1 ly siêu ngon safdasf 1 ly siêu ngon safd</p>  
                         </div>
                         <div class="nut_bam">
-                            <button class="mua_ngay imgSPBoxCuaHang">Mua ngay</button>
-                            <button class="chi_tiet">Chi tiết</button>
+                            <button class="btnhover mua_ngay ">Chi tiết</button>
+                            <button class="btnhover chi_tiet imgSPBoxCuaHang">Mua ngay</button>
                         </div>
                     </div>
                 </div>
@@ -431,8 +432,8 @@
                             <p>1 ly siêu ngon safdasf 1 ly siêu ngon safd</p>  
                         </div>
                         <div class="nut_bam">
-                            <button class="mua_ngay imgSPBoxCuaHang">Mua ngay</button>
-                            <button class="chi_tiet">Chi tiết</button>
+                            <button class="btnhover mua_ngay ">Chi tiết</button>
+                            <button class="btnhover chi_tiet imgSPBoxCuaHang">Mua ngay</button>
                         </div>
                     </div>
                 </div>
@@ -447,8 +448,8 @@
                             <p>1 ly siêu ngon safdasf 1 ly siêu ngon safd</p>  
                         </div>
                         <div class="nut_bam">
-                            <button class="mua_ngay imgSPBoxCuaHang">Mua ngay</button>
-                            <button class="chi_tiet">Chi tiết</button>
+                            <button class="btnhover mua_ngay ">Chi tiết</button>
+                            <button class="btnhover chi_tiet imgSPBoxCuaHang">Mua ngay</button>
                         </div>
                     </div>
                 </div>
@@ -463,8 +464,8 @@
                             <p>1 ly siêu ngon safdasf 1 ly siêu ngon safd</p>  
                         </div>
                         <div class="nut_bam">
-                            <button class="mua_ngay imgSPBoxCuaHang">Mua ngay</button>
-                            <button class="chi_tiet">Chi tiết</button>
+                            <button class="btnhover mua_ngay ">Chi tiết</button>
+                            <button class="btnhover chi_tiet imgSPBoxCuaHang">Mua ngay</button>
                         </div>
                     </div>
                 </div>
@@ -479,8 +480,8 @@
                             <p>1 ly siêu ngon safdasf 1 ly siêu ngon safd</p>  
                         </div>
                         <div class="nut_bam">
-                            <button class="mua_ngay imgSPBoxCuaHang">Mua ngay</button>
-                            <button class="chi_tiet">Chi tiết</button>
+                            <button class="btnhover mua_ngay ">Chi tiết</button>
+                            <button class="btnhover chi_tiet imgSPBoxCuaHang">Mua ngay</button>
                         </div>
                     </div>
                 </div>
@@ -495,8 +496,8 @@
                             <p>1 ly siêu ngon safdasf 1 ly siêu ngon safd</p>  
                         </div>
                         <div class="nut_bam">
-                            <button class="mua_ngay imgSPBoxCuaHang">Mua ngay</button>
-                            <button class="chi_tiet">Chi tiết</button>
+                            <button class="btnhover mua_ngay ">Chi tiết</button>
+                            <button class="btnhover chi_tiet imgSPBoxCuaHang">Mua ngay</button>
                         </div>
                     </div>
                 </div>
@@ -511,8 +512,8 @@
                             <p>1 ly siêu ngon safdasf 1 ly siêu ngon safd</p>  
                         </div>
                         <div class="nut_bam">
-                            <button class="mua_ngay imgSPBoxCuaHang">Mua ngay</button>
-                            <button class="chi_tiet">Chi tiết</button>
+                            <button class="btnhover mua_ngay ">Chi tiết</button>
+                            <button class="btnhover chi_tiet imgSPBoxCuaHang">Mua ngay</button>
                         </div>
                     </div>
                 </div>
@@ -527,8 +528,8 @@
                             <p>1 ly siêu ngon safdasf 1 ly siêu ngon safd</p>  
                         </div>
                         <div class="nut_bam">
-                            <button class="mua_ngay imgSPBoxCuaHang">Mua ngay</button>
-                            <button class="chi_tiet">Chi tiết</button>
+                            <button class="btnhover mua_ngay ">Chi tiết</button>
+                            <button class="btnhover chi_tiet imgSPBoxCuaHang">Mua ngay</button>
                         </div>
                     </div>
                 </div>    
@@ -592,55 +593,56 @@
                 </div>
             </div>
         </div>
-    <!-- Box Liên hệ -->
-        <div id="boxlienhe" class="box">
-            <div class="boxlogo">
-                <h2></h2>
-                <span class="span0"></span>
-                <img id="inglogomiutimoLH" class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
-                <span class="span1">Trà sữa và bạn</span>
-                <span class="span2">Liên hệ</span>
-            </div>
-            <div class="box_lien_he">
-                <div class="box_tren_duoi">
-                    <div class="box_trai_phai_tren">
-                        <img src="IMG/anh_cuoi_tra_sua_va_ban.png" alt="">
-                    </div>
-                    <div class="box_trai_phai_tren">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902365.6818415667!2d103.7598606155717!3d17.22344650237801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3140b1ced4b08e39%3A0xe63766baac056d38!2sNhat%20timo!5e0!3m2!1sen!2s!4v1679844785844!5m2!1sen!2s" width="100%" height="autocomplete" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                
-                    </div>
+    </div>
+     <!-- PHẦN CUỐI -->
+     <div id="boxlienhe" class="box">
+        <div class="boxlogo">
+            <h2></h2>
+            <span class="span0"></span>
+            <img id="inglogomiutimoLH" class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
+            <span class="span1">Trà sữa và bạn</span>
+            <span class="span2">Liên hệ</span>
+        </div>
+        <div class="box_lien_he">
+            <div class="box_tren_duoi">
+                <div class="box_trai_phai_tren">
+                    <img src="IMG/anh_cuoi_tra_sua_va_ban.png" alt="">
                 </div>
-                <div class="box_tren_duoi">
-                    <div class="box_trai_phai_duoi">
-                        <div class="TT_lien_he">
-                            <img class="icon_TT" src="IMG/icon_gmail.png" alt="">
-                            <a href="https://mail.google.com/mail/u/0/#inbox">nguyenvannhatltqb@gmail.com</a>
-                        </div>
-                        <div class="TT_lien_he">
-                            <img class="icon_TT" src="IMG/icon-youtube.png" alt="">
-                            <a href="https://www.youtube.com/@NhatTimo/videos">Nhật Timo</a>
-                        </div>
-                        <div class="TT_lien_he">
-                            <img class="icon_TT" src="IMG/icons-DT.png" alt="">
-                            <a href="">0857075999</a>
-                        </div>
-                    </div>
-                    <div class="box_trai_phai_duoi">
-                        <div class="TT_lien_he">
-                            <img class="icon_TT" src="IMG/icon_facebock.png" alt="">
-                            <a href="https://www.facebook.com/profile.php?id=100038476450011">Nguyễn Nhật(Poly moll)</a>
-                        </div>
-                        <div class="TT_lien_he">
-                            <img onclick="getLocation() " id="location" class="icon_TT" src="IMG/location.png" alt="">
-                            <a href="#">Định vị vị trí</a>
-                        </div>
-                        <img class="logo" src="IMG/Miu-timo.png" alt="">
-                    </div>
+                <div class="box_trai_phai_tren">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902365.6818415667!2d103.7598606155717!3d17.22344650237801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3140b1ced4b08e39%3A0xe63766baac056d38!2sNhat%20timo!5e0!3m2!1sen!2s!4v1679844785844!5m2!1sen!2s" width="100%" height="autocomplete" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                
                 </div>
             </div>
-            <div class="boxtruotlentop">
-                <a href="javascript:;" onclick="goto(0)" class="boxtrontruotlentop">&#10097;</a>
+            <div class="box_tren_duoi">
+                <div class="box_trai_phai_duoi">
+                    <div class="TT_lien_he">
+                        <img class="icon_TT" src="IMG/icon_gmail.png" alt="">
+                        <a href="https://mail.google.com/mail/u/0/#inbox">nguyenvannhatltqb@gmail.com</a>
+                    </div>
+                    <div class="TT_lien_he">
+                        <img class="icon_TT" src="IMG/icon-youtube.png" alt="">
+                        <a href="https://www.youtube.com/@NhatTimo/videos">Nhật Timo</a>
+                    </div>
+                    <div class="TT_lien_he">
+                        <img class="icon_TT" src="IMG/icons-DT.png" alt="">
+                        <a href="">0857075999</a>
+                    </div>
+                </div>
+                <div class="box_trai_phai_duoi">
+                    <div class="TT_lien_he">
+                        <img class="icon_TT" src="IMG/icon_facebock.png" alt="">
+                        <a href="https://www.facebook.com/profile.php?id=100038476450011">Nguyễn Nhật(Poly moll)</a>
+                    </div>
+                    <div class="TT_lien_he">
+                        <img onclick="getLocation() " id="location" class="icon_TT" src="IMG/location.png" alt="">
+                        <a href="#">Định vị vị trí</a>
+                    </div>
+                    <img class="logo" src="IMG/Miu-timo.png" alt="">
+                </div>
             </div>
+        </div>
+        <div class="boxtruotlentop">
+            <a href="javascript:;">&#10097;</a>
+            <div class="boxtrontruotlentop" onclick="goto(0)"></div>
         </div>
     </div>
 </body>

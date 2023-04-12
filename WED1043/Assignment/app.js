@@ -1,6 +1,45 @@
+//__________________________________________________________________
+//CODE JS HOVER btn
+var btnhover = document.getElementsByClassName("btnhover");
+console.log(btnhover);
+for (let i = 0; i < btnhover.length; i++) {
+  btnhover[i].addEventListener("mousemove",function(){
+    btnhover[i].classList.add('hoverbtnopacity');
+    btnhover[i].style.cursor = 'pointer';
+   });
+   btnhover[i].addEventListener("mouseout",function(){
+    btnhover[i].classList.remove('hoverbtnopacity');
+   });
+}
+
+// Làm việc với thẻ nav
+var hoverbtnnav = document.getElementsByClassName("btn");
+var hoverbtnnav1 = document.getElementsByClassName("btn1");
+console.log(hoverbtnnav);
+for (let i = 0; i < hoverbtnnav.length; i++) {
+  // khi click chuột lên btn thì làm
+  hoverbtnnav[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("activebtnnav");
+  current[0].className = current[0].className.replace(" activebtnnav", "");
+  this.className += " activebtnnav";
+  });
+  
+  // khi di chuột vào btn thì làm
+  hoverbtnnav[i].addEventListener('mousemove',function(){
+    hoverbtnnav[i].classList.add("hoverbtnnav")
+  });
+  
+  // khi di chuột ra btn thì làm
+  hoverbtnnav[i].addEventListener('mouseout',function(){
+    hoverbtnnav[i].classList.remove("hoverbtnnav")
+  }); 
+}
+
 //CODE JS cho thẻ nav ( Thanh menu )
+
 window.onscroll = function(){
   console.log(document.documentElement.scrollTop);
+  var boxslide = document.getElementById("padingbox_slide")
   var navtimo = document.getElementById('navtimo');
   navtimo.style.zIndex = 2;
   navtimo.style.height= '60px';
@@ -9,13 +48,17 @@ window.onscroll = function(){
     navtimo.style.transitionDuration = '500ms';
     navtimo.style.backgroundColor = 'rgba(4, 4, 3, 0.694)';
     navtimo.style.animation = "navshow 0.3s linear";
+    boxslide.style.marginTop="280px";
   }else{
     navtimo.style.position ='relative' ;
     navtimo.style.backgroundColor = 'rgba(49, 18, 2, 0.594)';
     navtimo.style.top = 0;
-    navtimo.style.transitionDuration = '500ms';
+    navtimo.style.transitionDuration = '300ms';
     navtimo.style.animation = "none";
+    boxslide.style.marginTop="0";
   }
+
+  // Hiệu ứng trsnfom logo timo
   var inglogomiutimo = document.getElementById('inglogomiutimoGT');
   if(document.documentElement.scrollTop > 500 || document.body.scrollTop > 500 ){
     // inglogomiutimo.style.
@@ -50,6 +93,7 @@ function exitshowIMG(){
 
 // ____________________________________________________________________
 // CODE JS cho lúc trượt web
+goto(0);
 function goto(px){
   window.scrollTo(0,px);
   // var runtimeweb = setInterval(function(){
@@ -59,6 +103,7 @@ function goto(px){
   //   }
   // },1);
 }
+
 
 // ____________________________________________________________________
 // CODE JS cho box slide
@@ -93,6 +138,7 @@ function img(value) {
   chamTron[id - 1].className += " active";  // chamTron[index] thay đổi tên class = " active"
 }
 
+
 // ____________________________________________________________________
 // CODE JS cho box slide tự động chuyển tiếp img
 let idAutu = 0;
@@ -106,7 +152,7 @@ function autuImg() {
   }
   idAutu++;
   if (idAutu > imgs.length){
-    idAutu = 1
+    idAutu = 1;
   }    
   for (i = 0; i < chamTron.length; i++) {
     chamTron[i].className = chamTron[i].className.replace(" active", "");
@@ -119,8 +165,8 @@ function autuImg() {
 // ____________________________________________________________________
 // CODE JS cho item đăng nhập và đăng ký
 // Tài khoản, Mật khẩu mặc định
-const tk = "nguyenvannhat"
-const mk = "nhat12345"
+const tk = "nguyenvannhat";
+const mk = "nhat12345";
 
 // kiểm tra đăng nhập
 // var getinput = document.getElementById("inputdangnhap")
@@ -142,6 +188,7 @@ const mk = "nhat12345"
 //     getinput.className = 'sai'
 //   }
 // }
+
 
 
 //___________box đăng nhập
@@ -323,9 +370,9 @@ function hasWhiteSpace(str) {
     return str.indexOf(' ') >= 0;
 }
 var getDiv =document.getElementsByTagName("div")
-console.log(getDiv)
+console.log(getDiv);
 function off(){
-  getDiv[0].setAttribute("class",'huytrinhchieutext')
+  getDiv[0].setAttribute("class",'huytrinhchieutext');
 }
 
 
@@ -351,19 +398,25 @@ function showPosition(position) {
 function showError(error) {
   switch(error.code) {
     case error.PERMISSION_DENIED:
-      x.innerHTML = "User denied the request for Geolocation."
+      x.innerHTML = "User denied the request for Geolocation.";
       break;
     case error.POSITION_UNAVAILABLE:
-      x.innerHTML = "Location information is unavailable."
+      x.innerHTML = "Location information is unavailable.";
       break;
     case error.TIMEOUT:
-      x.innerHTML = "The request to get user location timed out."
+      x.innerHTML = "The request to get user location timed out.";
       break;
     case error.UNKNOWN_ERROR:
-      x.innerHTML = "An unknown error occurred."
+      x.innerHTML = "An unknown error occurred.";
       break;
   }
 }
+
+
+
+
+
+
 
 
 
