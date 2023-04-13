@@ -1,3 +1,190 @@
+goto(-1);
+window.onscroll = function(){
+  console.log(document.documentElement.scrollTop);
+  var phuboxslide = document.getElementById("phuboxslide")
+  var navtimo = document.getElementById('navtimo');
+  navtimo.style.zIndex = 1;
+  navtimo.style.height= '60px';
+  if(document.documentElement.scrollTop > 205 || document.body.scrollTop > 205 ){
+    navtimo.style.position ='fixed' ;
+    navtimo.style.transitionDuration = '500ms';
+    navtimo.style.backgroundColor = 'rgba(4, 4, 3, 0.694)';
+    navtimo.style.animation = "navshow 0.3s linear";
+    phuboxslide.style.display = 'flex';
+  }else{
+    navtimo.style.position ='relative' ;
+    navtimo.style.backgroundColor = 'var(--colorBackgroundNav)';
+    navtimo.style.top = 0;
+    navtimo.style.transitionDuration = '300ms';
+    navtimo.style.animation = "none";
+    phuboxslide.style.display = 'none';
+  
+  }
+  // Hiệu ứng trsnfom logo timo
+  var inglogomiutimo = document.getElementById('inglogomiutimoGT');
+  if(document.documentElement.scrollTop > 500 || document.body.scrollTop > 500 ){
+  // inglogomiutimo.style.
+  }else{
+    inglogomiutimo.style.position ='absolute' ;
+  }
+};
+var phuboxslide = document.getElementById('phuboxslide');
+phuboxslide.addEventListener("mouseover",function(){
+  phuboxslide.style.height = '180px';
+  phuboxslide.style.color = 'rgb(225, 215, 215)';
+  phuboxslide.style.transitionDuration = '300ms';
+  phuboxslide.style.backgroundColor = 'rgba(4, 4, 3, 0.694)';
+});
+phuboxslide.addEventListener("mouseout",function(){
+  phuboxslide.style.height = '100px';
+  phuboxslide.style.animation = 'idphuboxslide 0.7s linear forwards';
+  phuboxslide.style.color = 'var(--colorBackgroundNav)';
+  phuboxslide.style.backgroundColor = 'transparent';
+});
+
+var h1phuboxslide = document.getElementById('h1phuboxslide');
+h1phuboxslide.addEventListener('mouseover',function(){
+  h1phuboxslide.style.animation = 'hovertextphuboxslide 0.2s linear forwards';
+  h1phuboxslide.style.transitionDuration = '500s'; 
+  h1phuboxslide.style.backgroundColor = 'var(--colorBackgroundNav)';
+  h1phuboxslide.style.color = 'rgb(236, 231, 231)';
+});
+h1phuboxslide.addEventListener('mouseout',function(){
+  h1phuboxslide.style.animation='textphuboxslide 0.2s linear forwards';
+  h1phuboxslide.style.backgroundColor = '#c14b24';
+  h1phuboxslide.style.color = 'var(--colorBackgroundNav)';
+
+
+  
+});
+
+// ____________________________________________________________________
+// CODE JS cho  "Chào mừng bạn đến với shop Miu timo"
+const text = document.querySelector('.text');
+const charArr = text.textContent.split('');
+
+let dataText = '';
+const arrClass = [];
+const arrNumberRandom = [];
+charArr.forEach((element, index) => {
+    if (hasWhiteSpace(element)) {
+        dataText += `<span class="letter letter-${index}">&nbsp;</span>`;
+    } else {
+        dataText += `<span class='letter letter-${index}'>${element}</span>`;
+    }
+});
+
+text.innerHTML = dataText;
+
+for (let i = 0; i < charArr.length; i++) {
+    arrNumberRandom.push(i);
+    arrClass.push(`letter-${i}`);
+}
+let delay = 0;
+setTimeout(function () {
+    const letters = document.querySelectorAll('.letter');
+    for (let i = 0; i < charArr.length; i++) {
+        let indexRandom = randomNumber(arrNumberRandom.length);
+
+        const posOfletter = arrNumberRandom[indexRandom];
+        const letter = letters[posOfletter];
+
+        letter.style.transitionDelay = `${(delay += 0.01)}s`;
+        letter.style.animationDelay = `${(delay += 0.1)}s`;
+        letter.classList.add('appear', 'go-down');
+
+        arrNumberRandom.splice(indexRandom, 1);
+    }
+}, 500);
+
+function randomNumber(length) {
+    return Math.floor(Math.random() * length);
+}
+function hasWhiteSpace(str) {
+    return str.indexOf(' ') >= 0;
+}
+var getDiv =document.getElementsByTagName("div")
+console.log(getDiv);
+function off(){
+  getDiv[0].setAttribute("class",'huytrinhchieutext');
+};
+
+
+
+
+// ______________________________________________________________________
+// CODE JS SHOW box item mua hàng
+// web đã được nạp xong mới đc làm
+function Afterloadingtheweb() {
+  var imgSPBoxCuaHang = document.getElementsByClassName("imgSPBoxCuaHang");
+  for (let i = 0; i < imgSPBoxCuaHang.length; i++) {
+   imgSPBoxCuaHang[i].addEventListener("click",function(){
+     showIMG(this);
+   });
+  }
+ };
+
+
+
+//CODE JS cho thẻ nav ( Thanh menu )
+
+
+
+// hàm hiện box mua hàng
+var myModolIMG = document.getElementById("myModolIMG");
+function showIMG(IMG){
+var imgIDModol = document.getElementById("IMGIDModol");
+imgIDModol.src = IMG.src;
+// myModolIMG.classList.toggle("showboxdangnhap");
+myModolIMG.style.display = 'flex';
+} ;
+function exitshowIMG(){
+myModolIMG.style.display = 'none';
+} ;
+
+
+// Làm việc với thẻ nav hover active
+var hoverbtnnav = document.getElementsByClassName("btn");
+var hoverbtnnav1 = document.getElementsByClassName("btn1");
+for (let i = 0; i < hoverbtnnav.length; i++) {
+
+  // khi di chuột vào btn thì làm
+  hoverbtnnav[i].addEventListener('mousemove',function(){
+    hoverbtnnav[i].classList.add("hoverbtnnav");
+    hoverbtnnav[i].cursor='pointer';
+  });
+  
+  // khi di chuột ra btn thì làm
+  hoverbtnnav[i].addEventListener('mouseout',function(){
+    hoverbtnnav[i].classList.remove("hoverbtnnav");
+  }); 
+
+  // khi click chuột lên btn thì làm
+  hoverbtnnav[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("activebtnnav");
+    current[0].className = current[0].className.replace(" activebtnnav", "");
+    this.className += " activebtnnav";
+    this.color ='var(--colorBackgroundNav)';
+  });
+}
+
+
+
+
+// ____________________________________________________________________
+// CODE JS cho lúc trượt web
+function goto(px){
+  window.scrollTo(0,px);
+  // var runtimeweb = setInterval(function(){
+  //   document.documentElement.scrollTop -= 25;
+  //   if(document.documentElement.scrollTop <= 0){
+  //     clearInterval(runtimeweb);
+  //   }
+  // },1);
+};
+
+
+
 //__________________________________________________________________
 //CODE JS HOVER btn
 var btnhover = document.getElementsByClassName("btnhover");
@@ -12,97 +199,6 @@ for (let i = 0; i < btnhover.length; i++) {
    });
 }
 
-// Làm việc với thẻ nav
-var hoverbtnnav = document.getElementsByClassName("btn");
-var hoverbtnnav1 = document.getElementsByClassName("btn1");
-console.log(hoverbtnnav);
-for (let i = 0; i < hoverbtnnav.length; i++) {
-  // khi click chuột lên btn thì làm
-  hoverbtnnav[i].addEventListener("click", function() {
-  var current = document.getElementsByClassName("activebtnnav");
-  current[0].className = current[0].className.replace(" activebtnnav", "");
-  this.className += " activebtnnav";
-  });
-  
-  // khi di chuột vào btn thì làm
-  hoverbtnnav[i].addEventListener('mousemove',function(){
-    hoverbtnnav[i].classList.add("hoverbtnnav")
-  });
-  
-  // khi di chuột ra btn thì làm
-  hoverbtnnav[i].addEventListener('mouseout',function(){
-    hoverbtnnav[i].classList.remove("hoverbtnnav")
-  }); 
-}
-
-//CODE JS cho thẻ nav ( Thanh menu )
-
-window.onscroll = function(){
-  console.log(document.documentElement.scrollTop);
-  var boxslide = document.getElementById("padingbox_slide")
-  var navtimo = document.getElementById('navtimo');
-  navtimo.style.zIndex = 2;
-  navtimo.style.height= '60px';
-  if(document.documentElement.scrollTop > 205 || document.body.scrollTop > 205 ){
-    navtimo.style.position ='fixed' ;
-    navtimo.style.transitionDuration = '500ms';
-    navtimo.style.backgroundColor = 'rgba(4, 4, 3, 0.694)';
-    navtimo.style.animation = "navshow 0.3s linear";
-    boxslide.style.marginTop="280px";
-  }else{
-    navtimo.style.position ='relative' ;
-    navtimo.style.backgroundColor = 'rgba(49, 18, 2, 0.594)';
-    navtimo.style.top = 0;
-    navtimo.style.transitionDuration = '300ms';
-    navtimo.style.animation = "none";
-    boxslide.style.marginTop="0";
-  }
-
-  // Hiệu ứng trsnfom logo timo
-  var inglogomiutimo = document.getElementById('inglogomiutimoGT');
-  if(document.documentElement.scrollTop > 500 || document.body.scrollTop > 500 ){
-    // inglogomiutimo.style.
-  }else{
-    inglogomiutimo.style.position ='absolute' ;
-  }
-};
-
-// ______________________________________________________________________
-// CODE JS SHOW box item mua hàng
-// web đã được nạp xong mới đc làm
-function Afterloadingtheweb() {
- var imgSPBoxCuaHang = document.getElementsByClassName("imgSPBoxCuaHang");
- for (let i = 0; i < imgSPBoxCuaHang.length; i++) {
-  imgSPBoxCuaHang[i].addEventListener("click",function(){
-    showIMG(this);
-  });
- }
-}
-// hàm hiện box mua hàng
-var myModolIMG = document.getElementById("myModolIMG");
-function showIMG(IMG){
-  var imgIDModol = document.getElementById("IMGIDModol");
-  imgIDModol.src = IMG.src;
-  // myModolIMG.classList.toggle("showboxdangnhap");
-  myModolIMG.style.display = 'flex';
-} 
-function exitshowIMG(){
-  myModolIMG.style.display = 'none';
-} 
-
-
-// ____________________________________________________________________
-// CODE JS cho lúc trượt web
-goto(0);
-function goto(px){
-  window.scrollTo(0,px);
-  // var runtimeweb = setInterval(function(){
-  //   document.documentElement.scrollTop -= 25;
-  //   if(document.documentElement.scrollTop <= 0){
-  //     clearInterval(runtimeweb);
-  //   }
-  // },1);
-}
 
 
 // ____________________________________________________________________
@@ -323,59 +419,6 @@ function start()
       start();
     }, 1000);
 }
-// ____________________________________________________________________
-// CODE JS cho  "Chào mừng bạn đến với shop Miu timo"
-const text = document.querySelector('.text');
-const charArr = text.textContent.split('');
-
-let dataText = '';
-const arrClass = [];
-const arrNumberRandom = [];
-
-charArr.forEach((element, index) => {
-    if (hasWhiteSpace(element)) {
-        dataText += `<span class="letter letter-${index}">&nbsp;</span>`;
-    } else {
-        dataText += `<span class='letter letter-${index}'>${element}</span>`;
-    }
-});
-
-text.innerHTML = dataText;
-
-for (let i = 0; i < charArr.length; i++) {
-    arrNumberRandom.push(i);
-    arrClass.push(`letter-${i}`);
-}
-let delay = 0;
-setTimeout(function () {
-    const letters = document.querySelectorAll('.letter');
-    for (let i = 0; i < charArr.length; i++) {
-        let indexRandom = randomNumber(arrNumberRandom.length);
-
-        const posOfletter = arrNumberRandom[indexRandom];
-        const letter = letters[posOfletter];
-
-        letter.style.transitionDelay = `${(delay += 0.01)}s`;
-        letter.style.animationDelay = `${(delay += 0.1)}s`;
-        letter.classList.add('appear', 'go-down');
-
-        arrNumberRandom.splice(indexRandom, 1);
-    }
-}, 500);
-
-function randomNumber(length) {
-    return Math.floor(Math.random() * length);
-}
-function hasWhiteSpace(str) {
-    return str.indexOf(' ') >= 0;
-}
-var getDiv =document.getElementsByTagName("div")
-console.log(getDiv);
-function off(){
-  getDiv[0].setAttribute("class",'huytrinhchieutext');
-}
-
-
 
 
 // ____________________________________________________________________

@@ -18,9 +18,13 @@ body{
     --colortextTieuDe: rgb(103, 93, 80);
     --backgroundbox: rgb(171, 196, 170);
     --colorboderbottominput: rgb(247, 247, 247);
+    --colornavjs:rgba(4, 4, 3, 0.694);
 }
-/* ______________________________________________________________________________________________*/
 
+
+
+
+/* ______________________________________________________________________________________________*/
 /* chào mừng quý khách đến với miu timo */
 .boxhello{
     position: fixed;
@@ -30,14 +34,108 @@ body{
     background-color: #000000b7;
     transition-duration: 500ms;
     z-index: 1;
-    animation: demo 8s linear forwards;
+    animation: demo 7s linear forwards;
     filter: drop-shadow(0px 2px 2px rgba(17, 16, 16, 0.147))
             drop-shadow(0px 10px 3px rgba(22, 21, 21, 0.23))
             drop-shadow(0px 10px 3px rgba(19, 20, 19, 0.506));
 }
+.huytrinhchieutext{
+    display: none;
+}
+@keyframes demo {
+    0%{
+        opacity: 0;
+    }
+    10%{
+        opacity: 0.8;
+    }
+    50%, 90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.boxhello h1{
+    z-index: 4;
+    width: 100%;
+    font-size: 500%;
+    position: absolute;
+    color: whitesmoke;
+    margin: 370px auto;
+    text-align: center; 
+    transition-duration: 500ms;
+    animation: demotext 7s linear forwards ;
+} 
+@keyframes demotext {
+    0% {
+        opacity: 0.3;
+        transform: translateY(-325px);
+    }
+    10%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    20%{
+        opacity: 0.8;
+    }
+    70%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    90%{
+        opacity: 0;
+        font-size: 500%;
+        transform: translateY(25px);
+        transform: scale(1.5);
+    }
+    91%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.letter {
+    cursor: pointer;
+    position: relative;
+    letter-spacing: 10px; 
+    opacity: 0;
+    visibility: hidden;
+    background-color: rgba(59, 57, 57, 0.271);
+    padding: 100px 0 ;
+    transition-duration: 500ms;
+    /* animation: demotext 10s linear forwards ; */
+}
+@keyframes ziczac {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-40px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+.letter.appear {
+    opacity: 1;
+    visibility: visible;
+    animation: ziczac 0.1s linear;
+}
+.letter.go-down {
+    transform: translateX(0) rotate(0);
+}
 
 
-/* ______________________________________________________________________________________________*/
+
+
+
+
+
+
+
+/* ________________________________________________________________________________________________________________________ */
 /* box tt mua hàng, thêm hàng vào giỏ, thanh toan, tiền  */
 #myModolIMG{
     position:fixed;
@@ -65,7 +163,6 @@ body{
         transform: translateY(40px);
     }
 }
-
 #myModolIMG>.boxitemMyModol>.exit{
     width: 20px;
     height: 20px;
@@ -138,9 +235,7 @@ body{
     width: 100%;
     height: 85%;
     padding-left: 5px;
-   
 }
-
 .boxitemMyModol>.itemphai>.itemphaicon>.boxtext{
     width: 100%;
     height: auto;
@@ -215,110 +310,7 @@ body{
 
 
 
-
-
-
-
-
-
-/* ________________________________________________________________________________________________________________________ */
-.huytrinhchieutext{
-    display: none;
-}
-@keyframes demo {
-    0%{
-        opacity: 0;
-    }
-    10%{
-        opacity: 0.8;
-    }
-    50%, 90%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
-}
-.boxhello h1{
-    z-index: 3;
-    width: 100%;
-    position: absolute;
-    font-size: 500%;
-    color: whitesmoke;
-    margin: 300px auto;
-    text-align: center; 
-    transition-duration: 500ms;
-    animation: demotext 9s linear forwards ;
-} 
-@keyframes demotext {
-    0% {
-        opacity: 0.3;
-        font-size: 800%;
-        transform: translateY(-1350px);
-    }
-    10%{
-        opacity: 1;
-        transform: translateY(0);
-    }
-    20%{
-        font-size: 500%;
-        opacity: 0.8;
-        transform: translateY(0);
-    }
-    30%{
-        opacity: 1;
-        transform: translateY(5px);
-    }
-    35%{
-        opacity: 1;
-        transform: translateY(15px);
-    }
-    90%{
-        opacity: 1;
-        transform: translateY(30px);
-    }
-    100%{
-        opacity: 0;
-        transform: translateY(0);
-    }
-}
-.letter {
-    cursor: pointer;
-    position: relative;
-    letter-spacing: 10px; 
-    opacity: 0;
-    visibility: hidden;
-    background-color: rgba(59, 57, 57, 0.271);
-    padding: 100px 0 ;
-    transition-duration: 500ms;
-    /* animation: demotext 10s linear forwards ; */
-}
-@keyframes ziczac {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-40px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-.letter.appear {
-    opacity: 1;
-    visibility: visible;
-    animation: ziczac 0.1s linear;
-}
-.letter.go-down {
-    transform: translateX(0) rotate(0);
-}
-
-
-
-
-
 /* ________________________________________________________________________________ */
-
 header{
     width: 100%;
     height: auto;
@@ -334,16 +326,14 @@ header img{
 
 
 
-
-
 /* ______________________________________________________________________ */
-/* Thanh menu */
+/* Thanh menu (nav) */
 nav{
     z-index: 1;
     width: 100%;
     height: 60px;
     background-color:var(--colorBackgroundNav);
-    display: flex; /* nằm 1 hàng */
+    display: flex; 
     flex-direction: row;
     justify-content: space-between;  
 }
@@ -357,12 +347,8 @@ nav{
     }
 }
 .btn {
-	outline: none;
 	font-family: inherit;
 	font-size: 15px;
-	cursor: pointer;
-	/* border: 3px solid #fff; */
-	color: #ffffff;
 	display: inline-block;
 	overflow: hidden;
 	text-transform: uppercase;
@@ -373,7 +359,7 @@ nav{
 	transition: all 0.7s;
 }
 /* nền trắng hiệu ứng*/ 
- .btn:after {
+.btn:after {
 	content: '';
 	position: absolute;
 	z-index: -1;
@@ -382,15 +368,22 @@ nav{
 	transition: all 0.2s;
 }
 .activebtnnav{
-    color: var(--colorBackgroundNav);
     background-color: #ebe7e5;
+    color: var(--colorBackgroundNav);
 }
+.hoverbtnnav{
+    color: var(--colorBackgroundNav);
+} 
+
 .hoverbtnnav:after {
 	height: 230%;
     width: 110%;
 	opacity: 0.9;
 } 
+
+
 .btn1:after {
+    content: '';
 	width: 100%;
 	height: 0;
 	top: 50%;
@@ -402,16 +395,10 @@ nav{
 	-ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
 	transform: translateX(-50%) translateY(-50%) rotate(45deg);
 }
-.btn1:hover{
-	color: #4a1e07;
-}
 .btn1:hover:after {
 	height: 155%;
 	opacity: 1;
 }
-
-
-
 
 
 
@@ -423,11 +410,7 @@ nav>.nav_box{
 nav>.nav_box .chulogo_miutimo{
     height: 100%;
     width: 25%;
-    margin: auto;
-    
-}
-nav img{
-    margin-right: 10px;
+    padding: 0 20px;
     cursor: pointer;
 }
 nav a{
@@ -435,8 +418,6 @@ nav a{
     text-align: center;
     text-decoration: none;
     width: 130px;
-    font-family:'FontAwesome';
-    font-size: 18px;
     color: rgb(245, 238, 238);
     background-color: inherit;
     border: none;
@@ -513,6 +494,7 @@ nav>.nav_box>.icon>.soLuong{
 #userdangnhap{
     position: absolute;
     display: none;
+    border-bottom: 2px solid var(--colorBackgroundNav);
 }
 #userdangnhap input{
     outline: none;
@@ -522,8 +504,8 @@ nav>.nav_box>.icon>.soLuong{
     border: none;
     margin: auto;
     margin-bottom: 20px;
-    border-bottom: 2px solid rgb(68, 29, 7) ;
-    background-color: #2f272458;  
+    border-bottom: 2px solid var(--colorboderbottominput) ;
+    background-color: #c94e22f4;  
 }
 /* show box đăng nhập , đăng ký */
 #userdangnhap.showboxdangnhap {
@@ -543,7 +525,7 @@ nav>.nav_box>.icon>.soLuong{
     drop-shadow(0px 1px 2px rgba(16, 8, 8, 0.889));
 }
 #userdangnhap.showboxdangnhap h2 {
-    background-color: #a56649;
+    background-color: var(--colorBackgroundNav);
     margin-top: 0;
     padding: 15px;
     margin-bottom: 20px;
@@ -562,14 +544,15 @@ nav>.nav_box>.icon>.soLuong{
     width: 80%;
     height: 30px;
     margin: 15px auto 0 auto;
-    background-color: rgba(23, 22, 22, 0.244);
+    padding-left: 10px;
+    background-color: rgba(0, 0, 0, 0.284);
     border: none;
-    border-bottom: 2px solid rgb(69, 65, 65) ;
+    border-bottom: 2px solid var(--colorBackgroundNav) ;
     transition-duration: 300ms; 
 }
 
 #userdangnhap.showboxdangnhap input:focus{
-    border-bottom: 2px solid rgb(222, 211, 211) ;
+    border-bottom: 2px solid var(--colorboderbottominput) ;
 }
 
 #userdangnhap.showboxdangnhap>.btn_DK_DN button{
@@ -583,17 +566,16 @@ nav>.nav_box>.icon>.soLuong{
 }
 
 #userdangnhap.showboxdangnhap>.btn_DK_DN button:hover{
-    color: rgb(219, 215, 201);
-    background-color: rgba(30, 30, 27, 0.447);
+    color: var(--colorboderbottominput);
 }
 #userdangnhap.showboxdangnhap>.btn_DK_DN button:active{
-    background-color: rgba(30, 30, 27, 0.765);
+    background-color: var(--colortextTieuDe);
 }
 
 /* hiệu ứng bnt */
 .btnanimation span{
     position: absolute;
-    background-color: #b6602b;
+    background-color: var(--colorBackgroundNav);
     display: block;
     transition: all 0.25s linear ;
 }
@@ -648,7 +630,8 @@ nav>.nav_box>.icon>.soLuong{
     margin: auto;
     display: flex;
     flex-direction: column;
-    backdrop-filter: blur(120px);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--colorBackgroundNav);
     border-radius: 0 0 20px 20px;
     filter: drop-shadow(0px 0px 2px rgba(20, 15, 2, 0.3))
     drop-shadow(0px 1px 3px rgba(150, 64, 64, 0.2))
@@ -659,7 +642,7 @@ nav>.nav_box>.icon>.soLuong{
     flex-direction: column;
 }
 .showboxdangky>.ttdangky h2{
-    background-color: #a56649;
+    background-color: var(--colorBackgroundNav);
     text-align: center;
     padding: 15px;
     margin-top: 0;
@@ -670,13 +653,24 @@ nav>.nav_box>.icon>.soLuong{
     width: 80%;
     height: 30px;
     margin: 12px auto 0 auto;
+    padding-left: 10px;
     background-color: rgba(0, 0, 0, 0.284);
     border: none;
-    border-bottom: 2px solid gray ;
+    border-bottom: 2px solid var(--colorBackgroundNav) ;
+}
+.showboxdangky>.ttdangky>input:focus{
+    border-bottom: 2px solid var(--colorboderbottominput) ;
 }
 .showboxdangky>.ttgiotinh fieldset{
     width: 80%;
+    height: 70px;
+    padding-left: 10px;
     margin: 10px auto;
+    line-height: 30px;
+    border: 1px solid var(--colorBackgroundNav);
+}
+.showboxdangky>.ttgiotinh fieldset:hover{
+    border: 1px solid var(--colorboderbottominput);
 }
 .showboxdangky>.btndangky{
     display: flex;
@@ -693,8 +687,7 @@ nav>.nav_box>.icon>.soLuong{
     border: none;
 }
 .showboxdangky>.btndangky button:hover{
-    background-color: rgba(80, 16, 16, 0.302); 
-    color: rgb(219, 215, 201);
+    color: var(--colorboderbottominput);
 }
 .showboxdangky>.btndangky button:nth-child(1){
     justify-content: end;
@@ -726,13 +719,77 @@ nav>.nav_box>.icon>.soLuong{
     color: rgb(246, 26, 26);
 }
 
-/* _________________________________________ */
-
-
-/* ///////////////////////////////////////////////////////// */
+/* _____________________________________________________________________________ */
 
 
 
+#phuboxslide{
+    display: none;
+    justify-content: center;
+    width: 100%;
+    margin: 100px auto 0 auto;
+    height: 100px;
+    transition-duration: 300ms; 
+    color: var(--colorBackgroundNav);
+    animation: idphuboxslide 0.7s linear forwards ;
+}
+@keyframes idphuboxslide {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#phuboxslide h1{
+    background-color: #c14b24;
+    font-size: 70px;
+    height: 40px;
+    margin-top: 60px;
+    text-transform: uppercase;
+    transition-duration: 500ms; 
+    animation: textphuboxslide 0.2s linear forwards ;
+}
+@keyframes textphuboxslide {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+        transition-duration: 500ms;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        transition-duration: 500ms;
+    }
+}
+
+
+/* hover */
+/* #hoverphuboxslide h1:hover{
+    transition-duration: 500ms;
+    animation: hovertextphuboxslide 0.2s linear forwards ;
+} */
+@keyframes hovertextphuboxslide {
+    0% {
+        transform: translateY(0);
+        transition-duration: 500ms;
+    }
+    100% {
+        color : rgb(236, 231, 231);
+        background-color: var(--colorBackgroundNav);
+        transform: translateY(-10px);
+    }
+}
+
+/* #hoverphuboxslide:hover{
+    height: 180px;
+    color: rgb(225, 215, 215);
+    transition-duration: 100ms; 
+    background-color: rgba(4, 4, 3, 0.694) ;
+} */
 
 
 
@@ -741,6 +798,13 @@ nav>.nav_box>.icon>.soLuong{
 
 
 
+
+
+
+
+
+
+/* ________________________________________________________________________________ */
 
 /* BOX SLIDE */
 /* khung tong */
