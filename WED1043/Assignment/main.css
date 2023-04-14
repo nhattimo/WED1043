@@ -23,25 +23,6 @@ body{
 
 
 
-/* .box>.box_cua_hang>.box_SP>.img_sp:hover{
-    animation: demo2 0.7s 1 forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-@keyframes demo2 {
-    0%{
-        transform: rotateY(0);
-    }
-    25%{
-        transform: translateY(-12px);
-    }
-    100%{
-        transform: translateY(-8px);
-    
-    }
-} */
-
-
-
 /* ______________________________________________________________________________________________*/
 /* chào mừng quý khách đến với miu timo */
 .boxhello{
@@ -487,9 +468,6 @@ nav>.nav_box>.icon>.soLuong{
     background-size: 30px;
     background-position: 45% 50%;
 } 
-.timkiem:hover{
-    border:  1px solid rgba(141, 115, 20, 0.581);
-}
 .timkiem:focus{
     border-radius: 30px;
     width: 160px;
@@ -581,9 +559,45 @@ nav>.nav_box>.icon>.soLuong{
     transition-duration: 300ms; 
 }
 
-#userdangnhap.showboxdangnhap>.btn_DK_DN button:hover{
-    color: var(--colorboderbottominput);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #userdangnhap.showboxdangnhap>.btn_DK_DN button:active{
     background-color: var(--colortextTieuDe);
 }
@@ -685,9 +699,7 @@ nav>.nav_box>.icon>.soLuong{
     line-height: 30px;
     border: 1px solid var(--colorBackgroundNav);
 }
-.showboxdangky>.ttgiotinh fieldset:hover{
-    border: 1px solid var(--colorboderbottominput);
-}
+
 .showboxdangky>.btndangky{
     display: flex;
     flex-direction: row;
@@ -703,9 +715,7 @@ nav>.nav_box>.icon>.soLuong{
     position: relative;
     border: none;
 }
-.showboxdangky>.btndangky button:hover{
-    color: var(--colorboderbottominput);
-}
+
 .showboxdangky>.btndangky button:nth-child(1){
     justify-content: end;
     width: 30%;
@@ -757,10 +767,12 @@ nav>.nav_box>.icon>.soLuong{
 }
 @keyframes idphuboxslide {
     0% {
+        transition-duration: 500ms;
         opacity: 0;
         transform: translateY(-40px);
     }
     100% {
+        transition-duration: 500ms;
         opacity: 1;
         transform: translateY(0);
     }
@@ -779,7 +791,7 @@ nav>.nav_box>.icon>.soLuong{
 @keyframes textphuboxslide {
     0% {
         opacity: 0;
-        transform: translateY(-40px);
+        transform: translateY(-20px);
         transition-duration: 500ms;
     }
     100% {
@@ -814,12 +826,6 @@ nav>.nav_box>.icon>.soLuong{
     }
 }
 
-
-/* hover */
-/* #hoverphuboxslide h1:hover{
-    transition-duration: 500ms;
-    animation: hovertextphuboxslide 0.2s linear forwards ;
-} */
 @keyframes hovertextphuboxslide {
     0% {
         transform: translateY(0);
@@ -832,12 +838,6 @@ nav>.nav_box>.icon>.soLuong{
     }
 }
 
-/* #hoverphuboxslide:hover{
-    height: 180px;
-    color: rgb(225, 215, 215);
-    transition-duration: 100ms; 
-    background-color: rgba(4, 4, 3, 0.694) ;
-} */
 
 
 
@@ -913,11 +913,7 @@ nav>.nav_box>.icon>.soLuong{
     text-align: left;
     color: rgba(181, 175, 175, 0.901);
     border-radius: 10px 0 0 10px;
-    background-color:inherit;
-}
-.box_slide>.nutbam_next_slide>#nut_trai:hover{
-    color: whitesmoke;
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.892), rgba(0, 0, 0, 0));
+    background-color: transparent
 }
 .box_slide>.nutbam_next_slide>#nut_phai{
     cursor: pointer;
@@ -934,12 +930,8 @@ nav>.nav_box>.icon>.soLuong{
     text-align: right;
     border: none;
     border-radius: 0 10px 10px 0;
-    background:initial;
-}
-.box_slide>.nutbam_next_slide>#nut_phai:hover{
-    color: whitesmoke;
-    background-image: linear-gradient(-90deg, rgba(0, 0, 0, 0.892), rgba(0, 0, 0, 0));
-}  
+    background-color: transparent;
+} 
 /* chấm tròn */
 .box_slide>.box_cham_tron{
     height: 40px;
@@ -949,19 +941,18 @@ nav>.nav_box>.icon>.soLuong{
 .box_slide>.box_cham_tron>.cham_tron{
     cursor: pointer;
     margin: 0 5px;
-    color: var(--background1);
+    color: var(--colornavjs);
     transition: all 0.6s ease;
 
 }
-.box_slide>.box_cham_tron>.cham_tron:hover{
-    color: rgb(235, 136, 16);
-    transition: all 0.6s ease;
-}
+
 .active, .box_slide>.box_cham_tron>.cham_tro{
     padding: 0 20px;
     background-color: var(--colorBackgroundNav);
-    border-left: 5px solid var(--colortextTD);
-    border-right: 5px solid var(--colorBackgroundboxlogo);
+    border-bottom: 1px solid var(--colortextTieuDe);
+    border-top: 1px solid var(--colortextTieuDe);
+    border-left: 2px solid var(--colorBackgroundboxlogo);
+    border-right: 2px solid var(--colorBackgroundboxlogo);
     border-radius: 20px;
     color: rgb(20, 12, 1);
 }
@@ -1225,12 +1216,7 @@ from {
     background-color: var(--colorBackgroundNav)
 
 }
-#itemanimationcombo{
-    transition-duration: 200ms; 
-}
-#itemanimationcombo:hover{
-    animation: demo1 0.3s 1 forwards ease;
-}
+
  
 @keyframes demo1 {
     to{
@@ -1260,17 +1246,6 @@ from {
     justify-content: space-between;
     transition-duration: 800ms;
 }
-
-
-.box-menu>.box-doi>.combo>.mua:hover{
-    height: 65px;
-    background-color: var(--colornavjs);
-    color: var(--colorBackgroundNav);
-    transition-duration: 400ms; 
-    font-size: 17px;
-}
-
-
 
 /* btn mua */
 .box-menu>.box-doi>.combo>.mua>button{
@@ -1674,12 +1649,6 @@ input:focus,
     border-radius: 5px;
     transition-duration: 500ms
 }
-.nut_dat_ban:hover{
-    background-color: var(--colorBackgroundboxlogo) ;
-}
-/* .nut_dat_ban:focus{
-    background-color: darkgreen;
-} */
 
 
 
@@ -1773,11 +1742,7 @@ input:focus,
     margin-left: 47.5%;
     margin-right: 48%;
 }
-.boxtruotlentop>.boxtrontruotlentop:hover{
-    cursor: pointer;
-    transform: rotate(-180deg);
-    background-color: #1916161e;
-}
+
 .boxtruotlentop> a{
     position: absolute;
     text-decoration: none;
@@ -2377,8 +2342,48 @@ input:focus,
     drop-shadow(0px 5px 3px rgba(32, 20, 4, 0.889));
 }
 
+.hover_text_trang{
+    color: var(--colorboderbottominput);
+}
+
+.hover_nut_phai_slide{
+    color: whitesmoke;
+    background-image: linear-gradient(-90deg, rgba(0, 0, 0, 0.892), rgba(0, 0, 0, 0));
+}
+
+.hover_nut_trai_slide{
+    color: whitesmoke;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.892), rgba(0, 0, 0, 0));
+}
+
+.hover_cham_tron_slide{
+    transition: all 0.6s ease;
+}
 
 
+#itemanimationcombo{
+    transition-duration: 200ms; 
+}
+#itemanimationcombo:hover{
+    animation: demo1 0.3s 1 forwards ease;
+}
+.showboxdangky>.ttgiotinh fieldset:hover{
+    border: 1px solid var(--colorboderbottominput);
+}
+
+
+.box-menu>.box-doi>.combo>.mua:hover{
+    height: 65px;
+    background-color: var(--colornavjs);
+    color: var(--colorBackgroundNav);
+    transition-duration: 400ms; 
+    font-size: 17px;
+}
+.boxtruotlentop>.boxtrontruotlentop:hover{
+    cursor: pointer;
+    transform: rotate(-180deg);
+    background-color: #1916161e;
+}
 .demo2{
     display: flex;
     justify-content: center;

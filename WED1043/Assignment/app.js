@@ -333,8 +333,46 @@ for (let i = 0; i < hoverfilter.length; i++){
     hoverfilter[i].style.width = '40%';
   }); 
 }
+var btnhovertexttrang = document.getElementsByClassName("btnhovertexttrang");
+for (let i = 0; i < btnhovertexttrang.length; i++){
+  btnhovertexttrang[i].addEventListener('mouseover',function(){
+    btnhovertexttrang[i].classList.add('hover_text_trang');
+  });
+  btnhovertexttrang[i].addEventListener('mouseout',function(){
+    btnhovertexttrang[i].classList.remove('hover_text_trang');
+  }); 
+}
 
+var hovernuttrai = document.getElementsByClassName("hovernuttrai");
+for (let i = 0; i < hovernuttrai.length; i++){
+  hovernuttrai[i].addEventListener('mouseover',function(){
+    hovernuttrai[i].classList.add('hover_nut_trai_slide');
+  });
+  hovernuttrai[i].addEventListener('mouseout',function(){
+    hovernuttrai[i].classList.remove('hover_nut_trai_slide');
+  }); 
+}
 
+var hovernutphai = document.getElementsByClassName("hovernutphai");
+for (let i = 0; i < hovernutphai.length; i++){
+  hovernutphai[i].addEventListener('mouseover',function(){
+    hovernutphai[i].classList.add('hover_nut_phai_slide');
+  });
+  hovernutphai[i].addEventListener('mouseout',function(){
+    hovernutphai[i].classList.remove('hover_nut_phai_slide');
+  }); 
+}
+var hoverchamtron = document.getElementsByClassName("hoverchamtron");
+for (let i = 0; i < hoverchamtron.length; i++){
+  hoverchamtron[i].addEventListener('mouseover',function(){
+    hoverchamtron[i].classList.add('hover_cham_tron_slide');
+    hoverchamtron[i].style.color = 'var(--colorBackgroundboxlogo)';
+  });
+  hoverchamtron[i].addEventListener('mouseout',function(){
+    hoverchamtron[i].classList.remove('hover_cham_tron_slide');
+    hoverchamtron[i].style.color = 'var(--colornavjs)';
+  }); 
+}
 // hover ghé vào shop
 var ghevaoshopbefore = document.getElementById('ghevaoshopbefore');
 var getghevaoshop = document.getElementById('ghevaoshop');
