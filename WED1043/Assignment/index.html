@@ -97,11 +97,11 @@
     <nav id="navtimo">
         <div class="nav_box">
             <img class="chulogo_miutimo btn activebtnnav" src="IMG/Miu-timo.png" alt="" onclick="goto(0)"> 
-            <a class="btn btn1" href="javascript:;" onclick="goto(205)" >Trang chủ</a> 
-            <a class="btn btn1" href="javascript:;" onclick="goto(960)" >Giới thiệu</a>
-            <a class="btn btn1" href="javascript:;" onclick="goto(2390)" >Sản phẩm</a>
-            <a class="btn btn1" href="javascript:;" onclick="goto(4880)" >Cửa hàng</a>
-            <a class="btn btn1" href="javascript:;" onclick="goto(7935)"  >Liên hệ</a>
+            <a class="btn btn1" href="javascript:;" onclick="goto(205)" >home</a> 
+            <a class="btn btn1" href="javascript:;" onclick="goto(960)" >introduce</a>
+            <a class="btn btn1" href="javascript:;" onclick="goto(2390)" >product</a>
+            <a class="btn btn1" href="javascript:;" onclick="goto(4880)" >shop</a>
+            <a class="btn btn1" href="javascript:;" onclick="goto(7935)"  >contact</a>
         </div>
         <div class="nav_box">
             <div class="icon">
@@ -110,14 +110,14 @@
                 <input class="timkiem" type="search">
                 <img id="user" src="IMG/ssmvtnogc7ue0jufjd03h6mj89.png" alt="User">
             </div>
-            <a class="btn btn1" href="javascript:;" onclick="goto(6925)" >Đặt bàn</a>
+            <a class="btn btn1" href="javascript:;" onclick="goto(6925)" >reservation</a>
         </div> 
         <!-- box đăng ký -->
         <div id="userdangnhap">
             <h2>Mời bạn đăng nhập</h2>
             <input id="inputdangnhapTK" type="text" name="" placeholder="Tên tài khoản">
             <input id="inputdangnhapMK" type="password" name=""  placeholder="Mật khẩu">
-            <h5 class="error">Bạn đã nhập sai. Mời nhập lại</h5>
+            <h5 id = "errortextDN" class="error"></h5>
             <div class="btn_DK_DN">
                 <button class="btnanimation" id="btndangky">
                     <span></span><span></span><span></span><span></span>
@@ -136,11 +136,18 @@
          <!-- box đăng nhập -->
         <div id="userdangky" class="dangky">
             <div class="ttdangky">
-                <h2>Mời bạn nhập thông tin</h2>
+                <h2>register</h2>
                 <input id="inputdangkyTK1" type="text" name="" placeholder="Tên dăng nhập">
-                <h5 class="error1">Tên tài khoản phải lớn hơn 6 ký tự</h5>
+                <h5 id="error1textDKtk1" class="error1"></h5>
+
                 <input id="inputdangkyMK1" type="password" name=""  placeholder="Mật khẩu ít nhất 8 ký tự">
-                <h5 class="error1">Mật khẩu phải lớn hơn 8 ký tự</h5>
+                <h5 id="error1textDKmk1" class="error1"></h5>
+
+                <input id="inputdangkysdt" type="text" name="" placeholder="Số điện thoại">
+                <h5 id="error1textDKsdt1" class="error1"></h5>
+
+                <input id="inputdangkyemail" type="text" name=""  placeholder="Email">
+                <h5 id="error1textDKemail1" class="error1">Hãy kiểm tra lại email của bạn</h5>
             </div>
             <div class="ttgiotinh">
                     <fieldset>
@@ -163,14 +170,15 @@
                 </button>
                 <button class="btnanimation" id="btndangky1">
                     <span></span><span></span><span></span><span></span>
-                    Đăng ký
+                    register
                 </button>
             </div>
         </div>
     </nav>
-
+    <!-- Welcome miu timo--> 
     <div id="phuboxslide">
         <h1 id="h1phuboxslide">Welcome miu timo</h1>
+        <h3 id="h3phuboxslide">Thank you very much &#9829;</h3>
     </div>
 <!-- PHẦN THÂN -->
     <div class="than">
@@ -208,7 +216,7 @@
                 <h2></h2>
                 <span class="span0"></span>
                 <img id="inglogomiutimoGT" class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
-                <span class="span1">Trà sữa và bạn</span>
+                <span class="span1">Milk tea and friends</span>
                 <span class="span2">Giới thiệu</span>
             </div>
             <div class="text-gioi-thieu">
@@ -262,7 +270,7 @@
                 <h2></h2>
                 <span class="span0"></span>
                 <img id="inglogomiutimoMN" class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
-                <span class="span1">Trà sữa và bạn</span>
+                <span class="span1">Milk tea and friends</span>
                 <span class="span2">Menu</span>
             </div>
             <div class="box-menu">
@@ -372,7 +380,7 @@
                 <h2></h2>
                 <span class="span0"></span>
                 <img id="inglogomiutimoCH" class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
-                <span class="span1">Trà sữa và bạn</span>
+                <span class="span1">Milk tea and friends</span>
                 <span class="span2">cửa hàng</span>
             </div>
             <!-- Time sales hàng -->
@@ -529,7 +537,7 @@
                 <h2></h2>
                 <span class="span0"></span>
                 <img id="inglogomiutimoDB" class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
-                <span class="span1">Trà sữa và bạn</span>
+                <span class="span1">Milk tea and friends</span>
                 <span class="span2">Đặt bàn</span>
             </div>
             <div class="box_dat_ban">
@@ -581,7 +589,7 @@
             <h2></h2>
             <span class="span0"></span>
             <img id="inglogomiutimoLH" class="logo-Miu-timo" src="IMG/logo-Miu-timo.png" width="200px" alt="logo Miu timo">
-            <span class="span1">Trà sữa và bạn</span>
+            <span class="span1">Milk tea and friends</span>
             <span class="span2">Liên hệ</span>
         </div>
         <div class="box_lien_he">

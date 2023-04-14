@@ -518,11 +518,8 @@ nav>.nav_box>.icon>.soLuong{
     margin: auto;
     display: flex;
     flex-direction: column;
-    backdrop-filter: blur(120px);
+    backdrop-filter: blur(50px);
     border-radius: 0 0 20px 20px;
-    filter: drop-shadow(0px 0px 2px rgba(20, 15, 2, 0.3))
-    drop-shadow(0px 1px 3px rgba(150, 64, 64, 0.2))
-    drop-shadow(0px 1px 2px rgba(16, 8, 8, 0.889));
 }
 #userdangnhap.showboxdangnhap h2 {
     background-color: var(--colorBackgroundNav);
@@ -584,13 +581,13 @@ nav>.nav_box>.icon>.soLuong{
     top:0;
     left: 0;
     width: 0;
-    height:1px;
+    height:2px;
 }
 .btnanimation span:nth-child(2){
     position: absolute;
     top:0;
     right: 0;
-    width:1px;
+    width:2px;
     height: 0;
     transition-delay: 0.40s;
 }
@@ -599,13 +596,13 @@ nav>.nav_box>.icon>.soLuong{
     bottom:0;
     right: 0;
     width: 0;
-    height:1px;
+    height:2px;
 }
 .btnanimation span:nth-child(4){
     position: absolute;
     bottom:0;
     left: 0;
-    width:1px;
+    width:2px;
     height: 0;
     transition-delay: 0.40s;
 }
@@ -682,6 +679,7 @@ nav>.nav_box>.icon>.soLuong{
 .showboxdangky>.btndangky button{
     height: 80%;
     margin: 2px;
+    
     background-color: transparent;
     position: relative;
     border: none;
@@ -718,6 +716,11 @@ nav>.nav_box>.icon>.soLuong{
     border-top: 2px solid red ;
     color: rgb(246, 26, 26);
 }
+.no_eror_h5_0{
+    margin-top: -1px;
+    border-top: 2px solid rgb(15, 211, 15);
+    color: transparent;
+}
 
 /* _____________________________________________________________________________ */
 
@@ -728,7 +731,7 @@ nav>.nav_box>.icon>.soLuong{
     justify-content: center;
     width: 100%;
     margin: 100px auto 0 auto;
-    height: 100px;
+    height: 180px;
     transition-duration: 300ms; 
     color: var(--colorBackgroundNav);
     animation: idphuboxslide 0.7s linear forwards ;
@@ -748,7 +751,8 @@ nav>.nav_box>.icon>.soLuong{
     background-color: #c14b24;
     font-size: 70px;
     height: 40px;
-    margin-top: 60px;
+    line-height: 100px;
+    margin-top: 120px;
     text-transform: uppercase;
     transition-duration: 500ms; 
     animation: textphuboxslide 0.2s linear forwards ;
@@ -760,6 +764,31 @@ nav>.nav_box>.icon>.soLuong{
         transition-duration: 500ms;
     }
     100% {
+        opacity: 1;
+        transform: translateY(0);
+        transition-duration: 500ms;
+    }
+}
+
+#phuboxslide h3{
+    position: absolute;
+    display: none;
+    bottom: 20px;
+    font-size: 45px;
+    height: 40px;
+    margin-top: 120px;
+    text-transform: uppercase;
+    transition-duration: 500ms; 
+    animation: textphuboxslidethank 0.2s linear forwards ;
+}
+@keyframes textphuboxslidethank {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+        transition-duration: 500ms;
+    }
+    100% {
+        color: var(--colorBackgroundNav);
         opacity: 1;
         transform: translateY(0);
         transition-duration: 500ms;
@@ -989,25 +1018,24 @@ from {
 .boxlogo>h2{
     position: absolute;
     width: 87%;
-    top: 70px;
+    top: 73px;
     border-bottom: 2px dashed var(--colorBackgroundNav);
     left: 50%;
     transform: translate(-50%);
 }
 /* Nền sau chữ trà sữa và bạn*/
 .boxlogo>.span0{
-    width: 370px;
+    width:550px;
     height: 30px;
     position: absolute;
     top: 60px;
     background-color: var(--colorBackgroundboxlogo);
     left: 50%;
     transform: translate(-51%);
-    font-family: "Archaic", serif;
 }
 /* Chữ trà sữa và bạn */
 .boxlogo>.span1{
-    width: 400px;
+    width: 600px;
     top: 60px;
     left: 50%;
     transform: translate(-50%);
@@ -1022,12 +1050,11 @@ from {
 .boxlogo>.span2{
     width: 100%;
     position: absolute;
-    font-family: "viber", cursive;
-    font-size: 60px;
+    font-size: 55px;
     text-align: center;
-    letter-spacing: 15px;  
-    font-family:'FontAwesome';
-    bottom: 0;
+    letter-spacing: 10px;  
+    text-transform: uppercase;
+    bottom: -4px;
     color: var(--colortextTieuDe) ;
     left: 50%;
     transform: translate(-50%);  

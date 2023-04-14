@@ -30,36 +30,38 @@ window.onscroll = function(){
 };
 var phuboxslide = document.getElementById('phuboxslide');
 phuboxslide.addEventListener("mouseover",function(){
-  phuboxslide.style.height = '180px';
+  phuboxslide.style.height = '260px';
   phuboxslide.style.color = 'rgb(225, 215, 215)';
   phuboxslide.style.transitionDuration = '300ms';
   phuboxslide.style.backgroundColor = 'rgba(4, 4, 3, 0.694)';
 });
 phuboxslide.addEventListener("mouseout",function(){
-  phuboxslide.style.height = '100px';
+  phuboxslide.style.height = '180px';
   phuboxslide.style.animation = 'idphuboxslide 0.7s linear forwards';
   phuboxslide.style.color = 'var(--colorBackgroundNav)';
   phuboxslide.style.backgroundColor = 'transparent';
 });
 
+var h3phuboxslide = document.getElementById('h3phuboxslide');
 var h1phuboxslide = document.getElementById('h1phuboxslide');
 h1phuboxslide.addEventListener('mouseover',function(){
   h1phuboxslide.style.animation = 'hovertextphuboxslide 0.2s linear forwards';
   h1phuboxslide.style.transitionDuration = '500s'; 
   h1phuboxslide.style.backgroundColor = 'var(--colorBackgroundNav)';
   h1phuboxslide.style.color = 'rgb(236, 231, 231)';
+  h3phuboxslide.style.display = 'flex'
 });
 h1phuboxslide.addEventListener('mouseout',function(){
   h1phuboxslide.style.animation='textphuboxslide 0.2s linear forwards';
   h1phuboxslide.style.backgroundColor = '#c14b24';
   h1phuboxslide.style.color = 'var(--colorBackgroundNav)';
+  h3phuboxslide.style.display = 'none'
 
-
-  
 });
 
+
 // ____________________________________________________________________
-// CODE JS cho  "Chào mừng bạn đến với shop Miu timo"
+// CODE JS cho  "hello you! Have a nice day"
 const text = document.querySelector('.text');
 const charArr = text.textContent.split('');
 
@@ -296,11 +298,6 @@ user.addEventListener('mouseup',function(){
   userdangky.className="dangky";
 })
 
-// btn thoát box đăng nhập
-var thoat = document.getElementById('thoat');
-thoat.addEventListener('mouseup',function(){
-  userdangnhap.classList.toggle("showboxdangnhap");
-})
 
 // btn đăng nhập , đăng ký
 var btnDangKy = document.getElementById('btndangky');
@@ -311,7 +308,7 @@ btnDangKy.addEventListener("mouseup",function(){
   userdangnhap.classList.toggle("showboxdangnhap");
 })
 
-// ok đăng nhập
+// Kiểm tra đăng nhập tk và mật khẩu
 var getinputTK = document.getElementById("inputdangnhapTK");
 var getinputMK = document.getElementById("inputdangnhapMK");
 var geterror = document.getElementsByClassName("error");
@@ -320,14 +317,34 @@ btnDangNhap.addEventListener("mouseup",function(){
   var valuegetinputMK = getinputMK.value;
   // var valuegetinputMK = getinputMK.value
   if(valuegetinputTK == tk || valuegetinputMK == mk ){
-    userdangnhap.classList.toggle("showboxdangnhap");
     getinputTK.value = "";
     getinputMK.value = "";
     geterror[0].className='error';
+    userdangnhap.classList.toggle("showboxdangnhap");
+  }else if(valuegetinputTK == '' && valuegetinputMK == '' ){
+    document.getElementById("errortextDN").innerText = 'Bạn không được để trống khi đăng nhập';
+    geterror[0].className='error h5_0';
+  }else if(valuegetinputTK == ''){
+    document.getElementById("errortextDN").innerText = 'Bạn đang để trống ô tài khoản';
+    geterror[0].className='error h5_0';
+  }else if(valuegetinputMK == ''){
+    document.getElementById("errortextDN").innerText = 'Bạn đang để trống ô mật khẩu';
+    geterror[0].className='error h5_0';
   }else{
+    document.getElementById("errortextDN").innerText = 'Bạn đã nhập sai. Mời nhập lại';
     geterror[0].className='error h5_0';
   }
 })
+
+// btn thoát box đăng nhập
+var thoat = document.getElementById('thoat');
+thoat.addEventListener('mouseup',function(){
+  getinputTK.value = "";
+  getinputMK.value = "";
+  geterror[0].className='error';
+  userdangnhap.classList.toggle("showboxdangnhap");
+})
+
 
 //___________box đăng ký
 
@@ -336,40 +353,102 @@ var btndk1 = document.getElementById("btndangky1");
 var getinputTK1 = document.getElementById("inputdangkyTK1") ;
 var getinputMK1 = document.getElementById("inputdangkyMK1") ;
 var geterror1 = document.getElementsByClassName("error1");
+var getinputsdt = document.getElementById("inputdangkysdt");
+var getinputemail = document.getElementById("inputdangkyemail");
+
 
 // nhấn nút đăng ký sẽ làm những việc này: kiểm tra nhập đăng ký TK và MK
 btndk1.addEventListener("mouseup",function(){
   var valuegetinputTK1 = getinputTK1.value;
   var valuegetinputMK1 = getinputMK1.value;
-  let kt=0;
-  if (valuegetinputTK1.length<=6){
+
+  var valuegetinputsdt = getinputsdt.value;
+  var valuegetinputemail = getinputemail.value;
+
+  let kt = 0;
+  // Kiểm tra nhập tạo TK
+  if (valuegetinputTK1 == ''){
+    document.getElementById("error1textDKtk1").innerText='bạn không được để trống';
     geterror1[0].className='error1 h5_0';
-    kt=1;
+    kt = 1;
+  }else if (valuegetinputTK1 == [0-9]){
+    document.getElementById("error1textDKtk1").innerText='Tên đăng nhập không được bằng số';
+    geterror1[0].className='error1 h5_0';
+    kt = 1;
+  }else if (valuegetinputTK1.length <= 6){
+    document.getElementById("error1textDKtk1").innerText='Bạn hãy nhập ít nhất 6 ký tự';
+    geterror1[0].className='error1 h5_0';
+    kt = 1;
   }else{
     kt=0;
-    geterror1[0].className='error1';
+    geterror1[0].className='error1 no_eror_h5_0' ;
+  }
+  // Kiểm tra nhập tạo MK
+  if (valuegetinputMK1 == ''){
+    document.getElementById("error1textDKmk1").innerText='bạn không được để trống';
+    geterror1[1].className='error1 h5_0';
+    kt = 1;
   }
   if (valuegetinputMK1.length<=8){
+    document.getElementById("error1textDKmk1").innerText='Bạn hãy nhập ít nhất 8 ký tự';
     geterror1[1].className='error1 h5_0';
-    kt=1;
+    kt = 1;
   }else{
-    geterror1[1].className='error1';
     kt=0;
+    geterror1[1].className='error1 no_eror_h5_0';
   }
-  if(kt == 0){
-    getinputTK1.value = "";
-    getinputMK1.value = "";
+  
+
+  // Kiểm tra nhập tạo SDT
+  var sdtchuyan = /^\d{10}$/;
+  var sdtchuyankhchu = /^[a-zA-Z0-9]?/;
+  var ktsdt = sdtchuyan.test(valuegetinputsdt);
+  var ktsdtchu=sdtchuyankhchu.test(valuegetinputsdt)
+  if(ktsdt){
+    geterror1[2].className='error1 no_eror_h5_0';
+  }else if(ktsdtchu){
+    geterror1[2].className='error1 h5_0';
+    document.getElementById("error1textDKsdt1").innerText='Số điện thoại không được là chữ';
   }
-});
+  else{
+    geterror1[2].className='error1 h5_0';
+    document.getElementById("error1textDKsdt1").innerText='Bạn hãy kiểm tra lại số điện thoại';
+  }
+
+  // Kiểm tra nhập tạo email
+  var emailchuan = /^\w+@[a-zA-Z]{3,}\.com$/i;
+  var ktemail = emailchuan.test(valuegetinputemail)
+  if(ktemail){
+    geterror1[3].className='error1 no_eror_h5_0';
+  }else{
+    geterror1[3].className='error1 h5_0';
+  }
+
+  if(kt==0){
+    getinputTK1.value = '';
+    getinputMK1.value = '';
+    getinputsdt.value = '';
+    getinputemail.value = '';
+    geterror1[0].className='error1';
+    geterror1[1].className='error1';
+    geterror1[2].className='error1';
+    geterror1[3].className='error1';
+  }
+
+},10);
 
 // nhấn nút đăng nhập sẽ quay lại box đăng nhập và reset lại box đăng ký
 btndn1.addEventListener("mouseup",function(){
   userdangky.className="dangky";
   userdangnhap.classList.toggle("showboxdangnhap");
-  geterror1[1].className='error1';
-  geterror1[0].className='error1';
-  getinputTK1.value = "";
-  getinputMK1.value = "";
+    getinputTK1.value = '';
+    getinputMK1.value = '';
+    getinputsdt.value = '';
+    getinputemail.value = '';
+    geterror1[0].className='error1';
+    geterror1[1].className='error1';
+    geterror1[2].className='error1';
+    geterror1[3].className='error1';
 })
 
 
@@ -428,7 +507,8 @@ var x = document.getElementById("location");
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition, showError);
-  } else { 
+  } 
+  { 
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
