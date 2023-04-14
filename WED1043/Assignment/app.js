@@ -59,6 +59,63 @@ h1phuboxslide.addEventListener('mouseout',function(){
 
 });
 
+// ____________________________________________________________________
+// CODE JS cho box slide
+let id = 1;   // khởi tạo biến id = 1, mặc định vào trang web sẽ đứng ở ảnh 1
+img(id);      // mặc định vào trang web thì sẽ nằm ảnh 1
+
+function nutTraiPhai(value) { // click vào sẽ lấy value
+  img(id += value);           // gán id = cộng value, mỗi lần nhấn sẽ chuyển đến ảnh tiếp theo
+}  
+
+function chamTron(value) {  // click vào sẽ lấy value
+  img(id = value);          // nhấn vào chấm tròn bao nhiêu sẽ chạy tới ảnh tượng tự số của ảnh
+}
+
+function img(value) {
+  let i;
+  let imgs = document.getElementsByClassName("itemslide");          // truy xuất các thẻ có class là slide
+  let chamTron = document.getElementsByClassName("cham_tron");  // truy xuất các thẻ có class là cham_tron
+  if (value > imgs.length) {    // nếu số truyền vào lớn hơn lenght
+    id = 1;                     // thì gán id lại bằng 1 (img sẽ hiển thị ảnh 1)
+  }
+  if (value < 1) {              // nếu số truyền vào nhỏ hơn 1 
+    id = imgs.length;           // thì slide ảnh sẽ trở về ảnh cuối (ảnh 3)
+  }
+  for (i = 0; i < imgs.length; i++) { 
+    imgs[i].style.display = "none";   // thêm style cho thẻ div có class tên là slide, với thuộc tính none
+  }
+  for (i = 0; i < chamTron.length; i++) {
+    chamTron[i].className = chamTron[i].className.replace(" active", "");   // thêm class active vào thẻ span
+  } 
+  imgs[id - 1].style.display = "block";     // imgs [index] có thêm thuộc tính style display = "block"
+  chamTron[id - 1].className += " active";  // chamTron[index] thay đổi tên class = " active"
+}
+
+
+// ____________________________________________________________________
+// CODE JS cho box slide tự động chuyển tiếp img
+let idAutu = 0;
+autuImg();
+function autuImg() {
+  let i;
+  let imgs = 	document.getElementsByClassName("itemslide");
+  let chamTron = document.getElementsByClassName("cham_tron");
+  for (i = 0; i < imgs.length; i++) {
+    imgs[i].style.display = "none";  
+  }
+  idAutu++;
+  if (idAutu > imgs.length){
+    idAutu = 1;
+  }    
+  for (i = 0; i < chamTron.length; i++) {
+    chamTron[i].className = chamTron[i].className.replace(" active", "");
+  }
+  imgs[idAutu-1].style.display = "block";  
+  chamTron[idAutu-1].className += " active";
+  setTimeout(autuImg, 4000); // Change image every 2 seconds
+}
+
 
 // ____________________________________________________________________
 // CODE JS cho  "hello you! Have a nice day"
@@ -193,101 +250,144 @@ var btnhover = document.getElementsByClassName("btnhover");
 console.log(btnhover);
 for (let i = 0; i < btnhover.length; i++) {
   btnhover[i].addEventListener("mousemove",function(){
-    btnhover[i].classList.add('hoverbtnopacity');
+    btnhover[i].classList.add('btn_hover_opacity');
     btnhover[i].style.cursor = 'pointer';
    });
    btnhover[i].addEventListener("mouseout",function(){
-    btnhover[i].classList.remove('hoverbtnopacity');
+    btnhover[i].classList.remove('btn_hover_opacity');
+    btnhover[i].classList.remove('btn_active_opacity');
    });
+   btnhover[i].addEventListener("mousedown",function(){
+    btnhover[i].classList.add('btn_active_opacity');
+   });
+  btnhover[i].addEventListener("mouseup",function(){
+    btnhover[i].classList.remove('btn_active_opacity');
+  });
+}
+
+var btnhover_opacity_text_sang = document.getElementsByClassName("btnhover_opacity_text_sang");
+console.log(btnhover_opacity_text_sang);
+for (let i = 0; i < btnhover_opacity_text_sang.length; i++) {
+  btnhover_opacity_text_sang[i].addEventListener("mousemove",function(){
+    btnhover_opacity_text_sang[i].classList.add('btnhover_opacity_text_sang_css');
+    btnhover_opacity_text_sang[i].style.cursor = 'pointer';
+   });
+   btnhover_opacity_text_sang[i].addEventListener("mouseout",function(){
+    btnhover_opacity_text_sang[i].classList.remove('btnhover_opacity_text_sang_css');
+    btnhover_opacity_text_sang[i].classList.remove('btnactive_opacity_text_sang_css');
+   });
+  btnhover_opacity_text_sang[i].addEventListener("mousedown",function(){
+    btnhover_opacity_text_sang[i].classList.add('btnactive_opacity_text_sang_css');
+   });
+  btnhover_opacity_text_sang[i].addEventListener("mouseup",function(){
+    btnhover_opacity_text_sang[i].classList.remove('btnactive_opacity_text_sang_css');
+  });
+}
+
+var hoverzoom = document.getElementsByClassName('hoverzoom');
+for (let i = 0; i < hoverzoom.length; i++){
+  hoverzoom[i].addEventListener('mouseover',function(){
+    hoverzoom[i].classList.add('hover_zoom');
+  });
+  hoverzoom[i].addEventListener('mouseout',function(){
+    hoverzoom[i].classList.remove('hover_zoom');;
+  });
+  
+}
+
+var hovershadow = document.getElementsByClassName('hoverfiltershadow');
+for (let i = 0; i < hovershadow.length; i++){
+  hovershadow[i].addEventListener('mouseover',function(){
+    hovershadow[i].classList.add('hover_filter_shadow')
+    
+  });
+  hovershadow[i].addEventListener('mouseout',function(){
+    
+    hovershadow[i].classList.remove('hover_filter_shadow')
+  });
+}
+
+var hoveruptop = document.getElementsByClassName('hoveruptop');
+for (let i = 0; i < hoveruptop.length; i++){
+  hoveruptop[i].addEventListener('mouseover',function(){
+    hoveruptop[i].classList.add('hover_tranfrom_up_top');
+  });
+  hoveruptop[i].addEventListener('mouseout',function(){
+    hoveruptop[i].classList.remove('hover_tranfrom_up_top');
+  }); 
+}
+
+var hoverfilter = document.getElementsByClassName('hoverfilter');
+for (let i = 0; i < hoverfilter.length; i++){
+  hoverfilter[i].addEventListener('mouseover',function(){
+    hoverfilter[i].style.backgroundColor = 'transparent';
+    hoverfilter[i].style.transitionDuration = '100ms';
+    hoverfilter[i].style.width = '317px';
+    hoverfilter[i].style.color = 'var(--colorBackgroundboxlogo)';
+    hoverfilter[i].classList.add('hover_filter_gia_tien');
+  });
+  hoverfilter[i].addEventListener('mouseout',function(){
+    hoverfilter[i].style.backgroundColor = 'var(--colortextTieuDe)';
+    hoverfilter[i].style.transitionDuration = '100ms';
+    hoverfilter[i].classList.remove('hover_filter_gia_tien');
+    hoverfilter[i].style.width = '40%';
+  }); 
 }
 
 
+// hover ghé vào shop
+var ghevaoshopbefore = document.getElementById('ghevaoshopbefore');
+var getghevaoshop = document.getElementById('ghevaoshop');
 
-// ____________________________________________________________________
-// CODE JS cho box slide
-let id = 1;   // khởi tạo biến id = 1, mặc định vào trang web sẽ đứng ở ảnh 1
-img(id);      // mặc định vào trang web thì sẽ nằm ảnh 1
+getghevaoshop.addEventListener('mouseover',function(){
+  // getghevaoshop.classList.add('boxbiashop_btn_hover');
+  getghevaoshop.style.width = '240px';
+  getghevaoshop.style.color = 'var(--colorBackgroundNav)';
+  
+  ghevaoshopbefore.style.width = '100%';
 
-function nutTraiPhai(value) { // click vào sẽ lấy value
-  img(id += value);           // gán id = cộng value, mỗi lần nhấn sẽ chuyển đến ảnh tiếp theo
-}  
+});
+getghevaoshop.addEventListener('mouseout',function(){
+  getghevaoshop.classList.remove('boxbiashop_btn_hover');
+  getghevaoshop.style.width = '200px';
+  getghevaoshop.style.color = 'var(--colornavjs)'
 
-function chamTron(value) {  // click vào sẽ lấy value
-  img(id = value);          // nhấn vào chấm tròn bao nhiêu sẽ chạy tới ảnh tượng tự số của ảnh
-}
-
-function img(value) {
-  let i;
-  let imgs = document.getElementsByClassName("itemslide");          // truy xuất các thẻ có class là slide
-  let chamTron = document.getElementsByClassName("cham_tron");  // truy xuất các thẻ có class là cham_tron
-  if (value > imgs.length) {    // nếu số truyền vào lớn hơn lenght
-    id = 1;                     // thì gán id lại bằng 1 (img sẽ hiển thị ảnh 1)
-  }
-  if (value < 1) {              // nếu số truyền vào nhỏ hơn 1 
-    id = imgs.length;           // thì slide ảnh sẽ trở về ảnh cuối (ảnh 3)
-  }
-  for (i = 0; i < imgs.length; i++) { 
-    imgs[i].style.display = "none";   // thêm style cho thẻ div có class tên là slide, với thuộc tính none
-  }
-  for (i = 0; i < chamTron.length; i++) {
-    chamTron[i].className = chamTron[i].className.replace(" active", "");   // thêm class active vào thẻ span
-  } 
-  imgs[id - 1].style.display = "block";     // imgs [index] có thêm thuộc tính style display = "block"
-  chamTron[id - 1].className += " active";  // chamTron[index] thay đổi tên class = " active"
-}
+  ghevaoshopbefore.style.width = '0';
+});
 
 
-// ____________________________________________________________________
-// CODE JS cho box slide tự động chuyển tiếp img
-let idAutu = 0;
-autuImg();
-function autuImg() {
-  let i;
-  let imgs = 	document.getElementsByClassName("itemslide");
-  let chamTron = document.getElementsByClassName("cham_tron");
-  for (i = 0; i < imgs.length; i++) {
-    imgs[i].style.display = "none";  
-  }
-  idAutu++;
-  if (idAutu > imgs.length){
-    idAutu = 1;
-  }    
-  for (i = 0; i < chamTron.length; i++) {
-    chamTron[i].className = chamTron[i].className.replace(" active", "");
-  }
-  imgs[idAutu-1].style.display = "block";  
-  chamTron[idAutu-1].className += " active";
-  setTimeout(autuImg, 4000); // Change image every 2 seconds
-}
+// hover xem thêm
+var xemthembefore = document.getElementById('xemthembefore');
+var getxemthem = document.getElementById('xemthem');
+
+getxemthem.addEventListener('mouseover',function(){
+  getxemthem.style.width = '240px';
+  getxemthem.style.color = 'var(--colorBackgroundNav)';
+  
+  xemthembefore.style.width = '100%';
+
+});
+getxemthem.addEventListener('mouseout',function(){
+  getxemthem.classList.remove('boxbiashop_btn_hover');
+  getxemthem.style.width = '200px';
+  getxemthem.style.color = 'var(--colornavjs)'
+
+  xemthembefore.style.width = '0';
+});
+
+// btn mua ở box sản phẩm
+
+
+
+
+
+
 
 // ____________________________________________________________________
 // CODE JS cho item đăng nhập và đăng ký
 // Tài khoản, Mật khẩu mặc định
 const tk = "nguyenvannhat";
 const mk = "nhat12345";
-
-// kiểm tra đăng nhập
-// var getinput = document.getElementById("inputdangnhap")
-// function ktnhaptk(){
-//   var value = getinput.value
-//   if(value.length <= 6){
-//     console.log("chưa đủ số lượng");
-//   }else{
-//     console.log("ok fren")
-//     getinput.className = 'sai'
-//   }
-// }
-// function ktnhapmk(){
-//   var value = getinput.value
-//   if(value.length <= 6){
-//     console.log("chưa đủ số lượng");
-//   }else{
-//     console.log("ok fren")
-//     getinput.className = 'sai'
-//   }
-// }
-
-
 
 //___________box đăng nhập
 // Show box đăng nhâp
@@ -322,16 +422,16 @@ btnDangNhap.addEventListener("mouseup",function(){
     geterror[0].className='error';
     userdangnhap.classList.toggle("showboxdangnhap");
   }else if(valuegetinputTK == '' && valuegetinputMK == '' ){
-    document.getElementById("errortextDN").innerText = 'Bạn không được để trống khi đăng nhập';
+    document.getElementById("errortextDN").innerText = 'You must not leave blank when logging in';
     geterror[0].className='error h5_0';
   }else if(valuegetinputTK == ''){
-    document.getElementById("errortextDN").innerText = 'Bạn đang để trống ô tài khoản';
+    document.getElementById("errortextDN").innerText = 'Please fill out your account';
     geterror[0].className='error h5_0';
   }else if(valuegetinputMK == ''){
-    document.getElementById("errortextDN").innerText = 'Bạn đang để trống ô mật khẩu';
+    document.getElementById("errortextDN").innerText = 'Please enter the password';
     geterror[0].className='error h5_0';
   }else{
-    document.getElementById("errortextDN").innerText = 'Bạn đã nhập sai. Mời nhập lại';
+    document.getElementById("errortextDN").innerText = 'You have entered the wrong. Invite to re -enter';
     geterror[0].className='error h5_0';
   }
 })
@@ -365,66 +465,65 @@ btndk1.addEventListener("mouseup",function(){
   var valuegetinputsdt = getinputsdt.value;
   var valuegetinputemail = getinputemail.value;
 
-  let kt = 0;
+  var sdtchuyan = /^\d{10}$/;
+  var ktsdt = sdtchuyan.test(valuegetinputsdt);
+
+  var emailchuan = /^\w+@[a-zA-Z]{3,}\.com$/i;
+  var ktemail = emailchuan.test(valuegetinputemail);
+
+  var kttk1 = 0;
   // Kiểm tra nhập tạo TK
   if (valuegetinputTK1 == ''){
-    document.getElementById("error1textDKtk1").innerText='bạn không được để trống';
+    document.getElementById("error1textDKtk1").innerText='You must not leave blank';
     geterror1[0].className='error1 h5_0';
-    kt = 1;
-  }else if (valuegetinputTK1 == [0-9]){
-    document.getElementById("error1textDKtk1").innerText='Tên đăng nhập không được bằng số';
+    kttk1 = 1;
+  }
+  if (valuegetinputTK1.length <= 6){
+    kttk1 = 1;
+    document.getElementById("error1textDKtk1").innerText='Please enter at least 6 characters';
     geterror1[0].className='error1 h5_0';
-    kt = 1;
-  }else if (valuegetinputTK1.length <= 6){
-    document.getElementById("error1textDKtk1").innerText='Bạn hãy nhập ít nhất 6 ký tự';
-    geterror1[0].className='error1 h5_0';
-    kt = 1;
   }else{
-    kt=0;
+    kttk1=0;
     geterror1[0].className='error1 no_eror_h5_0' ;
   }
+
   // Kiểm tra nhập tạo MK
+  var ktmk1 = 0;
   if (valuegetinputMK1 == ''){
-    document.getElementById("error1textDKmk1").innerText='bạn không được để trống';
+    document.getElementById("error1textDKmk1").innerText='You must not leave blank';
     geterror1[1].className='error1 h5_0';
-    kt = 1;
+    ktmk1 = 1;
   }
   if (valuegetinputMK1.length<=8){
-    document.getElementById("error1textDKmk1").innerText='Bạn hãy nhập ít nhất 8 ký tự';
+    document.getElementById("error1textDKmk1").innerText='Please enter at least 8 characters';
     geterror1[1].className='error1 h5_0';
-    kt = 1;
+    ktmk1 = 1;
   }else{
-    kt=0;
+    ktmk1=0;
     geterror1[1].className='error1 no_eror_h5_0';
   }
   
-
   // Kiểm tra nhập tạo SDT
-  var sdtchuyan = /^\d{10}$/;
-  var sdtchuyankhchu = /^[a-zA-Z0-9]?/;
-  var ktsdt = sdtchuyan.test(valuegetinputsdt);
-  var ktsdtchu=sdtchuyankhchu.test(valuegetinputsdt)
+  var ktsdt1 = 0;
   if(ktsdt){
+    ktsdt1 =0;
     geterror1[2].className='error1 no_eror_h5_0';
-  }else if(ktsdtchu){
+  }else{
+    ktsdt1 =1;
     geterror1[2].className='error1 h5_0';
-    document.getElementById("error1textDKsdt1").innerText='Số điện thoại không được là chữ';
+    document.getElementById("error1textDKsdt1").innerText='Please check the phone number';
   }
-  else{
-    geterror1[2].className='error1 h5_0';
-    document.getElementById("error1textDKsdt1").innerText='Bạn hãy kiểm tra lại số điện thoại';
-  }
-
-  // Kiểm tra nhập tạo email
-  var emailchuan = /^\w+@[a-zA-Z]{3,}\.com$/i;
-  var ktemail = emailchuan.test(valuegetinputemail)
+ var ktemail1 = 0;
+   // Kiểm tra nhập tạo email
   if(ktemail){
+    ktemail1=0;
     geterror1[3].className='error1 no_eror_h5_0';
   }else{
+    ktemail1=1;
     geterror1[3].className='error1 h5_0';
   }
 
-  if(kt==0){
+  if(ktmk1 ==0 && ktemail1 == 0 && ktsdt1 == 0 && kttk1 == 0){
     getinputTK1.value = '';
     getinputMK1.value = '';
     getinputsdt.value = '';
@@ -435,20 +534,20 @@ btndk1.addEventListener("mouseup",function(){
     geterror1[3].className='error1';
   }
 
-},10);
+});
 
 // nhấn nút đăng nhập sẽ quay lại box đăng nhập và reset lại box đăng ký
 btndn1.addEventListener("mouseup",function(){
   userdangky.className="dangky";
   userdangnhap.classList.toggle("showboxdangnhap");
-    getinputTK1.value = '';
-    getinputMK1.value = '';
-    getinputsdt.value = '';
-    getinputemail.value = '';
-    geterror1[0].className='error1';
-    geterror1[1].className='error1';
-    geterror1[2].className='error1';
-    geterror1[3].className='error1';
+  getinputTK1.value = '';
+  getinputMK1.value = '';
+  getinputsdt.value = '';
+  getinputemail.value = '';
+  geterror1[0].className='error1';
+  geterror1[1].className='error1';
+  geterror1[2].className='error1';
+  geterror1[3].className='error1';
 })
 
 
